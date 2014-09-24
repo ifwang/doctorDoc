@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PatientsViewController.h
 //  DoctorDoc
 //
 //  Created by ifwang on 14-9-25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PatientsViewController : UIViewController
 
 @end
-
