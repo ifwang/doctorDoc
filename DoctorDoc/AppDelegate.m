@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "PatientsViewController.h"
+
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) PatientsViewController *vc;
+
 
 @end
 
@@ -17,6 +22,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+
+    PatientsViewController *vc = [[PatientsViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    
+    
     return YES;
 }
 
