@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PatientsViewController.h"
-
+#import "PDDBManager.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +32,24 @@
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
+    
+    PDDBManager *manager = [PDDBManager shareInstance];
+    
+    [[PDDBManager shareInstance] start];
+    
+    [manager deletePid:3456];
+    
+    [manager insertPatientVO:[PatientRecord mockVO]];
+        
+    if([manager updatePatientVO:[PatientRecord mockVO]])
+    {
+        NSLog(@"更新Patient成功");
+    }
+    else
+    {
+        NSLog(@"更新Patient失败[%@]",[manager lastError]);
+    }
+    NSLog(@"Patient:%@",[manager queryPatientVO:3456]);
     
     
     return YES;

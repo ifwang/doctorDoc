@@ -28,7 +28,7 @@
         
         id propertyValue = [self valueForKey:pro];
         
-        [descirption appendFormat:@"%@ : %@",pro,propertyValue];
+        [descirption appendFormat:@"%@ : %@\n",pro,propertyValue];
         
     }
     
@@ -36,6 +36,16 @@
     
     
     return descirption;
+}
+
++ (instancetype)mockVO
+{
+    return [[PDObject alloc] init];
+}
+
+- (instancetype)initWithResultSet:(FMResultSet*)result
+{
+    return [self init];
 }
 
 

@@ -10,6 +10,8 @@
 
 @interface AntibioticsVO : PDObject
 
+@property (nonatomic, assign) NSUInteger aid;
+
 @property (nonatomic, copy) NSDate *useDate;
 
 @property (nonatomic, copy) NSString *name;

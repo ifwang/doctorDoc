@@ -12,7 +12,7 @@
 /**
  *  病人编号
  */
-@property (nonatomic, copy) NSString *pid;
+@property (nonatomic, assign) NSUInteger pid;
 /**
  *  诊断
  */
@@ -29,5 +29,17 @@
  *  身长 30-70 cm 
  */
 @property (nonatomic, copy) NSString *bodyLength;
+/**
+ *  光疗
+ */
+@property (nonatomic, strong) NSString *phototherapy;
+/**
+ *  低温
+ */
+@property (nonatomic, strong) NSString *hypothermia;
+/**
+ *  新生儿筛查
+ */
+@property (nonatomic, strong) NSString *newbornCheck;
 
 @end

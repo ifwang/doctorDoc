@@ -10,6 +10,10 @@
 
 @interface BSugarVO : PDObject
 /**
+ *  血糖记录ID
+ */
+@property (nonatomic, assign) NSUInteger bsid;
+/**
  *  时
  */
 @property (nonatomic, assign) NSUInteger hour;

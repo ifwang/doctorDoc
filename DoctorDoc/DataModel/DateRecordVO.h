@@ -15,11 +15,14 @@
 
 
 @interface DateRecordVO : PDObject
-
+/**
+ *  记录ID
+ */
+@property (nonatomic, assign) NSUInteger drid;
 /**
  *  记录日期
  */
-@property (nonatomic, copy) NSString *dateRecord;
+@property (nonatomic, copy) NSDate *recordDate;
 /**
  *  辐射台
  */
@@ -53,13 +56,14 @@
  */
 @property (nonatomic, copy) NSString *bloodOxy;
 /**
- *  喂养
- */
-@property (nonatomic, strong) FeedRecordVO *feed;
-/**
  *  尿总
  */
 @property (nonatomic, copy) NSString *urine;
+/**
+ *  喂养
+ */
+@property (nonatomic, strong) FeedRecordVO *feed;
+
 /**
  *  大便
  */
@@ -72,4 +76,7 @@
  *  TCB
  */
 @property (nonatomic, strong) TCBVO *tcb;
+
+
+
 @end

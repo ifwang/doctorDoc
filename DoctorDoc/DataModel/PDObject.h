@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "FMDB.h"
 @interface PDObject : NSObject
 
++ (instancetype)mockVO;
+
+- (instancetype)initWithResultSet:(FMResultSet*)result;
 
 @end
