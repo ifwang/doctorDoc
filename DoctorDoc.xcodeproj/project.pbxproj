@@ -11,7 +11,6 @@
 		2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */; };
 		2C1ACC6519D6551A00444069 /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6319D6551A00444069 /* PatientsViewController.m */; };
 		2C1ACC6619D6551A00444069 /* PatientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6419D6551A00444069 /* PatientsViewController.xib */; };
-		2C1ACC6A19D6567300444069 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6919D6567300444069 /* DBManager.m */; };
 		2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6C19D666FD00444069 /* PDObject.m */; };
 		2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC7019D668E400444069 /* BSugarVO.m */; };
 		2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB019D6FA240037A883 /* StoolVO.m */; };
@@ -19,6 +18,8 @@
 		2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB619D6FB520037A883 /* InspectVO.m */; };
 		2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */; };
 		2C30BFC419D700360037A883 /* PatientRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC319D700360037A883 /* PatientRecord.m */; };
+		2C30BFC719D7077E0037A883 /* healRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC619D7077E0037A883 /* healRecordVO.m */; };
+		2C30BFCB19D707CF0037A883 /* PDDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFCA19D707CF0037A883 /* PDDBManager.m */; };
 		2C7EC5B119D32C2B00830578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5B019D32C2B00830578 /* main.m */; };
 		2C7EC5B419D32C2B00830578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5B319D32C2B00830578 /* AppDelegate.m */; };
 		2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7EC5BB19D32C2B00830578 /* Images.xcassets */; };
@@ -45,8 +46,6 @@
 		2C1ACC6219D6551A00444069 /* PatientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
 		2C1ACC6319D6551A00444069 /* PatientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsViewController.m; sourceTree = "<group>"; };
 		2C1ACC6419D6551A00444069 /* PatientsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientsViewController.xib; sourceTree = "<group>"; };
-		2C1ACC6819D6567300444069 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = DataModel/DBManager.h; sourceTree = "<group>"; };
-		2C1ACC6919D6567300444069 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = DataModel/DBManager.m; sourceTree = "<group>"; };
 		2C1ACC6B19D666FD00444069 /* PDObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDObject.h; path = DataModel/PDObject.h; sourceTree = "<group>"; };
 		2C1ACC6C19D666FD00444069 /* PDObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDObject.m; path = DataModel/PDObject.m; sourceTree = "<group>"; };
 		2C1ACC6F19D668E400444069 /* BSugarVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSugarVO.h; path = DataModel/BSugarVO.h; sourceTree = "<group>"; };
@@ -61,6 +60,11 @@
 		2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateRecordVO.m; path = DataModel/DateRecordVO.m; sourceTree = "<group>"; };
 		2C30BFC219D700360037A883 /* PatientRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientRecord.h; path = DataModel/PatientRecord.h; sourceTree = "<group>"; };
 		2C30BFC319D700360037A883 /* PatientRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientRecord.m; path = DataModel/PatientRecord.m; sourceTree = "<group>"; };
+		2C30BFC519D7077E0037A883 /* healRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = healRecordVO.h; path = DataModel/healRecordVO.h; sourceTree = "<group>"; };
+		2C30BFC619D7077E0037A883 /* healRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = healRecordVO.m; path = DataModel/healRecordVO.m; sourceTree = "<group>"; };
+		2C30BFC919D707CF0037A883 /* PDDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDBManager.h; path = DBManager/PDDBManager.h; sourceTree = "<group>"; };
+		2C30BFCA19D707CF0037A883 /* PDDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDBManager.m; path = DBManager/PDDBManager.m; sourceTree = "<group>"; };
+		2C30BFCD19D709D90037A883 /* PDDBConstanst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PDDBConstanst.h; path = DBManager/PDDBConstanst.h; sourceTree = "<group>"; };
 		2C7EC5AB19D32C2B00830578 /* DoctorDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7EC5AF19D32C2B00830578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7EC5B019D32C2B00830578 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,8 +101,6 @@
 		2C1ACC6719D6563E00444069 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				2C1ACC6819D6567300444069 /* DBManager.h */,
-				2C1ACC6919D6567300444069 /* DBManager.m */,
 				2C1ACC6E19D6688600444069 /* VO */,
 			);
 			name = DataModel;
@@ -112,8 +114,12 @@
 				2C30BFB819D6FBB10037A883 /* DayRecordSubVO */,
 				2C30BFBF19D6FEBD0037A883 /* DateRecordVO.h */,
 				2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */,
+				2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */,
+				2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */,
 				2C30BFC219D700360037A883 /* PatientRecord.h */,
 				2C30BFC319D700360037A883 /* PatientRecord.m */,
+				2C30BFC519D7077E0037A883 /* healRecordVO.h */,
+				2C30BFC619D7077E0037A883 /* healRecordVO.m */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -123,8 +129,6 @@
 			children = (
 				2C1ACC6F19D668E400444069 /* BSugarVO.h */,
 				2C1ACC7019D668E400444069 /* BSugarVO.m */,
-				2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */,
-				2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */,
 				2C17C39719D66B4500EBE9CD /* FeedRecordVO.h */,
 				2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */,
 				2C30BFAF19D6FA240037A883 /* StoolVO.h */,
@@ -135,6 +139,16 @@
 				2C30BFB619D6FB520037A883 /* InspectVO.m */,
 			);
 			name = DayRecordSubVO;
+			sourceTree = "<group>";
+		};
+		2C30BFC819D707A30037A883 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				2C30BFC919D707CF0037A883 /* PDDBManager.h */,
+				2C30BFCA19D707CF0037A883 /* PDDBManager.m */,
+				2C30BFCD19D709D90037A883 /* PDDBConstanst.h */,
+			);
+			name = DBManager;
 			sourceTree = "<group>";
 		};
 		2C7EC5A219D32C2B00830578 = {
@@ -167,6 +181,7 @@
 				2C7EC5AE19D32C2B00830578 /* Supporting Files */,
 				2C1ACC6719D6563E00444069 /* DataModel */,
 				2C7EC5D719D3303B00830578 /* Patient */,
+				2C30BFC819D707A30037A883 /* DBManager */,
 			);
 			path = DoctorDoc;
 			sourceTree = "<group>";
@@ -351,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C30BFCB19D707CF0037A883 /* PDDBManager.m in Sources */,
 				2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */,
 				2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */,
 				2C30BFC419D700360037A883 /* PatientRecord.m in Sources */,
@@ -361,7 +377,7 @@
 				2C7EC5B419D32C2B00830578 /* AppDelegate.m in Sources */,
 				2C17C39619D66AEB00EBE9CD /* AntibioticsVO.m in Sources */,
 				2C7EC5B119D32C2B00830578 /* main.m in Sources */,
-				2C1ACC6A19D6567300444069 /* DBManager.m in Sources */,
+				2C30BFC719D7077E0037A883 /* healRecordVO.m in Sources */,
 				2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */,
 				2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */,
 			);
