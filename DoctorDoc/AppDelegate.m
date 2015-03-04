@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PatientsViewController.h"
 #import "PDDBManager.h"
+#import "YTKKeyValueStore.h"
 
 @interface AppDelegate ()
 
@@ -34,22 +35,8 @@
     self.window.rootViewController = nav;
     
     PDDBManager *manager = [PDDBManager shareInstance];
+    [manager start];
     
-    [[PDDBManager shareInstance] start];
-    
-    [manager deletePid:3456];
-    
-    [manager insertPatientVO:[PatientRecord mockVO]];
-        
-    if([manager updatePatientVO:[PatientRecord mockVO]])
-    {
-        NSLog(@"更新Patient成功");
-    }
-    else
-    {
-        NSLog(@"更新Patient失败[%@]",[manager lastError]);
-    }
-    NSLog(@"Patient:%@",[manager queryPatientVO:3456]);
     
     
     return YES;
