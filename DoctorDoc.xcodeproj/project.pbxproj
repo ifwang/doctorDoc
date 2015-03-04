@@ -9,22 +9,52 @@
 /* Begin PBXBuildFile section */
 		2C17C39619D66AEB00EBE9CD /* AntibioticsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */; };
 		2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */; };
-		2C1ACC6519D6551A00444069 /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6319D6551A00444069 /* PatientsViewController.m */; };
-		2C1ACC6619D6551A00444069 /* PatientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6419D6551A00444069 /* PatientsViewController.xib */; };
 		2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6C19D666FD00444069 /* PDObject.m */; };
 		2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC7019D668E400444069 /* BSugarVO.m */; };
+		2C1F0B9C1AA4B75800D79C03 /* PDAddPatientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9B1AA4B75800D79C03 /* PDAddPatientView.m */; };
+		2C1F0BA01AA4B77500D79C03 /* PDAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9E1AA4B77500D79C03 /* PDAddPatientViewController.m */; };
+		2C1F0BA11AA4B77500D79C03 /* PDAddPatientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */; };
+		2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25C80F1AA6109C009AD630 /* PDUIFactory.m */; };
 		2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB019D6FA240037A883 /* StoolVO.m */; };
 		2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB319D6FAF50037A883 /* TCBVO.m */; };
 		2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB619D6FB520037A883 /* InspectVO.m */; };
 		2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */; };
 		2C30BFC419D700360037A883 /* PatientRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC319D700360037A883 /* PatientRecord.m */; };
-		2C30BFC719D7077E0037A883 /* healRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFC619D7077E0037A883 /* healRecordVO.m */; };
 		2C30BFCB19D707CF0037A883 /* PDDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFCA19D707CF0037A883 /* PDDBManager.m */; };
+		2C66255A1A8651D50089BBA9 /* IFIDMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6625591A8651D50089BBA9 /* IFIDMaker.m */; };
+		2C66255D1A8651E60089BBA9 /* PDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C66255C1A8651E60089BBA9 /* PDCommon.m */; };
+		2C6625601A8663B20089BBA9 /* HealRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C66255F1A8663B20089BBA9 /* HealRecordVO.m */; };
+		2C6625661A867FC40089BBA9 /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6625641A867FC40089BBA9 /* PatientsViewController.m */; };
+		2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6625651A867FC40089BBA9 /* PatientsViewController.xib */; };
+		2C66256F1A8680100089BBA9 /* PatientListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C66256E1A8680100089BBA9 /* PatientListView.m */; };
+		2C66257C1A8680720089BBA9 /* PDButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6625781A8680720089BBA9 /* PDButtonTableViewCell.m */; };
+		2C66257D1A8680720089BBA9 /* PDButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6625791A8680720089BBA9 /* PDButtonTableViewCell.xib */; };
+		2C66257E1A8680720089BBA9 /* PDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C66257B1A8680720089BBA9 /* PDView.m */; };
+		2C6625831A8689340089BBA9 /* PatientTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6625811A8689340089BBA9 /* PatientTextTableViewCell.m */; };
+		2C6625841A8689340089BBA9 /* PatientTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6625821A8689340089BBA9 /* PatientTextTableViewCell.xib */; };
 		2C7EC5B119D32C2B00830578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5B019D32C2B00830578 /* main.m */; };
 		2C7EC5B419D32C2B00830578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5B319D32C2B00830578 /* AppDelegate.m */; };
 		2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7EC5BB19D32C2B00830578 /* Images.xcassets */; };
 		2C7EC5BF19D32C2B00830578 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7EC5BD19D32C2B00830578 /* LaunchScreen.xib */; };
 		2C7EC5CB19D32C2B00830578 /* DoctorDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5CA19D32C2B00830578 /* DoctorDocTests.m */; };
+		2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */; };
+		2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */; };
+		2CDDDF341AA37D3C004E2235 /* PDPationIDInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */; };
+		2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDDF351AA3864E004E2235 /* PDPationIDInputViewController.xib */; };
+		2CF41EF11A868F8C00435823 /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41EF01A868F8C00435823 /* PDViewController.m */; };
+		2CF41EF51A87573400435823 /* PDPatientInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41EF31A87573400435823 /* PDPatientInfoViewController.m */; };
+		2CF41EF61A87573400435823 /* PDPatientInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF41EF41A87573400435823 /* PDPatientInfoViewController.xib */; };
+		2CF41EFD1A8757E500435823 /* PDAddPatientTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41EFC1A8757E500435823 /* PDAddPatientTableDataSource.m */; };
+		2CF41F011A875A3300435823 /* PDNumInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41EFF1A875A3300435823 /* PDNumInputViewController.m */; };
+		2CF41F021A875A3300435823 /* PDNumInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF41F001A875A3300435823 /* PDNumInputViewController.xib */; };
+		2CF41F061A875A8E00435823 /* PDNumInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F051A875A8E00435823 /* PDNumInputView.m */; };
+		2CF41F0A1A87668C00435823 /* PDInputNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F081A87668C00435823 /* PDInputNumberTableViewCell.m */; };
+		2CF41F0B1A87668C00435823 /* PDInputNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF41F091A87668C00435823 /* PDInputNumberTableViewCell.xib */; };
+		2CF41F0E1A876B4700435823 /* PDTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F0D1A876B4700435823 /* PDTableDataSource.m */; };
+		2CF41F111A876CFA00435823 /* PDPatientInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F101A876CFA00435823 /* PDPatientInfoView.m */; };
+		2CF41F171A87703B00435823 /* PDTableViewHeaderTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F161A87703B00435823 /* PDTableViewHeaderTitle.m */; };
+		2CF41F1B1A87751D00435823 /* PDTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41F191A87751D00435823 /* PDTextViewTableViewCell.m */; };
+		2CF41F1C1A87751D00435823 /* PDTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF41F1A1A87751D00435823 /* PDTextViewTableViewCell.xib */; };
 		4E1DA9D816E947618F64247E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AF15F7345642ABB0725FA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +73,17 @@
 		2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntibioticsVO.m; path = DataModel/AntibioticsVO.m; sourceTree = "<group>"; };
 		2C17C39719D66B4500EBE9CD /* FeedRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedRecordVO.h; path = DataModel/FeedRecordVO.h; sourceTree = "<group>"; };
 		2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedRecordVO.m; path = DataModel/FeedRecordVO.m; sourceTree = "<group>"; };
-		2C1ACC6219D6551A00444069 /* PatientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
-		2C1ACC6319D6551A00444069 /* PatientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsViewController.m; sourceTree = "<group>"; };
-		2C1ACC6419D6551A00444069 /* PatientsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientsViewController.xib; sourceTree = "<group>"; };
 		2C1ACC6B19D666FD00444069 /* PDObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDObject.h; path = DataModel/PDObject.h; sourceTree = "<group>"; };
 		2C1ACC6C19D666FD00444069 /* PDObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDObject.m; path = DataModel/PDObject.m; sourceTree = "<group>"; };
 		2C1ACC6F19D668E400444069 /* BSugarVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSugarVO.h; path = DataModel/BSugarVO.h; sourceTree = "<group>"; };
 		2C1ACC7019D668E400444069 /* BSugarVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSugarVO.m; path = DataModel/BSugarVO.m; sourceTree = "<group>"; };
+		2C1F0B9A1AA4B75800D79C03 /* PDAddPatientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDAddPatientView.h; sourceTree = "<group>"; };
+		2C1F0B9B1AA4B75800D79C03 /* PDAddPatientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDAddPatientView.m; sourceTree = "<group>"; };
+		2C1F0B9D1AA4B77500D79C03 /* PDAddPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDAddPatientViewController.h; sourceTree = "<group>"; };
+		2C1F0B9E1AA4B77500D79C03 /* PDAddPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDAddPatientViewController.m; sourceTree = "<group>"; };
+		2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDAddPatientViewController.xib; sourceTree = "<group>"; };
+		2C25C80E1AA6109C009AD630 /* PDUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDUIFactory.h; sourceTree = "<group>"; };
+		2C25C80F1AA6109C009AD630 /* PDUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDUIFactory.m; sourceTree = "<group>"; };
 		2C30BFAF19D6FA240037A883 /* StoolVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoolVO.h; path = DataModel/StoolVO.h; sourceTree = "<group>"; };
 		2C30BFB019D6FA240037A883 /* StoolVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoolVO.m; path = DataModel/StoolVO.m; sourceTree = "<group>"; };
 		2C30BFB219D6FAF50037A883 /* TCBVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBVO.h; path = DataModel/TCBVO.h; sourceTree = "<group>"; };
@@ -60,11 +94,29 @@
 		2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateRecordVO.m; path = DataModel/DateRecordVO.m; sourceTree = "<group>"; };
 		2C30BFC219D700360037A883 /* PatientRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientRecord.h; path = DataModel/PatientRecord.h; sourceTree = "<group>"; };
 		2C30BFC319D700360037A883 /* PatientRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientRecord.m; path = DataModel/PatientRecord.m; sourceTree = "<group>"; };
-		2C30BFC519D7077E0037A883 /* healRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = healRecordVO.h; path = DataModel/healRecordVO.h; sourceTree = "<group>"; };
-		2C30BFC619D7077E0037A883 /* healRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = healRecordVO.m; path = DataModel/healRecordVO.m; sourceTree = "<group>"; };
 		2C30BFC919D707CF0037A883 /* PDDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDBManager.h; path = DBManager/PDDBManager.h; sourceTree = "<group>"; };
 		2C30BFCA19D707CF0037A883 /* PDDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDBManager.m; path = DBManager/PDDBManager.m; sourceTree = "<group>"; };
 		2C30BFCD19D709D90037A883 /* PDDBConstanst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PDDBConstanst.h; path = DBManager/PDDBConstanst.h; sourceTree = "<group>"; };
+		2C6625581A8651D50089BBA9 /* IFIDMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFIDMaker.h; sourceTree = "<group>"; };
+		2C6625591A8651D50089BBA9 /* IFIDMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFIDMaker.m; sourceTree = "<group>"; };
+		2C66255B1A8651E60089BBA9 /* PDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDCommon.h; sourceTree = "<group>"; };
+		2C66255C1A8651E60089BBA9 /* PDCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDCommon.m; sourceTree = "<group>"; };
+		2C66255E1A8663B20089BBA9 /* HealRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealRecordVO.h; path = DataModel/HealRecordVO.h; sourceTree = "<group>"; };
+		2C66255F1A8663B20089BBA9 /* HealRecordVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealRecordVO.m; path = DataModel/HealRecordVO.m; sourceTree = "<group>"; };
+		2C6625631A867FC40089BBA9 /* PatientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
+		2C6625641A867FC40089BBA9 /* PatientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsViewController.m; sourceTree = "<group>"; };
+		2C6625651A867FC40089BBA9 /* PatientsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientsViewController.xib; sourceTree = "<group>"; };
+		2C66256D1A8680100089BBA9 /* PatientListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListView.h; sourceTree = "<group>"; };
+		2C66256E1A8680100089BBA9 /* PatientListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListView.m; sourceTree = "<group>"; };
+		2C6625771A8680720089BBA9 /* PDButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDButtonTableViewCell.h; sourceTree = "<group>"; };
+		2C6625781A8680720089BBA9 /* PDButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDButtonTableViewCell.m; sourceTree = "<group>"; };
+		2C6625791A8680720089BBA9 /* PDButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDButtonTableViewCell.xib; sourceTree = "<group>"; };
+		2C66257A1A8680720089BBA9 /* PDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDView.h; sourceTree = "<group>"; };
+		2C66257B1A8680720089BBA9 /* PDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDView.m; sourceTree = "<group>"; };
+		2C66257F1A8687310089BBA9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2C6625801A8689340089BBA9 /* PatientTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientTextTableViewCell.h; sourceTree = "<group>"; };
+		2C6625811A8689340089BBA9 /* PatientTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTextTableViewCell.m; sourceTree = "<group>"; };
+		2C6625821A8689340089BBA9 /* PatientTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PatientTextTableViewCell.xib; sourceTree = "<group>"; };
 		2C7EC5AB19D32C2B00830578 /* DoctorDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7EC5AF19D32C2B00830578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7EC5B019D32C2B00830578 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,7 +127,38 @@
 		2C7EC5C419D32C2B00830578 /* DoctorDocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorDocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7EC5C919D32C2B00830578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7EC5CA19D32C2B00830578 /* DoctorDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorDocTests.m; sourceTree = "<group>"; };
-		681E81FDDBE5414E9DDA5DFE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2CBACB251A9E3A20002D18C8 /* PDTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextInputViewController.h; path = Controller/PDTextInputViewController.h; sourceTree = "<group>"; };
+		2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextInputViewController.m; path = Controller/PDTextInputViewController.m; sourceTree = "<group>"; };
+		2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDTextInputViewController.xib; path = Controller/PDTextInputViewController.xib; sourceTree = "<group>"; };
+		2CDDDF321AA37D3C004E2235 /* PDPationIDInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPationIDInputViewController.h; sourceTree = "<group>"; };
+		2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPationIDInputViewController.m; sourceTree = "<group>"; };
+		2CDDDF351AA3864E004E2235 /* PDPationIDInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDPationIDInputViewController.xib; sourceTree = "<group>"; };
+		2CF41EEF1A868F8C00435823 /* PDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDViewController.h; path = Controller/PDViewController.h; sourceTree = "<group>"; };
+		2CF41EF01A868F8C00435823 /* PDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDViewController.m; path = Controller/PDViewController.m; sourceTree = "<group>"; };
+		2CF41EF21A87573400435823 /* PDPatientInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPatientInfoViewController.h; sourceTree = "<group>"; };
+		2CF41EF31A87573400435823 /* PDPatientInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPatientInfoViewController.m; sourceTree = "<group>"; };
+		2CF41EF41A87573400435823 /* PDPatientInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDPatientInfoViewController.xib; sourceTree = "<group>"; };
+		2CF41EFB1A8757E500435823 /* PDAddPatientTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDAddPatientTableDataSource.h; path = DataSource/PDAddPatientTableDataSource.h; sourceTree = "<group>"; };
+		2CF41EFC1A8757E500435823 /* PDAddPatientTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDAddPatientTableDataSource.m; path = DataSource/PDAddPatientTableDataSource.m; sourceTree = "<group>"; };
+		2CF41EFE1A875A3300435823 /* PDNumInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDNumInputViewController.h; path = Controller/PDNumInputViewController.h; sourceTree = "<group>"; };
+		2CF41EFF1A875A3300435823 /* PDNumInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDNumInputViewController.m; path = Controller/PDNumInputViewController.m; sourceTree = "<group>"; };
+		2CF41F001A875A3300435823 /* PDNumInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDNumInputViewController.xib; path = Controller/PDNumInputViewController.xib; sourceTree = "<group>"; };
+		2CF41F041A875A8E00435823 /* PDNumInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDNumInputView.h; path = Controller/View/PDNumInputView.h; sourceTree = "<group>"; };
+		2CF41F051A875A8E00435823 /* PDNumInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDNumInputView.m; path = Controller/View/PDNumInputView.m; sourceTree = "<group>"; };
+		2CF41F071A87668C00435823 /* PDInputNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDInputNumberTableViewCell.h; sourceTree = "<group>"; };
+		2CF41F081A87668C00435823 /* PDInputNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDInputNumberTableViewCell.m; sourceTree = "<group>"; };
+		2CF41F091A87668C00435823 /* PDInputNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDInputNumberTableViewCell.xib; sourceTree = "<group>"; };
+		2CF41F0C1A876B4700435823 /* PDTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDTableDataSource.h; sourceTree = "<group>"; };
+		2CF41F0D1A876B4700435823 /* PDTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTableDataSource.m; sourceTree = "<group>"; };
+		2CF41F0F1A876CFA00435823 /* PDPatientInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPatientInfoView.h; sourceTree = "<group>"; };
+		2CF41F101A876CFA00435823 /* PDPatientInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPatientInfoView.m; sourceTree = "<group>"; };
+		2CF41F151A87703B00435823 /* PDTableViewHeaderTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDTableViewHeaderTitle.h; sourceTree = "<group>"; };
+		2CF41F161A87703B00435823 /* PDTableViewHeaderTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTableViewHeaderTitle.m; sourceTree = "<group>"; };
+		2CF41F181A87751D00435823 /* PDTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDTextViewTableViewCell.h; sourceTree = "<group>"; };
+		2CF41F191A87751D00435823 /* PDTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDTextViewTableViewCell.m; sourceTree = "<group>"; };
+		2CF41F1A1A87751D00435823 /* PDTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDTextViewTableViewCell.xib; sourceTree = "<group>"; };
+		7614157E627FE6B3854DB27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		841528460AF294E51BCB1505 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94AF15F7345642ABB0725FA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23274FF026307BB115AE8756 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7614157E627FE6B3854DB27F /* Pods.debug.xcconfig */,
+				841528460AF294E51BCB1505 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2C1ACC6719D6563E00444069 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,17 +203,27 @@
 			children = (
 				2C1ACC6B19D666FD00444069 /* PDObject.h */,
 				2C1ACC6C19D666FD00444069 /* PDObject.m */,
-				2C30BFB819D6FBB10037A883 /* DayRecordSubVO */,
-				2C30BFBF19D6FEBD0037A883 /* DateRecordVO.h */,
-				2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */,
-				2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */,
-				2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */,
 				2C30BFC219D700360037A883 /* PatientRecord.h */,
 				2C30BFC319D700360037A883 /* PatientRecord.m */,
-				2C30BFC519D7077E0037A883 /* healRecordVO.h */,
-				2C30BFC619D7077E0037A883 /* healRecordVO.m */,
+				2C6625611A8665ED0089BBA9 /* PatientRecordSubVO */,
+				2C30BFBF19D6FEBD0037A883 /* DateRecordVO.h */,
+				2C30BFC019D6FEBD0037A883 /* DateRecordVO.m */,
+				2C30BFB819D6FBB10037A883 /* DayRecordSubVO */,
 			);
 			name = VO;
+			sourceTree = "<group>";
+		};
+		2C25C8111AA749FC009AD630 /* AddPatient */ = {
+			isa = PBXGroup;
+			children = (
+				2CDDDF321AA37D3C004E2235 /* PDPationIDInputViewController.h */,
+				2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */,
+				2CDDDF351AA3864E004E2235 /* PDPationIDInputViewController.xib */,
+				2C1F0B9D1AA4B77500D79C03 /* PDAddPatientViewController.h */,
+				2C1F0B9E1AA4B77500D79C03 /* PDAddPatientViewController.m */,
+				2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */,
+			);
+			name = AddPatient;
 			sourceTree = "<group>";
 		};
 		2C30BFB819D6FBB10037A883 /* DayRecordSubVO */ = {
@@ -151,14 +253,110 @@
 			name = DBManager;
 			sourceTree = "<group>";
 		};
+		2C6625511A8651BF0089BBA9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2CF41EEE1A868F6D00435823 /* Controller */,
+				2C6625761A8680720089BBA9 /* View */,
+				2C6625571A8651D50089BBA9 /* IDMaker */,
+				2C66255B1A8651E60089BBA9 /* PDCommon.h */,
+				2C66255C1A8651E60089BBA9 /* PDCommon.m */,
+				2C25C80E1AA6109C009AD630 /* PDUIFactory.h */,
+				2C25C80F1AA6109C009AD630 /* PDUIFactory.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C6625571A8651D50089BBA9 /* IDMaker */ = {
+			isa = PBXGroup;
+			children = (
+				2C6625581A8651D50089BBA9 /* IFIDMaker.h */,
+				2C6625591A8651D50089BBA9 /* IFIDMaker.m */,
+			);
+			path = IDMaker;
+			sourceTree = "<group>";
+		};
+		2C6625611A8665ED0089BBA9 /* PatientRecordSubVO */ = {
+			isa = PBXGroup;
+			children = (
+				2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */,
+				2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */,
+				2C66255E1A8663B20089BBA9 /* HealRecordVO.h */,
+				2C66255F1A8663B20089BBA9 /* HealRecordVO.m */,
+			);
+			name = PatientRecordSubVO;
+			sourceTree = "<group>";
+		};
+		2C6625621A867FC40089BBA9 /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				2C6625681A867FC80089BBA9 /* View */,
+				2C6625631A867FC40089BBA9 /* PatientsViewController.h */,
+				2C6625641A867FC40089BBA9 /* PatientsViewController.m */,
+				2C6625651A867FC40089BBA9 /* PatientsViewController.xib */,
+				2CF41EF21A87573400435823 /* PDPatientInfoViewController.h */,
+				2CF41EF31A87573400435823 /* PDPatientInfoViewController.m */,
+				2CF41EF41A87573400435823 /* PDPatientInfoViewController.xib */,
+				2C25C8111AA749FC009AD630 /* AddPatient */,
+			);
+			path = Patient;
+			sourceTree = "<group>";
+		};
+		2C6625681A867FC80089BBA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CF41EFA1A8757AD00435823 /* DataSource&Delegate */,
+				2C6625701A8680170089BBA9 /* Compenent */,
+				2C66256D1A8680100089BBA9 /* PatientListView.h */,
+				2C66256E1A8680100089BBA9 /* PatientListView.m */,
+				2CF41F0F1A876CFA00435823 /* PDPatientInfoView.h */,
+				2CF41F101A876CFA00435823 /* PDPatientInfoView.m */,
+				2C1F0B9A1AA4B75800D79C03 /* PDAddPatientView.h */,
+				2C1F0B9B1AA4B75800D79C03 /* PDAddPatientView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2C6625701A8680170089BBA9 /* Compenent */ = {
+			isa = PBXGroup;
+			children = (
+				2C6625801A8689340089BBA9 /* PatientTextTableViewCell.h */,
+				2C6625811A8689340089BBA9 /* PatientTextTableViewCell.m */,
+				2C6625821A8689340089BBA9 /* PatientTextTableViewCell.xib */,
+				2CF41F071A87668C00435823 /* PDInputNumberTableViewCell.h */,
+				2CF41F081A87668C00435823 /* PDInputNumberTableViewCell.m */,
+				2CF41F091A87668C00435823 /* PDInputNumberTableViewCell.xib */,
+				2CF41F181A87751D00435823 /* PDTextViewTableViewCell.h */,
+				2CF41F191A87751D00435823 /* PDTextViewTableViewCell.m */,
+				2CF41F1A1A87751D00435823 /* PDTextViewTableViewCell.xib */,
+			);
+			name = Compenent;
+			sourceTree = "<group>";
+		};
+		2C6625761A8680720089BBA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C6625771A8680720089BBA9 /* PDButtonTableViewCell.h */,
+				2C6625781A8680720089BBA9 /* PDButtonTableViewCell.m */,
+				2C6625791A8680720089BBA9 /* PDButtonTableViewCell.xib */,
+				2C66257A1A8680720089BBA9 /* PDView.h */,
+				2C66257B1A8680720089BBA9 /* PDView.m */,
+				2CF41F0C1A876B4700435823 /* PDTableDataSource.h */,
+				2CF41F0D1A876B4700435823 /* PDTableDataSource.m */,
+				2CF41F151A87703B00435823 /* PDTableViewHeaderTitle.h */,
+				2CF41F161A87703B00435823 /* PDTableViewHeaderTitle.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2C7EC5A219D32C2B00830578 = {
 			isa = PBXGroup;
 			children = (
 				2C7EC5AD19D32C2B00830578 /* DoctorDoc */,
 				2C7EC5C719D32C2B00830578 /* DoctorDocTests */,
 				2C7EC5AC19D32C2B00830578 /* Products */,
-				681E81FDDBE5414E9DDA5DFE /* Pods.xcconfig */,
 				96ECE17EEF604A849D42D491 /* Frameworks */,
+				23274FF026307BB115AE8756 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,13 +372,14 @@
 		2C7EC5AD19D32C2B00830578 /* DoctorDoc */ = {
 			isa = PBXGroup;
 			children = (
+				2C6625621A867FC40089BBA9 /* Patient */,
+				2C6625511A8651BF0089BBA9 /* Common */,
 				2C7EC5B219D32C2B00830578 /* AppDelegate.h */,
 				2C7EC5B319D32C2B00830578 /* AppDelegate.m */,
 				2C7EC5BB19D32C2B00830578 /* Images.xcassets */,
 				2C7EC5BD19D32C2B00830578 /* LaunchScreen.xib */,
 				2C7EC5AE19D32C2B00830578 /* Supporting Files */,
 				2C1ACC6719D6563E00444069 /* DataModel */,
-				2C7EC5D719D3303B00830578 /* Patient */,
 				2C30BFC819D707A30037A883 /* DBManager */,
 			);
 			path = DoctorDoc;
@@ -191,6 +390,7 @@
 			children = (
 				2C7EC5AF19D32C2B00830578 /* Info.plist */,
 				2C7EC5B019D32C2B00830578 /* main.m */,
+				2C66257F1A8687310089BBA9 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,14 +412,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2C7EC5D719D3303B00830578 /* Patient */ = {
+		2CF41EEE1A868F6D00435823 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C1ACC6219D6551A00444069 /* PatientsViewController.h */,
-				2C1ACC6319D6551A00444069 /* PatientsViewController.m */,
-				2C1ACC6419D6551A00444069 /* PatientsViewController.xib */,
+				2CF41F031A875A4F00435823 /* View */,
+				2CF41EEF1A868F8C00435823 /* PDViewController.h */,
+				2CF41EF01A868F8C00435823 /* PDViewController.m */,
+				2CF41EFE1A875A3300435823 /* PDNumInputViewController.h */,
+				2CF41EFF1A875A3300435823 /* PDNumInputViewController.m */,
+				2CF41F001A875A3300435823 /* PDNumInputViewController.xib */,
+				2CBACB251A9E3A20002D18C8 /* PDTextInputViewController.h */,
+				2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */,
+				2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */,
 			);
-			name = Patient;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2CF41EFA1A8757AD00435823 /* DataSource&Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2CF41EFB1A8757E500435823 /* PDAddPatientTableDataSource.h */,
+				2CF41EFC1A8757E500435823 /* PDAddPatientTableDataSource.m */,
+			);
+			name = "DataSource&Delegate";
+			sourceTree = "<group>";
+		};
+		2CF41F031A875A4F00435823 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CF41F041A875A8E00435823 /* PDNumInputView.h */,
+				2CF41F051A875A8E00435823 /* PDNumInputView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		96ECE17EEF604A849D42D491 /* Frameworks */ = {
@@ -313,9 +537,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1F0BA11AA4B77500D79C03 /* PDAddPatientViewController.xib in Resources */,
 				2C7EC5BF19D32C2B00830578 /* LaunchScreen.xib in Resources */,
-				2C1ACC6619D6551A00444069 /* PatientsViewController.xib in Resources */,
+				2CF41F1C1A87751D00435823 /* PDTextViewTableViewCell.xib in Resources */,
+				2C66257D1A8680720089BBA9 /* PDButtonTableViewCell.xib in Resources */,
+				2CF41EF61A87573400435823 /* PDPatientInfoViewController.xib in Resources */,
+				2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */,
+				2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */,
 				2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */,
+				2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */,
+				2C6625841A8689340089BBA9 /* PatientTextTableViewCell.xib in Resources */,
+				2CF41F021A875A3300435823 /* PDNumInputViewController.xib in Resources */,
+				2CF41F0B1A87668C00435823 /* PDInputNumberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +589,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -367,19 +600,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C30BFCB19D707CF0037A883 /* PDDBManager.m in Sources */,
+				2CF41F061A875A8E00435823 /* PDNumInputView.m in Sources */,
+				2CF41F111A876CFA00435823 /* PDPatientInfoView.m in Sources */,
+				2CF41F0E1A876B4700435823 /* PDTableDataSource.m in Sources */,
 				2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */,
+				2C6625831A8689340089BBA9 /* PatientTextTableViewCell.m in Sources */,
+				2C66255A1A8651D50089BBA9 /* IFIDMaker.m in Sources */,
 				2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */,
 				2C30BFC419D700360037A883 /* PatientRecord.m in Sources */,
 				2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */,
-				2C1ACC6519D6551A00444069 /* PatientsViewController.m in Sources */,
 				2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */,
+				2CF41F011A875A3300435823 /* PDNumInputViewController.m in Sources */,
+				2C1F0B9C1AA4B75800D79C03 /* PDAddPatientView.m in Sources */,
 				2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */,
 				2C7EC5B419D32C2B00830578 /* AppDelegate.m in Sources */,
 				2C17C39619D66AEB00EBE9CD /* AntibioticsVO.m in Sources */,
+				2CF41F1B1A87751D00435823 /* PDTextViewTableViewCell.m in Sources */,
+				2C6625661A867FC40089BBA9 /* PatientsViewController.m in Sources */,
+				2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */,
+				2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */,
+				2CF41EF51A87573400435823 /* PDPatientInfoViewController.m in Sources */,
 				2C7EC5B119D32C2B00830578 /* main.m in Sources */,
-				2C30BFC719D7077E0037A883 /* healRecordVO.m in Sources */,
+				2CF41EF11A868F8C00435823 /* PDViewController.m in Sources */,
+				2C1F0BA01AA4B77500D79C03 /* PDAddPatientViewController.m in Sources */,
+				2CDDDF341AA37D3C004E2235 /* PDPationIDInputViewController.m in Sources */,
+				2CF41F0A1A87668C00435823 /* PDInputNumberTableViewCell.m in Sources */,
+				2CF41EFD1A8757E500435823 /* PDAddPatientTableDataSource.m in Sources */,
+				2C66257E1A8680720089BBA9 /* PDView.m in Sources */,
+				2C6625601A8663B20089BBA9 /* HealRecordVO.m in Sources */,
+				2C66256F1A8680100089BBA9 /* PatientListView.m in Sources */,
 				2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */,
+				2C66257C1A8680720089BBA9 /* PDButtonTableViewCell.m in Sources */,
+				2CF41F171A87703B00435823 /* PDTableViewHeaderTitle.m in Sources */,
 				2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */,
+				2C66255D1A8651E60089BBA9 /* PDCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,12 +745,13 @@
 		};
 		2C7EC5CF19D32C2B00830578 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 681E81FDDBE5414E9DDA5DFE /* Pods.xcconfig */;
+			baseConfigurationReference = 7614157E627FE6B3854DB27F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = DoctorDoc/PrefixHeader.pch;
 				INFOPLIST_FILE = DoctorDoc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -504,12 +759,13 @@
 		};
 		2C7EC5D019D32C2B00830578 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 681E81FDDBE5414E9DDA5DFE /* Pods.xcconfig */;
+			baseConfigurationReference = 841528460AF294E51BCB1505 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = DoctorDoc/PrefixHeader.pch;
 				INFOPLIST_FILE = DoctorDoc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
