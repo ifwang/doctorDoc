@@ -8,10 +8,16 @@
 
 #import "PDTableDataSource.h"
 
+@protocol PDPatientInfoTableDataSourceDelegate
+
+@end
+
 @interface PDPatientInfoTableDataSource : PDTableDataSource
 /**
  *  病人VO
  */
 @property (nonatomic, strong) PatientRecord *pRecord;
+
+@property (nonatomic, weak) id<PDPatientInfoTableDataSourceDelegate> actionDelegate;
 
 @end

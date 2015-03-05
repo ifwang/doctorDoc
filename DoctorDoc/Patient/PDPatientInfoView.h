@@ -9,8 +9,16 @@
 #import "PDView.h"
 #import "PDPatientInfoTableDataSource.h"
 
+@protocol PDPatientInfoViewDelegate
+
+- (void)onBaseInfoBtnClicked;
+
+@end
+
 @interface PDPatientInfoView : PDView
 
-@property (nonatomic, strong) PDPatientInfoTableDataSource *datasource;
+@property (nonatomic, strong) PatientRecord *patientRecord;
+
+@property (nonatomic, weak) id<PDPatientInfoViewDelegate> delegate;
 
 @end

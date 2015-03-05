@@ -7,11 +7,18 @@
 //
 
 #import "PDViewController.h"
+#import "PatientRecord.h"
 
-
+typedef NS_ENUM(NSUInteger, PDAddVCSourceType)
+{
+    PDAddVCSourceTypeAdd = 0,
+    PDAddVCSourceTypeEdit = 1
+};
 
 @interface PDAddPatientViewController : PDViewController
 
-@property (nonatomic, strong) NSString *pid;
+@property (nonatomic, assign) PDAddVCSourceType souceType;
+
+- (void)setPatientRecord:(PatientRecord*)patientRecord;
 
 @end

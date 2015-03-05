@@ -104,21 +104,21 @@
     {
         [tList addObject:[PDCommon stringFromDate:photoDate]];
     }
-    dict[@"phototherapyList"] = tList;
+    dict[@"phototherapyList"] = [NSArray arrayWithArray:tList];
     
     [tList removeAllObjects];
     for (AntibioticsVO *antiVO in _antibioticsList)
     {
         [tList addObject:[antiVO dictionary]];
     }
-    dict[@"antibioticsList"] = tList;
+    dict[@"antibioticsList"] = [NSArray arrayWithArray:tList];
     
     [tList removeAllObjects];
     for (HealRecordVO *healVO in _healRecordList)
     {
         [tList addObject:[healVO dictionary]];
     }
-    dict[@"healRecordList"] = tList;
+    dict[@"healRecordList"] = [NSArray arrayWithArray:tList];
     
     return dict;
 }

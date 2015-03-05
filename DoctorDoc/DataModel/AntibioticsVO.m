@@ -14,7 +14,7 @@
 {
     AntibioticsVO *mockVO = [[AntibioticsVO alloc] init];
     
-    mockVO.date = [NSDate date];
+    mockVO.date = [NSDate dateWithTimeIntervalSince1970:1424793600];
     mockVO.text = @"抗生素1111";
     
     

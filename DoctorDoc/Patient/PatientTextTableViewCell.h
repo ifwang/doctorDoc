@@ -14,6 +14,10 @@
 
 @property (nonatomic, copy) NSString *detail;
 
+
+
 - (void)show;
+
+- (void)setTintFontSzie:(NSUInteger)size detailSize:(NSUInteger)detailSize;
 
 @end

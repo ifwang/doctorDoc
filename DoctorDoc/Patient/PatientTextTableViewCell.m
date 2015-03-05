@@ -22,7 +22,7 @@
     // Initialization code
     
     _titleLabel.font = [UIFont lightFlatFontOfSize:24];
-    _detailLabel.font = [UIFont lightFlatFontOfSize:16];
+    _detailLabel.font = [UIFont lightFlatFontOfSize:18];
     _detailLabel.textColor = HEXCOLOR(0x7B7B7B);
     
 }
@@ -53,6 +53,11 @@
 - (void)setDetail:(NSString *)detail
 {
     _detailLabel.text = detail;
+}
+- (void)setTintFontSzie:(NSUInteger)size detailSize:(NSUInteger)detailSize
+{
+    _titleLabel.font = [UIFont lightFlatFontOfSize:size];
+    _detailLabel.font = [UIFont lightFlatFontOfSize:detailSize];
 }
 
 

@@ -8,7 +8,6 @@
 
 #import "PDAddPatientViewController.h"
 #import "PDAddPatientView.h"
-#import "PatientRecord.h"
 #import "PDTextInputViewController.h"
 #import "PDUIFactory.h"
 #import "PDDBManager.h"
@@ -32,9 +31,6 @@
     self.pView = (PDAddPatientView*)self.view;
     _pView.delegate = self;
     [_pView initView];
-    
-    self.patientRecord = [[PatientRecord alloc] init];
-    _patientRecord.pid = _pid;
     
     _pView.datasource.pRecord = _patientRecord;
     [_pView reload];
@@ -92,12 +88,22 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            if (_souceType == 0)
+            {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            else
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
         });
     });
     
     
 }
+
+
 
 #pragma mark - Private Method
 
@@ -134,6 +140,16 @@
     
 }
 
+- (void)setPatientRecord:(PatientRecord *)patientRecord
+{
+    _patientRecord = [[PatientRecord alloc] init];
+    
+    _patientRecord.pid = patientRecord.pid;
+    _patientRecord.weight = patientRecord.weight;
+    _patientRecord.headRound = patientRecord.headRound;
+    _patientRecord.bodyLength = patientRecord.bodyLength;
+    _patientRecord.diagnostic = patientRecord.diagnostic;
+}
 
 
 @end

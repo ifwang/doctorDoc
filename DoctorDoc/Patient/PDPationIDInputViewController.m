@@ -8,6 +8,7 @@
 
 #import "PDPationIDInputViewController.h"
 #import "PDAddPatientViewController.h"
+#import "PatientRecord.h"
 
 
 
@@ -46,7 +47,12 @@
     {
         PDAddPatientViewController *vc = [[PDAddPatientViewController alloc] init];
         vc.title = @"基本资料";
-        vc.pid = result;
+        
+        PatientRecord *pr = [[PatientRecord alloc] init];
+        pr.pid = result;
+        vc.souceType = PDAddVCSourceTypeAdd;
+        vc.patientRecord = pr;
+        
         [self.navigationController pushViewController:vc animated:YES];
         
     }

@@ -200,18 +200,21 @@
         {
             cell.title = @"体重";
             cell.unit = @"kg";
+            cell.value = _pRecord.weight;
             break;
         }
         case 2:
         {
             cell.title = @"头围";
             cell.unit = @"cm";
+            cell.value = _pRecord.headRound;
             break;
         }
         case 3:
         {
             cell.title = @"身长";
             cell.unit = @"cm";
+            cell.value = _pRecord.bodyLength;
             break;
         }
         default:

@@ -38,6 +38,8 @@
 		2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7EC5BB19D32C2B00830578 /* Images.xcassets */; };
 		2C7EC5BF19D32C2B00830578 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7EC5BD19D32C2B00830578 /* LaunchScreen.xib */; };
 		2C7EC5CB19D32C2B00830578 /* DoctorDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EC5CA19D32C2B00830578 /* DoctorDocTests.m */; };
+		2C950B001AA89C420050E134 /* AntibioticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C950AFE1AA89C420050E134 /* AntibioticsViewController.m */; };
+		2C950B011AA89C420050E134 /* AntibioticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C950AFF1AA89C420050E134 /* AntibioticsViewController.xib */; };
 		2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */; };
 		2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */; };
 		2CDDDF341AA37D3C004E2235 /* PDPationIDInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */; };
@@ -130,6 +132,9 @@
 		2C7EC5C419D32C2B00830578 /* DoctorDocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorDocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7EC5C919D32C2B00830578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7EC5CA19D32C2B00830578 /* DoctorDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorDocTests.m; sourceTree = "<group>"; };
+		2C950AFD1AA89C420050E134 /* AntibioticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AntibioticsViewController.h; sourceTree = "<group>"; };
+		2C950AFE1AA89C420050E134 /* AntibioticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntibioticsViewController.m; sourceTree = "<group>"; };
+		2C950AFF1AA89C420050E134 /* AntibioticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AntibioticsViewController.xib; sourceTree = "<group>"; };
 		2CBACB251A9E3A20002D18C8 /* PDTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextInputViewController.h; path = Controller/PDTextInputViewController.h; sourceTree = "<group>"; };
 		2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextInputViewController.m; path = Controller/PDTextInputViewController.m; sourceTree = "<group>"; };
 		2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDTextInputViewController.xib; path = Controller/PDTextInputViewController.xib; sourceTree = "<group>"; };
@@ -297,9 +302,7 @@
 				2C6625631A867FC40089BBA9 /* PatientsViewController.h */,
 				2C6625641A867FC40089BBA9 /* PatientsViewController.m */,
 				2C6625651A867FC40089BBA9 /* PatientsViewController.xib */,
-				2CF41EF21A87573400435823 /* PDPatientInfoViewController.h */,
-				2CF41EF31A87573400435823 /* PDPatientInfoViewController.m */,
-				2CF41EF41A87573400435823 /* PDPatientInfoViewController.xib */,
+				2C950AF71AA88FF60050E134 /* PatientInfo */,
 				2C25C8111AA749FC009AD630 /* AddPatient */,
 			);
 			path = Patient;
@@ -413,6 +416,19 @@
 				2C7EC5C919D32C2B00830578 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C950AF71AA88FF60050E134 /* PatientInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2CF41EF21A87573400435823 /* PDPatientInfoViewController.h */,
+				2CF41EF31A87573400435823 /* PDPatientInfoViewController.m */,
+				2CF41EF41A87573400435823 /* PDPatientInfoViewController.xib */,
+				2C950AFD1AA89C420050E134 /* AntibioticsViewController.h */,
+				2C950AFE1AA89C420050E134 /* AntibioticsViewController.m */,
+				2C950AFF1AA89C420050E134 /* AntibioticsViewController.xib */,
+			);
+			name = PatientInfo;
 			sourceTree = "<group>";
 		};
 		2CF41EEE1A868F6D00435823 /* Controller */ = {
@@ -542,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C950B011AA89C420050E134 /* AntibioticsViewController.xib in Resources */,
 				2C1F0BA11AA4B77500D79C03 /* PDAddPatientViewController.xib in Resources */,
 				2C7EC5BF19D32C2B00830578 /* LaunchScreen.xib in Resources */,
 				2CF41F1C1A87751D00435823 /* PDTextViewTableViewCell.xib in Resources */,
@@ -623,6 +640,7 @@
 				2CF41F1B1A87751D00435823 /* PDTextViewTableViewCell.m in Sources */,
 				2C6625661A867FC40089BBA9 /* PatientsViewController.m in Sources */,
 				2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */,
+				2C950B001AA89C420050E134 /* AntibioticsViewController.m in Sources */,
 				2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */,
 				2CF41EF51A87573400435823 /* PDPatientInfoViewController.m in Sources */,
 				2C7EC5B119D32C2B00830578 /* main.m in Sources */,

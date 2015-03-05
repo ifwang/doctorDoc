@@ -14,7 +14,7 @@
 {
     HealRecordVO *antiVO = [[HealRecordVO alloc] init];
     
-    antiVO.date = [NSDate date];
+    antiVO.date = [NSDate dateWithTimeIntervalSince1970:1424793600];
     antiVO.text = @"记录111";
     
     
