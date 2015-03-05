@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
+#import "PDCommon.h"
+
 @interface PDObject : NSObject
 
 + (instancetype)mockVO;
 
-- (instancetype)initWithResultSet:(FMResultSet*)result;
+- (instancetype)initWithDictionary:(NSDictionary*)ditionary;
+
+- (NSDictionary*)dictionary;
+
+- (NSString*)stringNotNull:(NSString*)string;
 
 @end

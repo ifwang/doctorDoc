@@ -10,4 +10,15 @@
 
 @implementation AntibioticsVO
 
++ (instancetype)mockVO
+{
+    AntibioticsVO *mockVO = [[AntibioticsVO alloc] init];
+    
+    mockVO.date = [NSDate date];
+    mockVO.text = @"抗生素1111";
+    
+    
+    return mockVO;
+}
+
 @end

@@ -10,16 +10,27 @@
 
 @implementation TCBVO
 
-- (id)initWithResultSet:(FMResultSet *)result
+- (id)initWithDictionary:(NSDictionary *)ditionary
 {
-    if (self = [super initWithResultSet:result])
+    if (self = [super initWithDictionary:ditionary])
     {
-        self.value1 = [result stringForColumn:@"tcb_value1"];
-        self.value2 = [result stringForColumn:@"tcb_value2"];
-        self.value3 = [result stringForColumn:@"tcb_value3"];
+        self.value1 = [self stringNotNull:ditionary[@"value1"]];
+        self.value2 = [self stringNotNull:ditionary[@"value2"]];
+        self.value3 = [self stringNotNull:ditionary[@"value3"]];
     }
     
     return self;
+}
+
+- (NSDictionary*)dictionary
+{
+    return @{
+                @"value1":[self stringNotNull:_value1],
+                @"value2":[self stringNotNull:_value2],
+                @"value3":[self stringNotNull:_value3],
+             };
+    
+    
 }
 
 +(instancetype)mockVO

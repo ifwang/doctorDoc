@@ -1,0 +1,27 @@
+PODS:
+  - FlatUIKit (1.6)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - Masonry (0.6.1)
+  - MBProgressHUD (0.9)
+  - YTKKeyValueStore (0.1.2):
+    - FMDB (~> 2.0)
+
+DEPENDENCIES:
+  - FlatUIKit
+  - FMDB
+  - Masonry
+  - MBProgressHUD
+  - YTKKeyValueStore
+
+SPEC CHECKSUMS:
+  FlatUIKit: 48b78e6d026c2f2c8a733425aaa5015c99ffc079
+  FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  YTKKeyValueStore: a37a3ee636c1e064b7e2a2bcd016d016966f35ce
+
+COCOAPODS: 0.35.0

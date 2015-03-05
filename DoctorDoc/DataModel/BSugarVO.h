@@ -9,10 +9,7 @@
 #import "PDObject.h"
 
 @interface BSugarVO : PDObject
-/**
- *  血糖记录ID
- */
-@property (nonatomic, assign) NSUInteger bsid;
+
 /**
  *  时
  */

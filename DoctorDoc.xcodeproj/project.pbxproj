@@ -15,6 +15,7 @@
 		2C1F0BA01AA4B77500D79C03 /* PDAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9E1AA4B77500D79C03 /* PDAddPatientViewController.m */; };
 		2C1F0BA11AA4B77500D79C03 /* PDAddPatientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */; };
 		2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25C80F1AA6109C009AD630 /* PDUIFactory.m */; };
+		2C25C8141AA7774F009AD630 /* PDPatientInfoTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25C8131AA7774F009AD630 /* PDPatientInfoTableDataSource.m */; };
 		2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB019D6FA240037A883 /* StoolVO.m */; };
 		2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB319D6FAF50037A883 /* TCBVO.m */; };
 		2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB619D6FB520037A883 /* InspectVO.m */; };
@@ -84,6 +85,8 @@
 		2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDAddPatientViewController.xib; sourceTree = "<group>"; };
 		2C25C80E1AA6109C009AD630 /* PDUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDUIFactory.h; sourceTree = "<group>"; };
 		2C25C80F1AA6109C009AD630 /* PDUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDUIFactory.m; sourceTree = "<group>"; };
+		2C25C8121AA7774F009AD630 /* PDPatientInfoTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDPatientInfoTableDataSource.h; path = DataSource/PDPatientInfoTableDataSource.h; sourceTree = "<group>"; };
+		2C25C8131AA7774F009AD630 /* PDPatientInfoTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDPatientInfoTableDataSource.m; path = DataSource/PDPatientInfoTableDataSource.m; sourceTree = "<group>"; };
 		2C30BFAF19D6FA240037A883 /* StoolVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoolVO.h; path = DataModel/StoolVO.h; sourceTree = "<group>"; };
 		2C30BFB019D6FA240037A883 /* StoolVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoolVO.m; path = DataModel/StoolVO.m; sourceTree = "<group>"; };
 		2C30BFB219D6FAF50037A883 /* TCBVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBVO.h; path = DataModel/TCBVO.h; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 			children = (
 				2CF41EFB1A8757E500435823 /* PDAddPatientTableDataSource.h */,
 				2CF41EFC1A8757E500435823 /* PDAddPatientTableDataSource.m */,
+				2C25C8121AA7774F009AD630 /* PDPatientInfoTableDataSource.h */,
+				2C25C8131AA7774F009AD630 /* PDPatientInfoTableDataSource.m */,
 			);
 			name = "DataSource&Delegate";
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 				2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */,
 				2C66257C1A8680720089BBA9 /* PDButtonTableViewCell.m in Sources */,
 				2CF41F171A87703B00435823 /* PDTableViewHeaderTitle.m in Sources */,
+				2C25C8141AA7774F009AD630 /* PDPatientInfoTableDataSource.m in Sources */,
 				2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */,
 				2C66255D1A8651E60089BBA9 /* PDCommon.m in Sources */,
 			);

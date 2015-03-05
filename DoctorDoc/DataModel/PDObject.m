@@ -43,10 +43,38 @@
     return [[PDObject alloc] init];
 }
 
-- (instancetype)initWithResultSet:(FMResultSet*)result
+- (instancetype)initWithDictionary:(NSDictionary*)ditionary
 {
+    if (ditionary == nil)
+    {
+        return nil;
+    }
+    
     return [self init];
 }
+- (NSDictionary*)dictionary
+{
+    return @{};
+}
 
+- (id)valueNotNull:(id)value
+{
+    if (value == nil)
+    {
+        return [NSNull null];
+    }
+    
+    return value;
+}
+
+- (NSString*)stringNotNull:(NSString *)string
+{
+    if (string == nil)
+    {
+        return @"";
+    }
+    
+    return string;
+}
 
 @end

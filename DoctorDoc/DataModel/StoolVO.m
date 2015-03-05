@@ -10,18 +10,31 @@
 
 @implementation StoolVO
 
-- (id)initWithResultSet:(FMResultSet *)result
+- (id)initWithDictionary:(NSDictionary *)ditionary
 {
-    if (self = [super initWithResultSet:result])
+    if (self = [super initWithDictionary:(NSDictionary *)ditionary])
     {
-        self.times = [result intForColumn:@"stool_times"];
-        self.isYellow = [result boolForColumn:@"stool_isYellow"];
-        self.isGreen = [result boolForColumn:@"stool_isGreen"];
-        self.isDarkGreen = [result boolForColumn:@"stool_isDarkGreen"];
-        self.other = [result stringForColumn:@"other"];
+        self.times = [ditionary[@"times"] integerValue];
+        self.isYellow = [ditionary[@"isYellow"] boolValue];
+        self.isGreen = [ditionary[@"isGreen"] boolValue];
+        self.isDarkGreen = [ditionary[@"isDarkGreen"] boolValue];
+        self.other = [self stringNotNull:ditionary[@"isYellow"]];
     }
     
     return self;
+}
+
+- (NSDictionary*)dictionary
+{
+    return @{
+                @"times":@(self.times),
+                @"isYellow":@(self.isYellow),
+                @"isGreen":@(self.isGreen),
+                @"isDarkGreen":@(self.isDarkGreen),
+                @"other":[self stringNotNull:_other]
+             };
+    
+    
 }
 
 +(instancetype)mockVO

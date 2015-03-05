@@ -11,4 +11,14 @@
 
 static NSString *kDBCreatedTag = @"kDBCreatedTag";
 
+static NSString *kTableNamePatient = @"kTableNamePatient";
+
+static NSString *kTableNameDateRecord = @"kTableNameDateRecord";
+
+static NSString *kTableNamePatientList = @"kTableNamePatientList";
+
+static NSString *kTableNameDateRecordList = @"kTableNameDateRecordList";
+
+static NSString *kListKeyDateReord = @"kListKeyDateReord_";
+
 #endif

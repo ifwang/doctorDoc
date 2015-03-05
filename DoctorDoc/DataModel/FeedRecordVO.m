@@ -10,23 +10,44 @@
 
 @implementation FeedRecordVO
 
-- (id)initWithResultSet:(FMResultSet *)result
+- (id)initWithDictionary:(NSDictionary *)ditionary
 {
-    if (self = [super initWithResultSet:result])
+    if (self = [super initWithDictionary:ditionary])
     {
-        self.selfSuck = [result boolForColumn:@"feed_selfSuck"];
-        self.noseFeed = [result boolForColumn:@"feed_noseFeed"];
-        self.famulaMilk = [result boolForColumn:@"feed_famulaMilk"];
-        self.waterMilk = [result boolForColumn:@"feed_waterMilk"];
-        self.noSugarMilk = [result boolForColumn:@"feed_noSugarMilk"];
-        self.earlyBabyMilk = [result boolForColumn:@"feed_earlyBabyMilk"];
-        self.vomit = [result boolForColumn:@"feed_vomit"];
-        self.totleValue = [result stringForColumn:@"feed_totleValue"];
-        self.perVlaue = [result stringForColumn:@"feed_perVlaue"];
+        self.selfSuck = [ditionary[@"selfSuck"] boolValue];
+        self.noseFeed = [ditionary[@"noseFeed"] boolValue];
+        self.famulaMilk = [ditionary[@"famulaMilk"] boolValue];
+        self.waterMilk = [ditionary[@"waterMilk"] boolValue];
+        self.noSugarMilk = [ditionary[@"noSugarMilk"] boolValue];
+        self.earlyBabyMilk = [ditionary[@"earlyBabyMilk"] boolValue];
+        self.vomit = [ditionary[@"vomit"] boolValue];
+        
+        self.totleValue = [self stringNotNull:ditionary[@"totleValue"]];
+        self.perVlaue = [self stringNotNull:ditionary[@"perVlaue"]];
+        self.otherText = [self stringNotNull:ditionary[@"otherText"]];
     }
     
     return self;
 }
+
+- (NSDictionary*)dictionary
+{
+    return @{
+                @"selfSuck":@(self.selfSuck),
+                @"noseFeed":@(self.noseFeed),
+                @"famulaMilk":@(self.famulaMilk),
+                @"waterMilk":@(self.waterMilk),
+                @"noSugarMilk":@(self.noSugarMilk),
+                @"earlyBabyMilk":@(self.earlyBabyMilk),
+                @"vomit":@(self.vomit),
+                @"totleValue":[self stringNotNull:_totleValue],
+                @"perVlaue":[self stringNotNull:_perVlaue],
+                @"otherText":[self stringNotNull:_otherText]
+             };
+    
+    
+}
+
 
 +(instancetype)mockVO
 {
@@ -41,7 +62,7 @@
     feed.vomit = YES;
     feed.totleValue = @"879";
     feed.perVlaue = @"876-233";
-    
+    feed.otherText = @"备注备注";
     return feed;
     
 }

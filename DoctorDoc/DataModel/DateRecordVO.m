@@ -10,32 +10,84 @@
 
 @implementation DateRecordVO
 
-- (id)initWithResultSet:(FMResultSet *)result
+- (id)initWithDictionary:(NSDictionary *)ditionary
 {
-    if (self = [super initWithResultSet:result])
+    if (self = [super initWithDictionary:ditionary])
     {
-        self.drid = [result intForColumn:@"drid"];
-        self.recordDate = [result dateForColumn:@"recordDate"];
-        self.radio = [result boolForColumn:@"radio"];
-        self.warnBox = [result boolForColumn:@"warnBox"];
-        self.hotBed = [result boolForColumn:@"hotBed"];
-        self.heartRate = [result stringForColumn:@"heartRate"];
-        self.bodyTemperature = [result stringForColumn:@"bodyTemperature"];
-        self.breath = [result stringForColumn:@"breath"];
-        self.lowFlowOxy = [result boolForColumn:@"lowFlowOxy"];
-        self.bloodOxy = [result stringForColumn:@"bloodOxy"];
+        self.drid = [ditionary[@"drid"] integerValue];
+        self.recordDate = [PDCommon dateFromString:ditionary[@"recordDate"]];
+        self.radio = [ditionary[@"radio"] boolValue];
+        self.warnBox = [ditionary[@"warnBox"] boolValue];
+        self.hotBed = [ditionary[@"hotBed"] boolValue];
+        
+        self.heartRate = [self stringNotNull:ditionary[@"heartRate"]];
+        self.bodyTemperature = [self stringNotNull:ditionary[@"bodyTemperature"]];
+        self.breath = [self stringNotNull:ditionary[@"breath"]];
+        
+        
+        self.lowFlowOxy = [ditionary[@"lowFlowOxy"] boolValue];
+        self.bloodOxy = [self stringNotNull:ditionary[@"bloodOxy"]];
+        self.urine = [self stringNotNull:ditionary[@"urine"]];
 
-        self.feed = [[FeedRecordVO alloc] initWithResultSet:result];
-        
-        self.urine = [result stringForColumn:@"urine"];
-        
-        self.stool = [[StoolVO alloc] initWithResultSet:result];
-        self.inspect = [[InspectVO alloc] initWithResultSet:result];
-        self.tcb = [[TCBVO alloc] initWithResultSet:result];
+        self.feed = [[FeedRecordVO alloc] initWithDictionary:ditionary[@"feed"]];
+        self.stool = [[StoolVO alloc] initWithDictionary:ditionary[@"stool"]];
+        self.inspect = [[InspectVO alloc] initWithDictionary:ditionary[@"inspect"]];
+        self.tcb = [[TCBVO alloc] initWithDictionary:ditionary[@"tcb"]];
     }
     
     return self;
 }
+
+- (NSDictionary*)dictionary
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict addEntriesFromDictionary:@{
+                                        @"drid":@(self.drid),
+                                        @"radio":@(self.radio),
+                                        @"warnBox":@(self.warnBox),
+                                        @"hotBed":@(self.hotBed),
+                                        @"lowFlowOxy":@(self.lowFlowOxy),
+                                        @"recordDate":[PDCommon stringFromDate:_recordDate],
+                                        @"heartRate":[self stringNotNull:@"heartRate"],
+                                        @"bodyTemperature":[self stringNotNull:@"bodyTemperature"],
+                                        @"breath":[self stringNotNull:@"breath"],
+                                        @"bloodOxy":[self stringNotNull:@"bloodOxy"],
+                                        @"urine":[self stringNotNull:@"urine"],
+
+                                        }];
+    
+    
+    if (_feed != nil)
+    {
+        [dict setObject:[_feed dictionary] forKey:@"feed"];
+    }
+    
+    if (_feed != nil)
+    {
+        [dict setObject:[_feed dictionary] forKey:@"feed"];
+    }
+    
+    if (_stool != nil)
+    {
+        [dict setObject:[_feed dictionary] forKey:@"stool"];
+    }
+    
+    if (_inspect != nil)
+    {
+        [dict setObject:[_feed dictionary] forKey:@"inspect"];
+    }
+    
+    if (_tcb != nil)
+    {
+        [dict setObject:[_feed dictionary] forKey:@"tcb"];
+    }
+    
+    return dict;
+    
+    
+}
+
 
 +(instancetype)mockVO
 {

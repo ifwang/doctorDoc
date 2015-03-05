@@ -45,5 +45,9 @@
  *  每次数值 xxx ML - xxx ML
  */
 @property (nonatomic, copy) NSString *perVlaue;
+/**
+ *  其他事项
+ */
+@property (nonatomic, copy) NSString *otherText;
 
 @end

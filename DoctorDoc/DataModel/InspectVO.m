@@ -10,16 +10,25 @@
 
 @implementation InspectVO
 
-- (id)initWithResultSet:(FMResultSet *)result
+- (id)initWithDictionary:(NSDictionary *)ditionary
 {
-    if (self = [super initWithResultSet:result])
+    if (self = [super initWithDictionary:ditionary])
     {
-        self.MR = [result boolForColumn:@"inspect_MR"];
-        self.ultrasound = [result boolForColumn:@"inspect_ultrasound"];
-        self.chest = [result boolForColumn:@"inspect_chest"];
+        self.MR = [ditionary[@"MR"] boolValue];
+        self.ultrasound = [ditionary[@"ultrasound"] boolValue];
+        self.chest = [ditionary[@"chest"] boolValue];
     }
     
     return self;
+}
+
+- (NSDictionary*)dictionary
+{
+    return @{
+                @"MR":@(self.MR),
+                @"ultrasound":@(self.ultrasound),
+                @"chest":@(self.chest),
+             };
 }
 
 

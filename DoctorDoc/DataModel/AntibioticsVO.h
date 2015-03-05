@@ -1,19 +1,13 @@
 //
 //  AntibioticsVO.h
 //  DoctorDoc
-//
+//  抗生素
 //  Created by ifwang on 14-9-27.
 //  Copyright (c) 2014年 ifwang. All rights reserved.
 //
 
-#import "PDObject.h"
+#import "HealRecordVO.h"
 
-@interface AntibioticsVO : PDObject
-
-@property (nonatomic, assign) NSUInteger aid;
-
-@property (nonatomic, copy) NSDate *useDate;
-
-@property (nonatomic, copy) NSString *name;
+@interface AntibioticsVO : HealRecordVO
 
 @end
