@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, PDAddVCSourceType)
+{
+    PDVCSourceTypeAdd = 0,
+    PDVCSourceTypeEdit = 1
+};
+
 @interface PDViewController : UIViewController
 
 - (void)showTextHUD:(NSString*)text;
