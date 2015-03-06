@@ -50,7 +50,7 @@
         
         PatientRecord *pr = [[PatientRecord alloc] init];
         pr.pid = result;
-        vc.souceType = PDAddVCSourceTypeAdd;
+        vc.souceType = PDVCSourceTypeAdd;
         vc.patientRecord = pr;
         
         [self.navigationController pushViewController:vc animated:YES];

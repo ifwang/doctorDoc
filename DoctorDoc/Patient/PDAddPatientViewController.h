@@ -9,15 +9,17 @@
 #import "PDViewController.h"
 #import "PatientRecord.h"
 
-typedef NS_ENUM(NSUInteger, PDAddVCSourceType)
-{
-    PDAddVCSourceTypeAdd = 0,
-    PDAddVCSourceTypeEdit = 1
-};
+@protocol PDAddPatientViewControllerDelegate
+
+- (void)onPatientInfoFinished:(PatientRecord*)patientRecord;
+
+@end
 
 @interface PDAddPatientViewController : PDViewController
 
 @property (nonatomic, assign) PDAddVCSourceType souceType;
+
+@property (nonatomic, weak) id<PDAddPatientViewControllerDelegate> delegate;
 
 - (void)setPatientRecord:(PatientRecord*)patientRecord;
 

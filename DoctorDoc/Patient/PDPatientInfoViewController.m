@@ -14,7 +14,7 @@
 #import "PDAddPatientViewController.h"
 #import "AntibioticsViewController.h"
 
-@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,UIActionSheetDelegate>
+@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,PDAddPatientViewControllerDelegate,AntibioticsViewControllerDelegate,UIActionSheetDelegate>
 
 @property (nonatomic, strong) PDPatientInfoView *pView;
 
@@ -34,12 +34,6 @@
     _pView.delegate = self;
     
     [_pView initView];
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     [self initData];
     _pView.patientRecord = _patientRecord;
 }
@@ -51,14 +45,37 @@
 
 #pragma mark - View Method
 
+- (void)onPatientInfoFinished:(PatientRecord *)patientRecord
+{
+    _patientRecord.weight = patientRecord.weight;
+    _patientRecord.headRound = patientRecord.headRound;
+    _patientRecord.bodyLength = patientRecord.bodyLength;
+    _patientRecord.diagnostic = patientRecord.diagnostic;
+    _pView.patientRecord = _patientRecord;
+}
+
 - (void)onBaseInfoBtnClicked
 {
     PDAddPatientViewController *vc = [[PDAddPatientViewController alloc] init];
     vc.patientRecord = _patientRecord;
-    vc.souceType = PDAddVCSourceTypeEdit;
-    
+    vc.souceType = PDVCSourceTypeEdit;
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (void)AntibioticsViewControllerDidFinishEdit:(AntibioticsViewController *)antiVC
+{
+    if (antiVC.sourceType == PDVCSourceTypeAdd)
+    {
+        NSMutableArray *tList = [NSMutableArray arrayWithArray:_patientRecord.antibioticsList];
+        [tList addObject:antiVC.antiVO];
+        _patientRecord.antibioticsList = [NSArray arrayWithArray:tList];
+    }
+    
+    _pView.patientRecord = _patientRecord;
+    
+    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
 }
 
 #pragma mark - Action Sheet Delegate
@@ -70,7 +87,8 @@
     if (buttonIndex == 0)
     {
         AntibioticsViewController *vc = [[AntibioticsViewController alloc] init];
-        
+        vc.sourceType = PDVCSourceTypeAdd;
+        vc.delegate = self;
         [self presentViewController:vc animated:YES completion:^{
             
         }];

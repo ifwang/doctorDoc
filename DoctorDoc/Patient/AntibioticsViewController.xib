@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AntibioticsViewController">
             <connections>
+                <outlet property="cancelBtn" destination="px1-Cb-DKB" id="JmI-kX-lk6"/>
                 <outlet property="doneBtn" destination="cgZ-bU-wqO" id="N8G-v3-DaI"/>
                 <outlet property="textField" destination="BnY-ek-vfp" id="WSM-s0-VLB"/>
                 <outlet property="useBtn" destination="htw-uZ-urb" id="0Ly-aD-EVW"/>
@@ -24,6 +25,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                    <connections>
+                        <action selector="textFieldDoneFinished:" destination="-1" eventType="editingDidEndOnExit" id="BGN-GE-5KL"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htw-uZ-urb">
                     <rect key="frame" x="30" y="165" width="260" height="30"/>
@@ -38,9 +42,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-bU-wqO" customClass="FUIButton">
-                    <rect key="frame" x="30" y="203" width="260" height="30"/>
+                    <rect key="frame" x="30" y="209" width="260" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="cNb-7W-zWA"/>
+                        <constraint firstAttribute="height" constant="40" id="cNb-7W-zWA"/>
                     </constraints>
                     <state key="normal" title="完成">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,20 +53,45 @@
                         <action selector="onDoneBtnClicked:" destination="-1" eventType="touchUpInside" id="g8k-Af-Gur"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="px1-Cb-DKB" customClass="FUIButton">
+                    <rect key="frame" x="30" y="25" width="60" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="54v-zh-hVw"/>
+                        <constraint firstAttribute="width" constant="60" id="qWi-6H-LWG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="取消">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onCancelBtnClicked:" destination="-1" eventType="touchUpInside" id="pmY-jv-rwz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="cgZ-bU-wqO" secondAttribute="trailing" constant="30" id="1at-AM-def"/>
                 <constraint firstItem="BnY-ek-vfp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="7qw-P7-2V3"/>
                 <constraint firstItem="cgZ-bU-wqO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8Ct-AS-eMh"/>
                 <constraint firstItem="htw-uZ-urb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8QT-EZ-gqT"/>
+                <constraint firstItem="px1-Cb-DKB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="A7Z-MS-8eM"/>
                 <constraint firstItem="BnY-ek-vfp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="AYO-W1-KCL"/>
+                <constraint firstItem="px1-Cb-DKB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Byd-cr-VVV"/>
                 <constraint firstAttribute="trailing" secondItem="BnY-ek-vfp" secondAttribute="trailing" constant="30" id="Mcc-21-xrR"/>
                 <constraint firstItem="htw-uZ-urb" firstAttribute="top" secondItem="BnY-ek-vfp" secondAttribute="bottom" constant="25" id="jDF-bl-lKa"/>
                 <constraint firstAttribute="trailing" secondItem="htw-uZ-urb" secondAttribute="trailing" constant="30" id="mb2-46-PIx"/>
-                <constraint firstItem="cgZ-bU-wqO" firstAttribute="top" secondItem="htw-uZ-urb" secondAttribute="bottom" constant="8" id="sd1-OV-1yC"/>
+                <constraint firstItem="cgZ-bU-wqO" firstAttribute="top" secondItem="htw-uZ-urb" secondAttribute="bottom" constant="14" id="sd1-OV-1yC"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="cf7-Aj-yXC" appends="YES" id="dUX-0Q-gzt"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="cf7-Aj-yXC">
+            <connections>
+                <action selector="onViewTap:" destination="-1" id="HLL-3e-NAM"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

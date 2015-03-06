@@ -94,6 +94,7 @@
             }
             else
             {
+                [_delegate onPatientInfoFinished:_patientRecord];
                 [self.navigationController popViewControllerAnimated:YES];
             }
             
