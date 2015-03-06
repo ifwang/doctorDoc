@@ -34,7 +34,13 @@
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
-#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 1
+
+// MGConferenceDatePicker
+#define COCOAPODS_POD_AVAILABLE_MGConferenceDatePicker
+#define COCOAPODS_VERSION_MAJOR_MGConferenceDatePicker 0
+#define COCOAPODS_VERSION_MINOR_MGConferenceDatePicker 0
+#define COCOAPODS_VERSION_PATCH_MGConferenceDatePicker 2
 
 // Masonry
 #define COCOAPODS_POD_AVAILABLE_Masonry
