@@ -106,8 +106,6 @@ const static CGFloat kCellTextPadding = 20;
         make.top.equalTo(superView.top).offset(13);
         make.trailing.equalTo(superView.trailing).offset(-kCellTextPadding);
         make.height.equalTo(18);
-
-
     }];
     
     [super updateConstraints];
@@ -123,7 +121,7 @@ const static CGFloat kCellTextPadding = 20;
                                               attributes:@{NSFontAttributeName:[UIFont lightFlatFontOfSize:17]}
                                               context:nil];
 
-    return titleRect.size.height + 2 * 10;
+    return titleRect.size.height;
 }
 
 

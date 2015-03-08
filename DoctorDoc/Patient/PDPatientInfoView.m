@@ -26,13 +26,15 @@
 {
     self.datasource = [[PDPatientInfoTableDataSource alloc] init];
     [_datasource registerTableView:_tableView];
-
+    
     _tableView.dataSource = _datasource;
     _tableView.delegate = _datasource;
     [_tableView reloadData];
     
     _pidLbl.font = [UIFont lightFlatFontOfSize:30];
     _baseInfoLbl.font = [UIFont lightFlatFontOfSize:14];
+    
+    _datasource.delegate = self;
     
 }
 
@@ -47,7 +49,30 @@
 #pragma mark - data source Delegate Method
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.section == PDPatientInfoTableSectionTypeDialog)
+    {
+        [_delegate onDialogCellClicked];
+    }
+    else if (indexPath.section == PDPatientInfoTableSectionTypeAnti)
+    {
+        [_delegate onAntiCellSelectedAtRow:indexPath.row];
+    }
+    else if (indexPath.section == PDPatientInfoTableSectionTypePhoto)
+    {
+        [_delegate onPhotoCellSelectedAtRow:indexPath.row];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView deleteCellforRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == PDPatientInfoTableSectionTypeAnti)
+    {
+        [_delegate onDeleteAntiCellAtRow:indexPath.row];
+    }
+    else if (indexPath.section == PDPatientInfoTableSectionTypePhoto)
+    {
+        [_delegate onDeletePhotoCellAtRow:indexPath.row];
+    }
 }
 
 #pragma mark - Private Method

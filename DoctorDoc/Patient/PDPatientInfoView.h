@@ -13,6 +13,16 @@
 
 - (void)onBaseInfoBtnClicked;
 
+- (void)onDialogCellClicked;
+
+- (void)onAntiCellSelectedAtRow:(NSUInteger)row;
+
+- (void)onDeleteAntiCellAtRow:(NSUInteger)row;
+
+- (void)onPhotoCellSelectedAtRow:(NSUInteger)row;
+
+- (void)onDeletePhotoCellAtRow:(NSUInteger)row;
+
 @end
 
 @interface PDPatientInfoView : PDView

@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MGConferenceDatePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CD7D0CC9A9FAD1A49A88D9F</key>
+		<key>0F54C2F8E780EB4CC3CE062F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>180AB1BC5F60C141F27AFCAA</key>
+		<key>2360D8F16281B0A160C19BDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>638AE2853BD1B89B8DA4C4ED</key>
+		<key>7FC77358847E53FFBE45352C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>965ECA414677B2DC04DECDBD</key>
+		<key>97D31144E09DD514359C80DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0E77FA67109671A2496B67B</key>
+		<key>C65F7CD3422DA24D55593F01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2E957CF1D2A8425988FED2F</key>
+		<key>D6D07D11768D6CEEDF97CA40</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA7911D1E51CB74CFEAA6B51</key>
 		<dict>
 			<key>primary</key>
 			<true/>

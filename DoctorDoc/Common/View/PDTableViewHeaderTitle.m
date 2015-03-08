@@ -23,7 +23,7 @@
     self.backgroundColor = [UIColor whiteColor];
     
     self.titleLabel = [[UILabel alloc] init];
-    _titleLabel.font = [UIFont lightFlatFontOfSize:26];
+    _titleLabel.font = [UIFont lightFlatFontOfSize:20];
     [self addSubview:_titleLabel];
     
     self.line = [[UIView alloc] init];

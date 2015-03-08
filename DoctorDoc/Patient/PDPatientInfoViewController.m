@@ -13,8 +13,9 @@
 #import "AntibioticsVO.h"
 #import "PDAddPatientViewController.h"
 #import "AntibioticsViewController.h"
+#import "PDTextInputViewController.h"
 
-@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,PDAddPatientViewControllerDelegate,AntibioticsViewControllerDelegate,UIActionSheetDelegate>
+@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,PDAddPatientViewControllerDelegate,AntibioticsViewControllerDelegate, PDTextInputViewControllerDelegate ,UIActionSheetDelegate>
 
 @property (nonatomic, strong) PDPatientInfoView *pView;
 
@@ -64,6 +65,51 @@
     
 }
 
+- (void)onDialogCellClicked
+{
+    PDTextInputViewController *vc = [[PDTextInputViewController alloc] init];
+    vc.delegate = self;
+    vc.text = _patientRecord.diagnostic;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)onAntiCellSelectedAtRow:(NSUInteger)row
+{
+    AntibioticsViewController *antiVC = [[AntibioticsViewController alloc] init];
+    
+    antiVC.sourceType = PDVCSourceTypeEdit;
+    antiVC.antiVO = _patientRecord.antibioticsList[row];
+    antiVC.delegate = self;
+    
+    [self presentViewController:antiVC animated:YES completion:^{
+        
+    }];
+}
+
+- (void)onDeleteAntiCellAtRow:(NSUInteger)row
+{
+    NSMutableArray *tList =  [NSMutableArray arrayWithArray:_patientRecord.antibioticsList];
+    [tList removeObjectAtIndex:row];
+    _patientRecord.antibioticsList = [NSArray arrayWithArray:tList];
+    
+    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+}
+
+- (void)onPhotoCellSelectedAtRow:(NSUInteger)row
+{
+    
+}
+
+- (void)onDeletePhotoCellAtRow:(NSUInteger)row
+{
+    NSMutableArray *tList =  [NSMutableArray arrayWithArray:_patientRecord.phototherapyList];
+    [tList removeObjectAtIndex:row];
+    _patientRecord.phototherapyList = [NSArray arrayWithArray:tList];
+    
+    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+}
+
+#pragma mark - Anti Delegate
 - (void)AntibioticsViewControllerDidFinishEdit:(AntibioticsViewController *)antiVC
 {
     if (antiVC.sourceType == PDVCSourceTypeAdd)
@@ -77,6 +123,16 @@
     
     [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
 }
+
+#pragma mark - Text Input Delegate
+
+- (void)onTextInputFinish:(PDTextInputViewController*)pTextInputVC
+{
+    _patientRecord.diagnostic = pTextInputVC.text;
+    _pView.patientRecord = _patientRecord;
+    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+}
+
 
 #pragma mark - Action Sheet Delegate
 
@@ -111,7 +167,7 @@
     
     self.patientRecord = [[PatientRecord alloc] initWithDictionary:[manager dictionaryWithKey:_pid inTable:kTableNamePatient]];
     
-    _patientRecord.antibioticsList = @[[AntibioticsVO mockVO],[AntibioticsVO mockVO]];
+    //_patientRecord.antibioticsList = @[[AntibioticsVO mockVO],[AntibioticsVO mockVO]];
     _patientRecord.phototherapyList = @[[NSDate date], [NSDate date]];
     _patientRecord.hypothermia = [NSDate date];
     _patientRecord.newbornCheck = [NSDate date];

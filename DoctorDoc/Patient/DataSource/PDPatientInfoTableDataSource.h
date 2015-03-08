@@ -8,6 +8,16 @@
 
 #import "PDTableDataSource.h"
 
+typedef NS_ENUM(NSUInteger, PDPatientInfoTableSectionType)
+{
+    PDPatientInfoTableSectionTypeDialog = 0,
+    PDPatientInfoTableSectionTypeAnti,
+    PDPatientInfoTableSectionTypePhoto,
+    PDPatientInfoTableSectionTypehypothermia,
+    PDPatientInfoTableSectionTypeNewBorn,
+};
+
+
 @protocol PDPatientInfoTableDataSourceDelegate
 
 @end

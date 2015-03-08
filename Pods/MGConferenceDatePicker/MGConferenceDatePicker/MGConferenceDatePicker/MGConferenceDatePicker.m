@@ -40,7 +40,6 @@ NSString *NOW = @"Now";
 #define SAVE_AREA_ORIGIN_Y self.bounds.size.height-SAVE_AREA_HEIGHT
 #define PICKER_ORIGIN_Y SAVE_AREA_ORIGIN_Y-SAVE_AREA_MARGIN_TOP-PICKER_HEIGHT
 #define BAR_SEL_ORIGIN_Y PICKER_HEIGHT/2.0-VALUE_HEIGHT/2.0
-static const NSInteger SCROLLVIEW_MOMENTS_TAG = 0;
 
 
 //Custom UIButton
@@ -377,7 +376,7 @@ const float LBL_BORDER_OFFSET = 8.0;
 
 //Save button pressed
 - (void)saveButtonPressed:(id)sender {
-    [self setUserInteractionEnabled:NO];
+    //[self setUserInteractionEnabled:NO];
     
     //Create date
     NSDate *date = [self createDateWithFormat:@"dd-MM-yyyy hh:mm:ss a" andDateString:@"%@ %@:%@:00 %@"];
@@ -450,6 +449,7 @@ const float LBL_BORDER_OFFSET = 8.0;
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     [formatter setLocale:locale];
     formatter.dateFormat = format;
+    
     return [formatter dateFromString:
             [NSString stringWithFormat:dateString,
              [self stringFromDate:_selectedDate withFormat:@"dd-MM-yyyy"],

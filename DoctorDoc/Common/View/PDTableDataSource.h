@@ -13,6 +13,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
+@optional
+
+- (void)tableView:(UITableView *)tableView  deleteCellforRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
 @end
 
 

@@ -8,7 +8,7 @@
 
 #import "PDView.h"
 
-const static CGFloat kPDTableViewHeaderTitleHeight = 50;
+const static CGFloat kPDTableViewHeaderTitleHeight = 40;
 
 @interface PDTableViewHeaderTitle : PDView
 

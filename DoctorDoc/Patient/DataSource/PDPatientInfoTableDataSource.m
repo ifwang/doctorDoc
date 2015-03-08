@@ -43,23 +43,23 @@
 {
     switch (section)
     {
-        case 0:
+        case PDPatientInfoTableSectionTypeDialog:
         {
             return 1;
         }
-        case 1:
+        case PDPatientInfoTableSectionTypeAnti:
         {
             return _pRecord.antibioticsList.count;
         }
-        case 2:
+        case PDPatientInfoTableSectionTypePhoto:
         {
             return _pRecord.phototherapyList.count;
         }
-        case 3:
+        case PDPatientInfoTableSectionTypehypothermia:
         {
             return _pRecord.hypothermia==nil?0:2;
         }
-        case 4:
+        case PDPatientInfoTableSectionTypeNewBorn:
         {
             return _pRecord.newbornCheck == nil?0:1;
         }
@@ -90,14 +90,14 @@
 {
     switch (indexPath.section)
     {
-        case 0:
+        case PDPatientInfoTableSectionTypeDialog:
         {
             PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
             [cell setTextViewText:_pRecord.diagnostic];
             
             return cell;
         }
-        case 1:
+        case PDPatientInfoTableSectionTypeAnti:
         {
             AntibioticsVO *antiVO = _pRecord.antibioticsList[indexPath.row];
             
@@ -113,7 +113,7 @@
             
             return textCell;
         }
-        case 2:
+        case PDPatientInfoTableSectionTypePhoto:
         {
             NSDate *pDate = _pRecord.phototherapyList[indexPath.row];
             
@@ -127,7 +127,7 @@
             
             return textCell;
         }
-        case 3:
+        case PDPatientInfoTableSectionTypehypothermia:
         {
             PatientTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PatientTextTableViewCell class]) forIndexPath:indexPath];
             [textCell setTintFontSzie:18 detailSize:16];
@@ -150,7 +150,7 @@
             
             return textCell;
         }
-        case 4:
+        case PDPatientInfoTableSectionTypeNewBorn:
         {
             PatientTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PatientTextTableViewCell class]) forIndexPath:indexPath];
             [textCell setTintFontSzie:18 detailSize:16];
@@ -171,7 +171,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == 0)
+    if (section == PDPatientInfoTableSectionTypeNewBorn)
     {
         return 1;
     }
@@ -189,14 +189,46 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
+
+#pragma mark - Table Delegate Delegate
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == PDPatientInfoTableSectionTypeAnti || indexPath.section == PDPatientInfoTableSectionTypePhoto)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.delegate tableView:tableView deleteCellforRowAtIndexPath:indexPath];
+        
+//        [_delegate onDeleteCellAtRow:indexPath.row];
+//        [_listArrary removeObjectAtIndex:indexPath.row];
+//        // Delete the row from the data source.
+        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
+
 
 #pragma mark - Cell Height
 - (CGFloat)heightForIndexPath:(NSIndexPath*)indexPath
 {
-    if (indexPath.section == 0 )
+    if (indexPath.section == PDPatientInfoTableSectionTypeDialog )
     {
-        return [PDTextViewTableViewCell cellHeightWithText:_pRecord.diagnostic];
+        return [PDTextViewTableViewCell cellHeightWithText:_pRecord.diagnostic] + 30;
     }
     else
     {
@@ -208,24 +240,24 @@
 {
     switch (section)
     {
-        case 0:
+        case PDPatientInfoTableSectionTypeDialog:
         {
             return kPDTableViewHeaderTitleHeight;
         }
-        case 1:
+        case PDPatientInfoTableSectionTypeAnti:
         {
             return (_pRecord.antibioticsList.count == 0)?0:kPDTableViewHeaderTitleHeight;
 
         }
-        case 2:
+        case PDPatientInfoTableSectionTypePhoto:
         {
             return (_pRecord.phototherapyList.count == 0)?0:kPDTableViewHeaderTitleHeight;
         }
-        case 3:
+        case PDPatientInfoTableSectionTypehypothermia:
         {
             return _pRecord.hypothermia==nil?0:kPDTableViewHeaderTitleHeight;
         }
-        case 4:
+        case PDPatientInfoTableSectionTypeNewBorn:
         {
             return _pRecord.newbornCheck==nil?0:kPDTableViewHeaderTitleHeight;
         }
@@ -240,12 +272,12 @@
     PDTableViewHeaderTitle *header = [[PDTableViewHeaderTitle alloc] init];
     [header initView];
     
-    if (section == 0)
+    if (section == PDPatientInfoTableSectionTypeDialog)
     {
         header.title = @"诊断";
         header.mainColor = HEXCOLOR(0x842B00);
     }
-    else if (section == 1)
+    else if (section == PDPatientInfoTableSectionTypeAnti)
     {
         if (_pRecord.antibioticsList.count == 0)
         {
@@ -255,7 +287,7 @@
         header.title = @"抗生素";
         header.mainColor = HEXCOLOR(0x003D79);
     }
-    else if (section == 2)
+    else if (section == PDPatientInfoTableSectionTypePhoto)
     {
         if (_pRecord.phototherapyList.count == 0)
         {
@@ -265,7 +297,7 @@
         header.title = @"光疗";
         header.mainColor = HEXCOLOR(0x1814A);
     }
-    else if (section == 3)
+    else if (section == PDPatientInfoTableSectionTypehypothermia)
     {
         if (_pRecord.hypothermia == nil)
         {
@@ -276,7 +308,7 @@
         header.mainColor = HEXCOLOR(0x005AB5);
 
     }
-    else if (section == 4)
+    else if (section == PDPatientInfoTableSectionTypeNewBorn)
     {
         if (_pRecord.newbornCheck == nil)
         {
@@ -290,6 +322,7 @@
     
     return header;
 }
+
 #pragma mark - Private Method
 - (void)setPRecord:(PatientRecord *)pRecord
 {

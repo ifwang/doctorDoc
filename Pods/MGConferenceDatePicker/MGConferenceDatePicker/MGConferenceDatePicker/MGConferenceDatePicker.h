@@ -31,6 +31,6 @@
 @interface MGConferenceDatePicker : UIView <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) id <MGConferenceDatePickerDelegate>delegate;
-@property (nonatomic, strong, readonly) NSDate *selectedDate;
+@property (nonatomic, strong) NSDate *selectedDate;
 
 @end

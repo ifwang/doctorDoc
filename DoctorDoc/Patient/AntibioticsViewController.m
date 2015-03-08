@@ -7,8 +7,10 @@
 //
 
 #import "AntibioticsViewController.h"
+#import "MGConferenceDatePicker.h"
+#import "MGConferenceDatePickerDelegate.h"
 
-@interface AntibioticsViewController ()<UITextFieldDelegate>
+@interface AntibioticsViewController ()<UITextFieldDelegate,MGConferenceDatePickerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -18,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet FUIButton *doneBtn;
 
 @property (weak, nonatomic) IBOutlet FUIButton *cancelBtn;
+
+@property (weak, nonatomic) IBOutlet MGConferenceDatePicker *pickerView;
 
 @end
 
@@ -51,7 +55,14 @@
     {
         self.antiVO = [[AntibioticsVO alloc] init];
     }
+    else if(_antiVO != nil)
+    {
+        _textField.text = _antiVO.text;
+        [_useBtn setTitle:[self stringFromDate:_antiVO.date] forState:UIControlStateNormal];
+    }
     
+    self.pickerView.delegate = self;
+    self.pickerView.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +73,11 @@
 #pragma mark - View Delegate
 - (IBAction)onDateBtnClicked:(id)sender
 {
+    [_textField resignFirstResponder];
+    [self.view bringSubviewToFront:_pickerView];
+    [UIView animateWithDuration:0.2 animations:^{
+        _pickerView.alpha = 1;
+    }];
     
 }
 
@@ -78,8 +94,6 @@
     {
         _antiVO.text = _textField.text;
     }
-    
-    _antiVO.date = [NSDate date];
     
     [_delegate AntibioticsViewControllerDidFinishEdit:self];
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -102,6 +116,20 @@
     [_textField resignFirstResponder];
 }
 
+- (void)conferenceDatePicker:(MGConferenceDatePicker *)datePicker saveDate:(NSDate *)date
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        _pickerView.alpha = 0;
+    } completion:^(BOOL finished) {
+       [self.view sendSubviewToBack:_pickerView];
+    }];
+    
+    [_useBtn setTitle:[self stringFromDate:date] forState:UIControlStateNormal];
+    _antiVO.date = date;
+    
+}
+
+
 #pragma mark - Private Method
 
 - (BOOL)checkDataValid
@@ -112,7 +140,20 @@
         return NO;
     }
     
+    if (_antiVO.date == nil)
+    {
+        [self showTextHUD:@"请选择日期"];
+        return NO;
+    }
     return YES;
+}
+
+- (NSString*)stringFromDate:(NSDate*)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    
+    return [formatter stringFromDate:date];
 }
 
 @end
