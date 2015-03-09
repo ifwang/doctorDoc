@@ -61,6 +61,17 @@
     {
         [_delegate onPhotoCellSelectedAtRow:indexPath.row];
     }
+    else if (indexPath.section == PDPatientInfoTableSectionTypehypothermia)
+    {
+        if (indexPath.row == 0)
+        {
+            [_delegate onHypothermiaCellSelectedAtRow:indexPath.row];
+        }
+    }
+    else if (indexPath.section == PDPatientInfoTableSectionTypeNewBorn)
+    {
+        [_delegate onNewBornCellSelectAtRow:indexPath.row];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView deleteCellforRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,6 +84,15 @@
     {
         [_delegate onDeletePhotoCellAtRow:indexPath.row];
     }
+    else if (indexPath.section == PDPatientInfoTableSectionTypehypothermia)
+    {
+        [_delegate onDeleteHypothermiaCell];
+    }
+    else if (indexPath.section == PDPatientInfoTableSectionTypeNewBorn)
+    {
+        [_delegate onDeleteNewbornCell];
+    }
+
 }
 
 #pragma mark - Private Method
@@ -82,8 +102,22 @@
     _patientRecord = patientRecord;
     _datasource.pRecord = patientRecord;
     
-    _pidLbl.text = patientRecord.pid;
-    _baseInfoLbl.text = [NSString stringWithFormat:@"体重 %@ kg，头围 %@ cm，身长 %@ cm", patientRecord.weight, patientRecord.headRound, patientRecord.bodyLength];
+    [self setHeaderView:patientRecord];
+}
+
+- (void)reload
+{
+    [_tableView reloadData];
+    
+    [self setHeaderView:_patientRecord];
+
+}
+
+- (void)setHeaderView:(PatientRecord*)pRecord
+{
+    _pidLbl.text = pRecord.pid;
+    _baseInfoLbl.text = [NSString stringWithFormat:@"体重 %@ kg，头围 %@ cm，身长 %@ cm", pRecord.weight, pRecord.headRound, pRecord.bodyLength];
+
 }
 
 

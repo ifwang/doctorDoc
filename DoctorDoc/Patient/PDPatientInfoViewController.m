@@ -14,12 +14,25 @@
 #import "PDAddPatientViewController.h"
 #import "AntibioticsViewController.h"
 #import "PDTextInputViewController.h"
+#import "PDDatePickerViewController.h"
 
-@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,PDAddPatientViewControllerDelegate,AntibioticsViewControllerDelegate, PDTextInputViewControllerDelegate ,UIActionSheetDelegate>
+typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
+{
+    PDPatientDatePickerTypeAddPhoto = 0,
+    PDPatientDatePickerTypePhoto,
+    PDPatientDatePickerTypeHypia ,
+    PDPatientDatePickerTypeNewBorn ,
+};
+
+
+
+@interface PDPatientInfoViewController ()<PDPatientInfoViewDelegate,PDAddPatientViewControllerDelegate,AntibioticsViewControllerDelegate, PDTextInputViewControllerDelegate , PDDatePickerViewControllerDelegate,UIActionSheetDelegate>
 
 @property (nonatomic, strong) PDPatientInfoView *pView;
 
 @property (nonatomic, strong) PatientRecord *patientRecord;
+
+@property (nonatomic, weak) PDDBManager *manager;
 
 @end
 
@@ -37,6 +50,8 @@
     [_pView initView];
     [self initData];
     _pView.patientRecord = _patientRecord;
+    
+    self.manager = [PDDBManager shareInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +67,7 @@
     _patientRecord.headRound = patientRecord.headRound;
     _patientRecord.bodyLength = patientRecord.bodyLength;
     _patientRecord.diagnostic = patientRecord.diagnostic;
-    _pView.patientRecord = _patientRecord;
+    [_pView reload];
 }
 
 - (void)onBaseInfoBtnClicked
@@ -88,25 +103,63 @@
 
 - (void)onDeleteAntiCellAtRow:(NSUInteger)row
 {
-    NSMutableArray *tList =  [NSMutableArray arrayWithArray:_patientRecord.antibioticsList];
-    [tList removeObjectAtIndex:row];
-    _patientRecord.antibioticsList = [NSArray arrayWithArray:tList];
+    [_patientRecord.antibioticsList removeObjectAtIndex:row];
     
-    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+    [_manager putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
 }
 
 - (void)onPhotoCellSelectedAtRow:(NSUInteger)row
 {
+    PDDatePickerViewController *picker = [[PDDatePickerViewController alloc] init];
+    picker.delegate = self;
+    picker.tag = PDPatientDatePickerTypePhoto * 100 + row;
+    picker.text = @"选择光疗日期";
+
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+    
     
 }
 
 - (void)onDeletePhotoCellAtRow:(NSUInteger)row
 {
-    NSMutableArray *tList =  [NSMutableArray arrayWithArray:_patientRecord.phototherapyList];
-    [tList removeObjectAtIndex:row];
-    _patientRecord.phototherapyList = [NSArray arrayWithArray:tList];
+    [_patientRecord.phototherapyList removeObjectAtIndex:row];
+    [_manager putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+}
+
+- (void)onHypothermiaCellSelectedAtRow:(NSUInteger)row
+{
+    PDDatePickerViewController *picker = [[PDDatePickerViewController alloc] init];
+    picker.delegate = self;
+    picker.tag = PDPatientDatePickerTypeHypia * 100 + row;
+    picker.text = @"选择亚低温开始日期";
+
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+
+- (void)onDeleteHypothermiaCell
+{
+    _patientRecord.hypothermia = nil;
+}
+
+- (void)onNewBornCellSelectAtRow:(NSUInteger)row
+{
     
-    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+    PDDatePickerViewController *picker = [[PDDatePickerViewController alloc] init];
+    picker.delegate = self;
+    picker.tag = PDPatientDatePickerTypeNewBorn * 100 + row;
+    picker.text = @"选择新生儿筛查日期";
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+
+- (void)onDeleteNewbornCell
+{
+    _patientRecord.newbornCheck = nil;
 }
 
 #pragma mark - Anti Delegate
@@ -114,14 +167,12 @@
 {
     if (antiVC.sourceType == PDVCSourceTypeAdd)
     {
-        NSMutableArray *tList = [NSMutableArray arrayWithArray:_patientRecord.antibioticsList];
-        [tList addObject:antiVC.antiVO];
-        _patientRecord.antibioticsList = [NSArray arrayWithArray:tList];
+        [_patientRecord.antibioticsList addObject:antiVC.antiVO];
     }
     
-    _pView.patientRecord = _patientRecord;
+    [_pView reload];
     
-    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+    [_manager putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
 }
 
 #pragma mark - Text Input Delegate
@@ -129,8 +180,8 @@
 - (void)onTextInputFinish:(PDTextInputViewController*)pTextInputVC
 {
     _patientRecord.diagnostic = pTextInputVC.text;
-    _pView.patientRecord = _patientRecord;
-    [[PDDBManager shareInstance] putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
+    [_pView reload];
+    [_manager putObject:_patientRecord key:_patientRecord.pid inTable:kTableNamePatient];
 }
 
 
@@ -148,9 +199,73 @@
         [self presentViewController:vc animated:YES completion:^{
             
         }];
-        
+    }
+    else if (buttonIndex == 1)
+    {
+        PDDatePickerViewController *vc = [[PDDatePickerViewController alloc] init];
+        vc.delegate = self;
+        vc.tag = PDPatientDatePickerTypeAddPhoto * 100;
+        vc.text = @"选择新增光疗日期";
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
+    else if (buttonIndex == 2)
+    {
+        PDDatePickerViewController *vc = [[PDDatePickerViewController alloc] init];
+        vc.delegate = self;
+        vc.tag = PDPatientDatePickerTypeHypia * 100;
+        vc.text = @"设置亚低温日期";
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
+    else if (buttonIndex == 3)
+    {
+        PDDatePickerViewController *vc = [[PDDatePickerViewController alloc] init];
+        vc.delegate = self;
+        vc.tag = PDPatientDatePickerTypeNewBorn * 100;
+        vc.text = @"设置新生儿筛查日期";
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
     }
     
+}
+
+#pragma mark - Date Picker Delegate Method
+
+- (void)datePicker:(PDDatePickerViewController *)picker selectDate:(NSDate *)date
+{
+    PDPatientDatePickerType type = picker.tag / 100;
+    NSUInteger subRow = picker.tag % 100;
+    
+    switch (type)
+    {
+        case PDPatientDatePickerTypeAddPhoto:
+        {
+            [_patientRecord.phototherapyList addObject:date];
+        }
+        case PDPatientDatePickerTypePhoto:
+        {
+            [_patientRecord.phototherapyList replaceObjectAtIndex:subRow withObject:date];
+            break;
+        }
+        case PDPatientDatePickerTypeHypia:
+        {
+            _patientRecord.hypothermia = date;
+            break;
+        }
+        case PDPatientDatePickerTypeNewBorn:
+        {
+            _patientRecord.newbornCheck = date;
+            break;
+        }
+    }
+    
+    [_pView reload];
+
+    [_manager putObject:_patientRecord key:_pid inTable:kTableNamePatient];
 }
 
 #pragma mark - Private Method
@@ -167,8 +282,6 @@
     
     self.patientRecord = [[PatientRecord alloc] initWithDictionary:[manager dictionaryWithKey:_pid inTable:kTableNamePatient]];
     
-    //_patientRecord.antibioticsList = @[[AntibioticsVO mockVO],[AntibioticsVO mockVO]];
-    _patientRecord.phototherapyList = @[[NSDate date], [NSDate date]];
     _patientRecord.hypothermia = [NSDate date];
     _patientRecord.newbornCheck = [NSDate date];
     NSLog(@"pation:\n%@",_patientRecord);

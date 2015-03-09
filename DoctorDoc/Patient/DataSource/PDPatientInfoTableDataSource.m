@@ -146,6 +146,7 @@
                 NSDate *endDate = [NSDate dateWithTimeInterval:60*60*72 sinceDate:hDate];
                 textCell.title = @"结束日期";
                 textCell.detail = [formater stringFromDate:endDate];
+                textCell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             
             return textCell;
@@ -197,7 +198,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == PDPatientInfoTableSectionTypeAnti || indexPath.section == PDPatientInfoTableSectionTypePhoto)
+    if (indexPath.section == PDPatientInfoTableSectionTypeAnti || indexPath.section == PDPatientInfoTableSectionTypePhoto || indexPath.section == PDPatientInfoTableSectionTypehypothermia || indexPath.section == PDPatientInfoTableSectionTypeNewBorn)
     {
         return YES;
     }
@@ -214,7 +215,16 @@
 //        [_delegate onDeleteCellAtRow:indexPath.row];
 //        [_listArrary removeObjectAtIndex:indexPath.row];
 //        // Delete the row from the data source.
-        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        [_tableView beginUpdates];
+
+        if (indexPath.section == PDPatientInfoTableSectionTypehypothermia)
+        {
+            [_tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationRight];
+        }
+        else
+        {
+            [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        }
         
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {

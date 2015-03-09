@@ -23,6 +23,15 @@
 
 - (void)onDeletePhotoCellAtRow:(NSUInteger)row;
 
+- (void)onHypothermiaCellSelectedAtRow:(NSUInteger)row;
+
+- (void)onDeleteHypothermiaCell;
+
+- (void)onNewBornCellSelectAtRow:(NSUInteger)row;
+
+- (void)onDeleteNewbornCell;
+
+
 @end
 
 @interface PDPatientInfoView : PDView
@@ -30,5 +39,7 @@
 @property (nonatomic, strong) PatientRecord *patientRecord;
 
 @property (nonatomic, weak) id<PDPatientInfoViewDelegate> delegate;
+
+- (void)reload;
 
 @end

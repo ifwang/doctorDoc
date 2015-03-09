@@ -42,6 +42,8 @@
 		2C950B011AA89C420050E134 /* AntibioticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C950AFF1AA89C420050E134 /* AntibioticsViewController.xib */; };
 		2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */; };
 		2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */; };
+		2CBDEC811AAD9B770012BDD3 /* PDDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDEC7F1AAD9B770012BDD3 /* PDDatePickerViewController.m */; };
+		2CBDEC821AAD9B770012BDD3 /* PDDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDEC801AAD9B770012BDD3 /* PDDatePickerViewController.xib */; };
 		2CDDDF341AA37D3C004E2235 /* PDPationIDInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */; };
 		2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDDF351AA3864E004E2235 /* PDPationIDInputViewController.xib */; };
 		2CF41EF11A868F8C00435823 /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41EF01A868F8C00435823 /* PDViewController.m */; };
@@ -138,6 +140,9 @@
 		2CBACB251A9E3A20002D18C8 /* PDTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextInputViewController.h; path = Controller/PDTextInputViewController.h; sourceTree = "<group>"; };
 		2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextInputViewController.m; path = Controller/PDTextInputViewController.m; sourceTree = "<group>"; };
 		2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDTextInputViewController.xib; path = Controller/PDTextInputViewController.xib; sourceTree = "<group>"; };
+		2CBDEC7E1AAD9B770012BDD3 /* PDDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDatePickerViewController.h; path = Controller/PDDatePickerViewController.h; sourceTree = "<group>"; };
+		2CBDEC7F1AAD9B770012BDD3 /* PDDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDatePickerViewController.m; path = Controller/PDDatePickerViewController.m; sourceTree = "<group>"; };
+		2CBDEC801AAD9B770012BDD3 /* PDDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDDatePickerViewController.xib; path = Controller/PDDatePickerViewController.xib; sourceTree = "<group>"; };
 		2CDDDF321AA37D3C004E2235 /* PDPationIDInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPationIDInputViewController.h; sourceTree = "<group>"; };
 		2CDDDF331AA37D3C004E2235 /* PDPationIDInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPationIDInputViewController.m; sourceTree = "<group>"; };
 		2CDDDF351AA3864E004E2235 /* PDPationIDInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDPationIDInputViewController.xib; sourceTree = "<group>"; };
@@ -443,6 +448,9 @@
 				2CBACB251A9E3A20002D18C8 /* PDTextInputViewController.h */,
 				2CBACB261A9E3A20002D18C8 /* PDTextInputViewController.m */,
 				2CBACB271A9E3A20002D18C8 /* PDTextInputViewController.xib */,
+				2CBDEC7E1AAD9B770012BDD3 /* PDDatePickerViewController.h */,
+				2CBDEC7F1AAD9B770012BDD3 /* PDDatePickerViewController.m */,
+				2CBDEC801AAD9B770012BDD3 /* PDDatePickerViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -566,6 +574,7 @@
 				2CF41EF61A87573400435823 /* PDPatientInfoViewController.xib in Resources */,
 				2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */,
 				2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */,
+				2CBDEC821AAD9B770012BDD3 /* PDDatePickerViewController.xib in Resources */,
 				2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */,
 				2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */,
 				2C6625841A8689340089BBA9 /* PatientTextTableViewCell.xib in Resources */,
@@ -633,6 +642,7 @@
 				2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */,
 				2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */,
 				2CF41F011A875A3300435823 /* PDNumInputViewController.m in Sources */,
+				2CBDEC811AAD9B770012BDD3 /* PDDatePickerViewController.m in Sources */,
 				2C1F0B9C1AA4B75800D79C03 /* PDAddPatientView.m in Sources */,
 				2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */,
 				2C7EC5B419D32C2B00830578 /* AppDelegate.m in Sources */,

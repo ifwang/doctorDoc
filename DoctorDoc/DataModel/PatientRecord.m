@@ -26,9 +26,9 @@
     record.hypothermia = date;
     record.newbornCheck= date;
     
-    record.phototherapyList = @[date, date2];
-    record.antibioticsList = @[[AntibioticsVO mockVO]];
-    record.healRecordList = @[[HealRecordVO mockVO]];
+    record.phototherapyList = [@[date, date2] mutableCopy];
+    record.antibioticsList = [@[[AntibioticsVO mockVO]] mutableCopy];
+    record.healRecordList = [@[[HealRecordVO mockVO]] mutableCopy];
     
     
     return record;
@@ -56,7 +56,7 @@
                 NSDate *pdate = [PDCommon dateFromString:dateStr];
                 [tList addObject:pdate];
             }
-            self.phototherapyList = [NSArray arrayWithArray:tList];
+            self.phototherapyList = [NSMutableArray arrayWithArray:tList];
         }
         
         NSArray *antiDictList = ditionary[@"antibioticsList"];
@@ -68,7 +68,7 @@
                 AntibioticsVO *antiVO = [[AntibioticsVO alloc] initWithDictionary:antiDic];
                 [tList addObject:antiVO];
             }
-            self.antibioticsList = [NSArray arrayWithArray:tList];
+            self.antibioticsList = [NSMutableArray arrayWithArray:tList];
         }
         
         NSArray *healDictList = ditionary[@"healRecordList"];
@@ -80,7 +80,7 @@
                 HealRecordVO *healVO = [[HealRecordVO alloc] initWithDictionary:healDict];
                 [tList addObject:healVO];
             }
-            self.healRecordList = [NSArray arrayWithArray:tList];
+            self.healRecordList = [NSMutableArray arrayWithArray:tList];
         }
     }
     

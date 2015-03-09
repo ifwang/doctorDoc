@@ -46,14 +46,14 @@
 /**
  *  光疗记录
  */
-@property (nonatomic, strong) NSArray *phototherapyList;
+@property (nonatomic, strong) NSMutableArray *phototherapyList;
 /**
  *  抗生素记录
  */
-@property (nonatomic, strong) NSArray *antibioticsList;
+@property (nonatomic, strong) NSMutableArray *antibioticsList;
 /**
  *  治疗文本记录
  */
-@property (nonatomic,strong) NSArray *healRecordList;
+@property (nonatomic,strong) NSMutableArray *healRecordList;
 
 @end

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDDatePickerViewController">
+            <connections>
+                <outlet property="picker" destination="Ngn-Sg-2cL" id="58U-y6-t9u"/>
+                <outlet property="titleLbl" destination="oHp-Yt-lsN" id="VIN-TM-A3a"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngn-Sg-2cL" customClass="MGConferenceDatePicker">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHp-Yt-lsN">
+                    <rect key="frame" x="20" y="35" width="335" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1uF-sn-ZEG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oHp-Yt-lsN" secondAttribute="trailing" constant="20" id="Mee-ho-Ztt"/>
+                <constraint firstItem="Ngn-Sg-2cL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T9Q-f8-8as"/>
+                <constraint firstItem="oHp-Yt-lsN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="Xks-Iv-VjU"/>
+                <constraint firstAttribute="bottom" secondItem="Ngn-Sg-2cL" secondAttribute="bottom" id="eBB-Pi-6Tu"/>
+                <constraint firstAttribute="trailing" secondItem="Ngn-Sg-2cL" secondAttribute="trailing" id="f6Z-2B-2h8"/>
+                <constraint firstItem="oHp-Yt-lsN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="mIu-Y0-a1s"/>
+                <constraint firstItem="Ngn-Sg-2cL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tLw-D4-FCe"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+</document>
