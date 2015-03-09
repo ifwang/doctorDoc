@@ -18,7 +18,7 @@
 /**
  *  记录ID
  */
-@property (nonatomic, assign) NSUInteger drid;
+@property (nonatomic, copy) NSString *drid;
 /**
  *  记录日期
  */

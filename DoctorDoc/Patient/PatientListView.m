@@ -89,11 +89,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
         [_delegate onDeleteCellAtRow:indexPath.row];
-        [_listArrary removeObjectAtIndex:indexPath.row];
-        // Delete the row from the data source.
-        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-
+        
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -107,6 +105,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [_delegate onSelectCellAtRow:indexPath.row];
 
+}
+
+- (void)deleteIdexPath:(NSIndexPath*)indexPath
+{
+    [_listArrary removeObjectAtIndex:indexPath.row];
+    // Delete the row from the data source.
+    [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 

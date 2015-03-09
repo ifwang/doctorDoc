@@ -15,6 +15,8 @@
 #import "AntibioticsViewController.h"
 #import "PDTextInputViewController.h"
 #import "PDDatePickerViewController.h"
+#import "PDDateRecordListViewController.h"
+
 
 typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
 {
@@ -162,6 +164,15 @@ typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
     _patientRecord.newbornCheck = nil;
 }
 
+- (void)onDateRecordCellSelected
+{
+    PDDateRecordListViewController *vc = [[PDDateRecordListViewController alloc] init];
+    vc.pid = _patientRecord.pid;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+
 #pragma mark - Anti Delegate
 - (void)AntibioticsViewControllerDidFinishEdit:(AntibioticsViewController *)antiVC
 {
@@ -282,8 +293,6 @@ typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
     
     self.patientRecord = [[PatientRecord alloc] initWithDictionary:[manager dictionaryWithKey:_pid inTable:kTableNamePatient]];
     
-    _patientRecord.hypothermia = [NSDate date];
-    _patientRecord.newbornCheck = [NSDate date];
     NSLog(@"pation:\n%@",_patientRecord);
 }
 
@@ -291,6 +300,8 @@ typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onAddItemClicked:)];
     self.navigationItem.rightBarButtonItem = item;
+    
+    self.title = @"病人资料";
 }
 
 - (void)onAddItemClicked:(id)sender

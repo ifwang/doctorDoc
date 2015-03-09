@@ -72,6 +72,10 @@
     {
         [_delegate onNewBornCellSelectAtRow:indexPath.row];
     }
+    else if (indexPath.section == PDPatientInfoTableSectionTypeDateRecord)
+    {
+        [_delegate onDateRecordCellSelected];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView deleteCellforRowAtIndexPath:(NSIndexPath *)indexPath

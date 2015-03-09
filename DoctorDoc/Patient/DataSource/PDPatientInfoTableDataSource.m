@@ -36,7 +36,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -62,6 +62,10 @@
         case PDPatientInfoTableSectionTypeNewBorn:
         {
             return _pRecord.newbornCheck == nil?0:1;
+        }
+        case PDPatientInfoTableSectionTypeDateRecord:
+        {
+            return 1;
         }
         default:
             break;
@@ -163,6 +167,17 @@
             textCell.detail = [formater stringFromDate:_pRecord.newbornCheck];
             return textCell;
         }
+        case PDPatientInfoTableSectionTypeDateRecord:
+        {
+            PatientTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PatientTextTableViewCell class]) forIndexPath:indexPath];
+            [textCell setTintFontSzie:18 detailSize:16];
+            
+            textCell.title = @"进入每日记录列表";
+            textCell.detail = @"";
+            textCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            return textCell;
+
+        }
         default:
             break;
     }
@@ -172,12 +187,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == PDPatientInfoTableSectionTypeNewBorn)
-    {
-        return 1;
-    }
+
     
-    return 0;
+    return 10;
     
 }
 
@@ -212,14 +224,12 @@
         
         [self.delegate tableView:tableView deleteCellforRowAtIndexPath:indexPath];
         
-//        [_delegate onDeleteCellAtRow:indexPath.row];
-//        [_listArrary removeObjectAtIndex:indexPath.row];
-//        // Delete the row from the data source.
-//        [_tableView beginUpdates];
 
         if (indexPath.section == PDPatientInfoTableSectionTypehypothermia)
         {
-            [_tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationRight];
+            NSIndexPath *secIndexPath = [NSIndexPath indexPathForRow:1 inSection:indexPath.section];
+            
+            [_tableView deleteRowsAtIndexPaths:@[indexPath, secIndexPath] withRowAnimation:UITableViewRowAnimationRight];
         }
         else
         {
@@ -270,6 +280,10 @@
         case PDPatientInfoTableSectionTypeNewBorn:
         {
             return _pRecord.newbornCheck==nil?0:kPDTableViewHeaderTitleHeight;
+        }
+        case PDPatientInfoTableSectionTypeDateRecord:
+        {
+            return kPDTableViewHeaderTitleHeight;
         }
         default:
             return 0;
@@ -328,7 +342,11 @@
         header.title = @"新生儿筛查";
         header.mainColor = HEXCOLOR(0x743A3A);
     }
-    
+    else if (section == PDPatientInfoTableSectionTypeDateRecord)
+    {
+        header.title = @"每日记录";
+        header.mainColor = HEXCOLOR(0x5B00AE);
+    }
     
     return header;
 }

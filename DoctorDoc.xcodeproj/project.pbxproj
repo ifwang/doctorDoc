@@ -16,6 +16,9 @@
 		2C1F0BA11AA4B77500D79C03 /* PDAddPatientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1F0B9F1AA4B77500D79C03 /* PDAddPatientViewController.xib */; };
 		2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25C80F1AA6109C009AD630 /* PDUIFactory.m */; };
 		2C25C8141AA7774F009AD630 /* PDPatientInfoTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C25C8131AA7774F009AD630 /* PDPatientInfoTableDataSource.m */; };
+		2C2F74081AAE0A3100A063B1 /* PDDateRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F74061AAE0A3100A063B1 /* PDDateRecordListViewController.m */; };
+		2C2F74091AAE0A3100A063B1 /* PDDateRecordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */; };
+		2C2F740D1AAE0A7F00A063B1 /* PDDateRecordListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */; };
 		2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB019D6FA240037A883 /* StoolVO.m */; };
 		2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB319D6FAF50037A883 /* TCBVO.m */; };
 		2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB619D6FB520037A883 /* InspectVO.m */; };
@@ -91,6 +94,11 @@
 		2C25C80F1AA6109C009AD630 /* PDUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDUIFactory.m; sourceTree = "<group>"; };
 		2C25C8121AA7774F009AD630 /* PDPatientInfoTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDPatientInfoTableDataSource.h; path = DataSource/PDPatientInfoTableDataSource.h; sourceTree = "<group>"; };
 		2C25C8131AA7774F009AD630 /* PDPatientInfoTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDPatientInfoTableDataSource.m; path = DataSource/PDPatientInfoTableDataSource.m; sourceTree = "<group>"; };
+		2C2F74051AAE0A3100A063B1 /* PDDateRecordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordListViewController.h; path = DateRecord/PDDateRecordListViewController.h; sourceTree = "<group>"; };
+		2C2F74061AAE0A3100A063B1 /* PDDateRecordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordListViewController.m; path = DateRecord/PDDateRecordListViewController.m; sourceTree = "<group>"; };
+		2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDDateRecordListViewController.xib; path = DateRecord/PDDateRecordListViewController.xib; sourceTree = "<group>"; };
+		2C2F740B1AAE0A7F00A063B1 /* PDDateRecordListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordListView.h; path = DateRecord/View/PDDateRecordListView.h; sourceTree = "<group>"; };
+		2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordListView.m; path = DateRecord/View/PDDateRecordListView.m; sourceTree = "<group>"; };
 		2C30BFAF19D6FA240037A883 /* StoolVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoolVO.h; path = DataModel/StoolVO.h; sourceTree = "<group>"; };
 		2C30BFB019D6FA240037A883 /* StoolVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoolVO.m; path = DataModel/StoolVO.m; sourceTree = "<group>"; };
 		2C30BFB219D6FAF50037A883 /* TCBVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBVO.h; path = DataModel/TCBVO.h; sourceTree = "<group>"; };
@@ -239,6 +247,26 @@
 			name = AddPatient;
 			sourceTree = "<group>";
 		};
+		2C2F74041AAE0A0600A063B1 /* DateRecord */ = {
+			isa = PBXGroup;
+			children = (
+				2C2F740A1AAE0A5F00A063B1 /* View */,
+				2C2F74051AAE0A3100A063B1 /* PDDateRecordListViewController.h */,
+				2C2F74061AAE0A3100A063B1 /* PDDateRecordListViewController.m */,
+				2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */,
+			);
+			name = DateRecord;
+			sourceTree = "<group>";
+		};
+		2C2F740A1AAE0A5F00A063B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C2F740B1AAE0A7F00A063B1 /* PDDateRecordListView.h */,
+				2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		2C30BFB819D6FBB10037A883 /* DayRecordSubVO */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +411,7 @@
 		2C7EC5AD19D32C2B00830578 /* DoctorDoc */ = {
 			isa = PBXGroup;
 			children = (
+				2C2F74041AAE0A0600A063B1 /* DateRecord */,
 				2C6625621A867FC40089BBA9 /* Patient */,
 				2C6625511A8651BF0089BBA9 /* Common */,
 				2C7EC5B219D32C2B00830578 /* AppDelegate.h */,
@@ -580,6 +609,7 @@
 				2C6625841A8689340089BBA9 /* PatientTextTableViewCell.xib in Resources */,
 				2CF41F021A875A3300435823 /* PDNumInputViewController.xib in Resources */,
 				2CF41F0B1A87668C00435823 /* PDInputNumberTableViewCell.xib in Resources */,
+				2C2F74091AAE0A3100A063B1 /* PDDateRecordListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,8 +666,10 @@
 				2CF41F0E1A876B4700435823 /* PDTableDataSource.m in Sources */,
 				2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */,
 				2C6625831A8689340089BBA9 /* PatientTextTableViewCell.m in Sources */,
+				2C2F74081AAE0A3100A063B1 /* PDDateRecordListViewController.m in Sources */,
 				2C66255A1A8651D50089BBA9 /* IFIDMaker.m in Sources */,
 				2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */,
+				2C2F740D1AAE0A7F00A063B1 /* PDDateRecordListView.m in Sources */,
 				2C30BFC419D700360037A883 /* PatientRecord.m in Sources */,
 				2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */,
 				2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */,

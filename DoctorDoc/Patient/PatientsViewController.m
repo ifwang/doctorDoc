@@ -12,7 +12,7 @@
 #import "PDPationIDInputViewController.h"
 #import "PDPatientInfoViewController.h"
 
-@interface PatientsViewController ()<PatientListViewDelegate>
+@interface PatientsViewController ()<PatientListViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) PatientListView *pView;
 
@@ -77,12 +77,18 @@
         NSLog(@"ERROR!!");
         return;
     }
+    
     NSDictionary *dict = _patientList[row];
     NSString *pid = dict[@"pid"];
     
-    [_patientList removeObject:dict];
-    
-    [[PDDBManager shareInstance] deletePid:pid];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:[NSString stringWithFormat:@"确认删除病人 %@",pid] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    alert.tag = row;
+    [alert show];
+
+//    
+//    [_patientList removeObject:dict];
+//    
+//    [[PDDBManager shareInstance] deletePid:pid];
     
 }
 
@@ -104,6 +110,25 @@
     
     
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"%ld", buttonIndex);
+    if (buttonIndex == 1)
+    {
+        NSUInteger row = alertView.tag;
+        
+        NSDictionary *dict = _patientList[row];
+        NSString *pid = dict[@"pid"];
+        [_patientList removeObject:dict];
+        [[PDDBManager shareInstance] deletePid:pid];
+        
+        [_pView deleteIdexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+    }
+    
+    
+}
+
 
 #pragma mark - Data Method
 - (void)initData

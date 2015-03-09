@@ -31,6 +31,7 @@
 
 - (void)onDeleteNewbornCell;
 
+- (void)onDateRecordCellSelected;
 
 @end
 

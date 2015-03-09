@@ -24,4 +24,6 @@
 
 - (void)addPatient:(NSDictionary*)pDict;
 
+- (void)deleteIdexPath:(NSIndexPath*)indexPath;
+
 @end

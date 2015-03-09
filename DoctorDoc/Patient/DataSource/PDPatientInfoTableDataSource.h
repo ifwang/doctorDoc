@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, PDPatientInfoTableSectionType)
     PDPatientInfoTableSectionTypePhoto,
     PDPatientInfoTableSectionTypehypothermia,
     PDPatientInfoTableSectionTypeNewBorn,
+    PDPatientInfoTableSectionTypeDateRecord,
 };
 
 

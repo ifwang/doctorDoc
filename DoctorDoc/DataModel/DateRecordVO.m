@@ -14,7 +14,7 @@
 {
     if (self = [super initWithDictionary:ditionary])
     {
-        self.drid = [ditionary[@"drid"] integerValue];
+        self.drid =  [self stringNotNull:ditionary[@"drid"]];
         self.recordDate = [PDCommon dateFromString:ditionary[@"recordDate"]];
         self.radio = [ditionary[@"radio"] boolValue];
         self.warnBox = [ditionary[@"warnBox"] boolValue];
@@ -43,7 +43,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     [dict addEntriesFromDictionary:@{
-                                        @"drid":@(self.drid),
+                                        @"drid":[self stringNotNull:self.drid],
                                         @"radio":@(self.radio),
                                         @"warnBox":@(self.warnBox),
                                         @"hotBed":@(self.hotBed),
@@ -93,7 +93,7 @@
 {
     DateRecordVO *record = [[DateRecordVO alloc] init];
     
-    record.drid = 3422;
+    record.drid = @"3422";
     record.recordDate = [NSDate date];
     record.radio = YES;
     record.warnBox = YES;
