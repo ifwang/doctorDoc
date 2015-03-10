@@ -10,6 +10,8 @@
 #import "PDDateRecordListView.h"
 #import "YTKKeyValueStore.h"
 #import "IFIDMaker.h"
+#import "DateRecordVO.h"
+#import "PDDateRecordDetailViewController.h"
 
 
 @interface PDDateRecordListViewController ()<PDDateRecordListViewDelegate>
@@ -44,28 +46,48 @@
 
 - (void)onDateRecordCellSelected:(NSUInteger)row
 {
+    NSDictionary *drDict = _drList[row];
+    NSString *drid = drDict[@"drid"];
+    
+    NSString *drKey = [PDCommon dateRecordKeyWithPid:_pid drid:drid];
+    
+    PDDateRecordDetailViewController *vc = [[PDDateRecordDetailViewController alloc] init];
+    vc.drKey = drKey;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
 - (void)onDeleteDateRecord:(NSUInteger)row
 {
+    //删除VO
+    NSDictionary *dict = _drList[row];
+    NSString *drid = dict[@"drid"];
+    [[PDDBManager shareInstance].originalStore deleteObjectById:[PDCommon dateRecordKeyWithPid:_pid drid:drid] fromTable:kTableNameDateRecord];
+
+    //在列表中删除
     [_drList removeObjectAtIndex:row];
-    
     [[PDDBManager shareInstance].originalStore deleteObjectById:_pid fromTable:kTableNameDateRecordList];
 }
 
 - (void)onAddDateRecord
 {
+    //获取递增的DateRecord ID
     NSUInteger newDrid = [[IFIDMaker shareInstance] getIncrementIDWithKey:kTableNameDateRecordList];
     
+    //保存列表
     NSDateFormatter *formater = [[NSDateFormatter alloc] init];
     formater.dateFormat = @"yyyy-MM-dd";
-    
-    NSDictionary *drDict = @{@"drid":[@(newDrid) stringValue], @"date":[formater stringFromDate:[NSDate date]]};
-    
+    NSDate *nowDate = [NSDate date];
+    NSDictionary *drDict = @{@"drid":[@(newDrid) stringValue], @"date":[formater stringFromDate:nowDate]};
     [_drList addObject:drDict];
     
     [[PDDBManager shareInstance].originalStore putObject:[NSArray arrayWithArray:_drList] withId:_pid intoTable:kTableNameDateRecordList];
+    //保存DRVO
+    DateRecordVO *dateRecord = [[DateRecordVO alloc] init];
+    dateRecord.drid = @(newDrid).stringValue;
+    dateRecord.recordDate = nowDate;
+    
+    [[PDDBManager shareInstance] putObject:dateRecord key:[PDCommon dateRecordKeyWithPid:_pid drid:dateRecord.drid] inTable:kTableNameDateRecord];
     
     [_pView addDateRecord:drDict];
 }

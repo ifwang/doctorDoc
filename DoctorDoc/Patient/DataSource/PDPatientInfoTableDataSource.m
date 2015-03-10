@@ -114,7 +114,8 @@
             textCell.detail = [NSString stringWithFormat:@"已使用 %d 天",(int)timeInter/3600/24];
             
             [textCell setTintFontSzie:18 detailSize:16];
-            
+            textCell.accessoryType = UITableViewCellAccessoryNone;
+
             return textCell;
         }
         case PDPatientInfoTableSectionTypePhoto:
@@ -128,7 +129,8 @@
             textCell.title = [formater stringFromDate:pDate];
             textCell.detail = @"";
             [textCell setTintFontSzie:18 detailSize:16];
-            
+            textCell.accessoryType = UITableViewCellAccessoryNone;
+
             return textCell;
         }
         case PDPatientInfoTableSectionTypehypothermia:
@@ -152,7 +154,8 @@
                 textCell.detail = [formater stringFromDate:endDate];
                 textCell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-            
+            textCell.accessoryType = UITableViewCellAccessoryNone;
+
             return textCell;
         }
         case PDPatientInfoTableSectionTypeNewBorn:
@@ -165,6 +168,8 @@
             
             textCell.title = @"筛查日期";
             textCell.detail = [formater stringFromDate:_pRecord.newbornCheck];
+            textCell.accessoryType = UITableViewCellAccessoryNone;
+
             return textCell;
         }
         case PDPatientInfoTableSectionTypeDateRecord:
@@ -188,8 +193,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
 
-    
-    return 10;
+    if (section == PDPatientInfoTableSectionTypeDialog || section == PDPatientInfoTableSectionTypeDateRecord)
+    {
+        return 10;
+    }
+    return 0;
     
 }
 
@@ -248,7 +256,7 @@
 {
     if (indexPath.section == PDPatientInfoTableSectionTypeDialog )
     {
-        return [PDTextViewTableViewCell cellHeightWithText:_pRecord.diagnostic] + 30;
+        return [PDTextViewTableViewCell cellHeightWithText:_pRecord.diagnostic] + 10;
     }
     else
     {

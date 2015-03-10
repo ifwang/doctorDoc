@@ -37,4 +37,11 @@
     
     return [dateFormater stringFromDate:date];
 }
+
++ (NSString*)dateRecordKeyWithPid:(NSString*)pid drid:(NSString*)drid
+{
+    return [NSString stringWithFormat:@"%@_%@",pid,drid];
+}
+
+
 @end

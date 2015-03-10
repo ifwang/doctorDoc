@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0EBC3B1AAF5B430056F87E /* PDDateRecordDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */; };
+		2C0EBC3F1AAF5B640056F87E /* PDDRDetailDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */; };
 		2C17C39619D66AEB00EBE9CD /* AntibioticsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */; };
 		2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */; };
 		2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6C19D666FD00444069 /* PDObject.m */; };
@@ -19,6 +21,8 @@
 		2C2F74081AAE0A3100A063B1 /* PDDateRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F74061AAE0A3100A063B1 /* PDDateRecordListViewController.m */; };
 		2C2F74091AAE0A3100A063B1 /* PDDateRecordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */; };
 		2C2F740D1AAE0A7F00A063B1 /* PDDateRecordListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */; };
+		2C2F74111AAEF4B900A063B1 /* PDDateRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F740F1AAEF4B900A063B1 /* PDDateRecordDetailViewController.m */; };
+		2C2F74121AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2F74101AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib */; };
 		2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB019D6FA240037A883 /* StoolVO.m */; };
 		2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB319D6FAF50037A883 /* TCBVO.m */; };
 		2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C30BFB619D6FB520037A883 /* InspectVO.m */; };
@@ -77,6 +81,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0EBC391AAF5B430056F87E /* PDDateRecordDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordDetailView.h; path = DateRecord/View/PDDateRecordDetailView.h; sourceTree = "<group>"; };
+		2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordDetailView.m; path = DateRecord/View/PDDateRecordDetailView.m; sourceTree = "<group>"; };
+		2C0EBC3D1AAF5B640056F87E /* PDDRDetailDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRDetailDataSource.h; path = DateRecord/View/PDDRDetailDataSource.h; sourceTree = "<group>"; };
+		2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDRDetailDataSource.m; path = DateRecord/View/PDDRDetailDataSource.m; sourceTree = "<group>"; };
 		2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntibioticsVO.h; path = DataModel/AntibioticsVO.h; sourceTree = "<group>"; };
 		2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntibioticsVO.m; path = DataModel/AntibioticsVO.m; sourceTree = "<group>"; };
 		2C17C39719D66B4500EBE9CD /* FeedRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedRecordVO.h; path = DataModel/FeedRecordVO.h; sourceTree = "<group>"; };
@@ -99,6 +107,9 @@
 		2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDDateRecordListViewController.xib; path = DateRecord/PDDateRecordListViewController.xib; sourceTree = "<group>"; };
 		2C2F740B1AAE0A7F00A063B1 /* PDDateRecordListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordListView.h; path = DateRecord/View/PDDateRecordListView.h; sourceTree = "<group>"; };
 		2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordListView.m; path = DateRecord/View/PDDateRecordListView.m; sourceTree = "<group>"; };
+		2C2F740E1AAEF4B900A063B1 /* PDDateRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordDetailViewController.h; path = DateRecord/PDDateRecordDetailViewController.h; sourceTree = "<group>"; };
+		2C2F740F1AAEF4B900A063B1 /* PDDateRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordDetailViewController.m; path = DateRecord/PDDateRecordDetailViewController.m; sourceTree = "<group>"; };
+		2C2F74101AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDDateRecordDetailViewController.xib; path = DateRecord/PDDateRecordDetailViewController.xib; sourceTree = "<group>"; };
 		2C30BFAF19D6FA240037A883 /* StoolVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoolVO.h; path = DataModel/StoolVO.h; sourceTree = "<group>"; };
 		2C30BFB019D6FA240037A883 /* StoolVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoolVO.m; path = DataModel/StoolVO.m; sourceTree = "<group>"; };
 		2C30BFB219D6FAF50037A883 /* TCBVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBVO.h; path = DataModel/TCBVO.h; sourceTree = "<group>"; };
@@ -211,6 +222,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2C0EBC3C1AAF5B480056F87E /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EBC3D1AAF5B640056F87E /* PDDRDetailDataSource.h */,
+				2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
 		2C1ACC6719D6563E00444069 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +274,9 @@
 				2C2F74051AAE0A3100A063B1 /* PDDateRecordListViewController.h */,
 				2C2F74061AAE0A3100A063B1 /* PDDateRecordListViewController.m */,
 				2C2F74071AAE0A3100A063B1 /* PDDateRecordListViewController.xib */,
+				2C2F740E1AAEF4B900A063B1 /* PDDateRecordDetailViewController.h */,
+				2C2F740F1AAEF4B900A063B1 /* PDDateRecordDetailViewController.m */,
+				2C2F74101AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib */,
 			);
 			name = DateRecord;
 			sourceTree = "<group>";
@@ -261,8 +284,11 @@
 		2C2F740A1AAE0A5F00A063B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C0EBC3C1AAF5B480056F87E /* DataSource */,
 				2C2F740B1AAE0A7F00A063B1 /* PDDateRecordListView.h */,
 				2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */,
+				2C0EBC391AAF5B430056F87E /* PDDateRecordDetailView.h */,
+				2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -603,6 +629,7 @@
 				2CF41EF61A87573400435823 /* PDPatientInfoViewController.xib in Resources */,
 				2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */,
 				2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */,
+				2C2F74121AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib in Resources */,
 				2CBDEC821AAD9B770012BDD3 /* PDDatePickerViewController.xib in Resources */,
 				2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */,
 				2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */,
@@ -684,9 +711,11 @@
 				2C25C8101AA6109C009AD630 /* PDUIFactory.m in Sources */,
 				2C950B001AA89C420050E134 /* AntibioticsViewController.m in Sources */,
 				2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */,
+				2C0EBC3B1AAF5B430056F87E /* PDDateRecordDetailView.m in Sources */,
 				2CF41EF51A87573400435823 /* PDPatientInfoViewController.m in Sources */,
 				2C7EC5B119D32C2B00830578 /* main.m in Sources */,
 				2CF41EF11A868F8C00435823 /* PDViewController.m in Sources */,
+				2C2F74111AAEF4B900A063B1 /* PDDateRecordDetailViewController.m in Sources */,
 				2C1F0BA01AA4B77500D79C03 /* PDAddPatientViewController.m in Sources */,
 				2CDDDF341AA37D3C004E2235 /* PDPationIDInputViewController.m in Sources */,
 				2CF41F0A1A87668C00435823 /* PDInputNumberTableViewCell.m in Sources */,
@@ -696,6 +725,7 @@
 				2C66256F1A8680100089BBA9 /* PatientListView.m in Sources */,
 				2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */,
 				2C66257C1A8680720089BBA9 /* PDButtonTableViewCell.m in Sources */,
+				2C0EBC3F1AAF5B640056F87E /* PDDRDetailDataSource.m in Sources */,
 				2CF41F171A87703B00435823 /* PDTableViewHeaderTitle.m in Sources */,
 				2C25C8141AA7774F009AD630 /* PDPatientInfoTableDataSource.m in Sources */,
 				2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */,

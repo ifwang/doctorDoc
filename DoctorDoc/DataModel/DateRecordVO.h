@@ -60,6 +60,10 @@
  */
 @property (nonatomic, copy) NSString *urine;
 /**
+ *  血糖（列表形式）
+ */
+@property (nonatomic, strong) NSMutableArray *sugarList;
+/**
  *  喂养
  */
 @property (nonatomic, strong) FeedRecordVO *feed;

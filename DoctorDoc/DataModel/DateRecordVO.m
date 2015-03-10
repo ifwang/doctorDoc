@@ -33,6 +33,16 @@
         self.stool = [[StoolVO alloc] initWithDictionary:ditionary[@"stool"]];
         self.inspect = [[InspectVO alloc] initWithDictionary:ditionary[@"inspect"]];
         self.tcb = [[TCBVO alloc] initWithDictionary:ditionary[@"tcb"]];
+        
+        NSArray *tSugarDictList = ditionary[@"sugarList"];
+        NSMutableArray *tList = [[NSMutableArray alloc] init];
+            
+        [tSugarDictList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSDictionary *dict = obj;
+                
+                [tList addObject:[[BSugarVO alloc] initWithDictionary:dict]];
+            }];
+        self.sugarList = tList;
     }
     
     return self;
@@ -56,6 +66,17 @@
                                         @"urine":[self stringNotNull:@"urine"],
 
                                         }];
+    
+
+    NSMutableArray *tList = [[NSMutableArray alloc] init];
+    [_sugarList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        BSugarVO *sugar = obj;
+        [tList addObject:[sugar dictionary]];
+        
+    }];
+    
+    [dict setObject:tList forKey:@"sugarList"];
+    
     
     
     if (_feed != nil)
@@ -84,8 +105,6 @@
     }
     
     return dict;
-    
-    
 }
 
 
@@ -97,18 +116,17 @@
     record.recordDate = [NSDate date];
     record.radio = YES;
     record.warnBox = YES;
-    record.hotBed = NO;
-    record.heartRate = @"88";
-    record.bodyTemperature = @"123";
-    record.breath = @"22.1";
+    record.hotBed = YES;
+    record.heartRate = @"60-250";
+    record.bodyTemperature = @"34.0-44.0";
+    record.breath = @"10-100";
     record.lowFlowOxy = YES;
-    record.bloodOxy = @"77";
+    record.bloodOxy = @"77-88";
     record.feed = [FeedRecordVO mockVO];
     record.urine = @"65";
     record.stool = [StoolVO mockVO];
     record.inspect = [InspectVO mockVO];
     record.tcb = [TCBVO mockVO];
-
     
     return record;
 }

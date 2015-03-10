@@ -19,16 +19,10 @@ typedef NS_ENUM(NSUInteger, PDPatientInfoTableSectionType)
 };
 
 
-@protocol PDPatientInfoTableDataSourceDelegate
-
-@end
-
 @interface PDPatientInfoTableDataSource : PDTableDataSource
 /**
  *  病人VO
  */
 @property (nonatomic, strong) PatientRecord *pRecord;
-
-@property (nonatomic, weak) id<PDPatientInfoTableDataSourceDelegate> actionDelegate;
 
 @end

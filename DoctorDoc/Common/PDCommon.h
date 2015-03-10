@@ -14,6 +14,6 @@
 
 + (NSString*)stringFromDate:(NSDate*)dateStr;
 
-
++ (NSString*)dateRecordKeyWithPid:(NSString*)pid drid:(NSString*)drid;
 
 @end
