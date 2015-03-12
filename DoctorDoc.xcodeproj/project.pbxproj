@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2C0EBC3B1AAF5B430056F87E /* PDDateRecordDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */; };
 		2C0EBC3F1AAF5B640056F87E /* PDDRDetailDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */; };
+		2C0EBC431AB07F8C0056F87E /* PDDRBaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC411AB07F8C0056F87E /* PDDRBaseInfoViewController.m */; };
+		2C0EBC441AB07F8C0056F87E /* PDDRBaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0EBC421AB07F8C0056F87E /* PDDRBaseInfoViewController.xib */; };
+		2C0EBC471AB080340056F87E /* PDDRBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC461AB080340056F87E /* PDDRBaseInfoView.m */; };
+		2C0EBC4A1AB080790056F87E /* PDDRBaseInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC491AB080790056F87E /* PDDRBaseInfoDataSource.m */; };
+		2C0EBC4F1AB085920056F87E /* PDSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC4D1AB085920056F87E /* PDSwitchTableViewCell.m */; };
+		2C0EBC501AB085920056F87E /* PDSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0EBC4E1AB085920056F87E /* PDSwitchTableViewCell.xib */; };
 		2C17C39619D66AEB00EBE9CD /* AntibioticsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */; };
 		2C17C39919D66B4500EBE9CD /* FeedRecordVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C39819D66B4500EBE9CD /* FeedRecordVO.m */; };
 		2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1ACC6C19D666FD00444069 /* PDObject.m */; };
@@ -85,6 +91,16 @@
 		2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordDetailView.m; path = DateRecord/View/PDDateRecordDetailView.m; sourceTree = "<group>"; };
 		2C0EBC3D1AAF5B640056F87E /* PDDRDetailDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRDetailDataSource.h; path = DateRecord/View/PDDRDetailDataSource.h; sourceTree = "<group>"; };
 		2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDRDetailDataSource.m; path = DateRecord/View/PDDRDetailDataSource.m; sourceTree = "<group>"; };
+		2C0EBC401AB07F8C0056F87E /* PDDRBaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRBaseInfoViewController.h; path = DateRecord/PDDRBaseInfoViewController.h; sourceTree = "<group>"; };
+		2C0EBC411AB07F8C0056F87E /* PDDRBaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDRBaseInfoViewController.m; path = DateRecord/PDDRBaseInfoViewController.m; sourceTree = "<group>"; };
+		2C0EBC421AB07F8C0056F87E /* PDDRBaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDDRBaseInfoViewController.xib; path = DateRecord/PDDRBaseInfoViewController.xib; sourceTree = "<group>"; };
+		2C0EBC451AB080340056F87E /* PDDRBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRBaseInfoView.h; path = DateRecord/View/PDDRBaseInfoView.h; sourceTree = "<group>"; };
+		2C0EBC461AB080340056F87E /* PDDRBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDRBaseInfoView.m; path = DateRecord/View/PDDRBaseInfoView.m; sourceTree = "<group>"; };
+		2C0EBC481AB080790056F87E /* PDDRBaseInfoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRBaseInfoDataSource.h; path = DateRecord/View/PDDRBaseInfoDataSource.h; sourceTree = "<group>"; };
+		2C0EBC491AB080790056F87E /* PDDRBaseInfoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDRBaseInfoDataSource.m; path = DateRecord/View/PDDRBaseInfoDataSource.m; sourceTree = "<group>"; };
+		2C0EBC4C1AB085920056F87E /* PDSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDSwitchTableViewCell.h; path = DateRecord/View/PDSwitchTableViewCell.h; sourceTree = "<group>"; };
+		2C0EBC4D1AB085920056F87E /* PDSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDSwitchTableViewCell.m; path = DateRecord/View/PDSwitchTableViewCell.m; sourceTree = "<group>"; };
+		2C0EBC4E1AB085920056F87E /* PDSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDSwitchTableViewCell.xib; path = DateRecord/View/PDSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		2C17C39419D66AEB00EBE9CD /* AntibioticsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntibioticsVO.h; path = DataModel/AntibioticsVO.h; sourceTree = "<group>"; };
 		2C17C39519D66AEB00EBE9CD /* AntibioticsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntibioticsVO.m; path = DataModel/AntibioticsVO.m; sourceTree = "<group>"; };
 		2C17C39719D66B4500EBE9CD /* FeedRecordVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedRecordVO.h; path = DataModel/FeedRecordVO.h; sourceTree = "<group>"; };
@@ -227,8 +243,20 @@
 			children = (
 				2C0EBC3D1AAF5B640056F87E /* PDDRDetailDataSource.h */,
 				2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */,
+				2C0EBC481AB080790056F87E /* PDDRBaseInfoDataSource.h */,
+				2C0EBC491AB080790056F87E /* PDDRBaseInfoDataSource.m */,
 			);
 			name = DataSource;
+			sourceTree = "<group>";
+		};
+		2C0EBC4B1AB0854C0056F87E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EBC4C1AB085920056F87E /* PDSwitchTableViewCell.h */,
+				2C0EBC4D1AB085920056F87E /* PDSwitchTableViewCell.m */,
+				2C0EBC4E1AB085920056F87E /* PDSwitchTableViewCell.xib */,
+			);
+			name = Component;
 			sourceTree = "<group>";
 		};
 		2C1ACC6719D6563E00444069 /* DataModel */ = {
@@ -277,6 +305,9 @@
 				2C2F740E1AAEF4B900A063B1 /* PDDateRecordDetailViewController.h */,
 				2C2F740F1AAEF4B900A063B1 /* PDDateRecordDetailViewController.m */,
 				2C2F74101AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib */,
+				2C0EBC401AB07F8C0056F87E /* PDDRBaseInfoViewController.h */,
+				2C0EBC411AB07F8C0056F87E /* PDDRBaseInfoViewController.m */,
+				2C0EBC421AB07F8C0056F87E /* PDDRBaseInfoViewController.xib */,
 			);
 			name = DateRecord;
 			sourceTree = "<group>";
@@ -284,11 +315,14 @@
 		2C2F740A1AAE0A5F00A063B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C0EBC4B1AB0854C0056F87E /* Component */,
 				2C0EBC3C1AAF5B480056F87E /* DataSource */,
 				2C2F740B1AAE0A7F00A063B1 /* PDDateRecordListView.h */,
 				2C2F740C1AAE0A7F00A063B1 /* PDDateRecordListView.m */,
 				2C0EBC391AAF5B430056F87E /* PDDateRecordDetailView.h */,
 				2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */,
+				2C0EBC451AB080340056F87E /* PDDRBaseInfoView.h */,
+				2C0EBC461AB080340056F87E /* PDDRBaseInfoView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -628,7 +662,9 @@
 				2C66257D1A8680720089BBA9 /* PDButtonTableViewCell.xib in Resources */,
 				2CF41EF61A87573400435823 /* PDPatientInfoViewController.xib in Resources */,
 				2CDDDF361AA3864E004E2235 /* PDPationIDInputViewController.xib in Resources */,
+				2C0EBC441AB07F8C0056F87E /* PDDRBaseInfoViewController.xib in Resources */,
 				2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */,
+				2C0EBC501AB085920056F87E /* PDSwitchTableViewCell.xib in Resources */,
 				2C2F74121AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib in Resources */,
 				2CBDEC821AAD9B770012BDD3 /* PDDatePickerViewController.xib in Resources */,
 				2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */,
@@ -701,6 +737,7 @@
 				2C1ACC6D19D666FD00444069 /* PDObject.m in Sources */,
 				2C30BFB419D6FAF50037A883 /* TCBVO.m in Sources */,
 				2CF41F011A875A3300435823 /* PDNumInputViewController.m in Sources */,
+				2C0EBC471AB080340056F87E /* PDDRBaseInfoView.m in Sources */,
 				2CBDEC811AAD9B770012BDD3 /* PDDatePickerViewController.m in Sources */,
 				2C1F0B9C1AA4B75800D79C03 /* PDAddPatientView.m in Sources */,
 				2C30BFB719D6FB520037A883 /* InspectVO.m in Sources */,
@@ -713,6 +750,7 @@
 				2CBACB281A9E3A20002D18C8 /* PDTextInputViewController.m in Sources */,
 				2C0EBC3B1AAF5B430056F87E /* PDDateRecordDetailView.m in Sources */,
 				2CF41EF51A87573400435823 /* PDPatientInfoViewController.m in Sources */,
+				2C0EBC4A1AB080790056F87E /* PDDRBaseInfoDataSource.m in Sources */,
 				2C7EC5B119D32C2B00830578 /* main.m in Sources */,
 				2CF41EF11A868F8C00435823 /* PDViewController.m in Sources */,
 				2C2F74111AAEF4B900A063B1 /* PDDateRecordDetailViewController.m in Sources */,
@@ -726,9 +764,11 @@
 				2C30BFB119D6FA240037A883 /* StoolVO.m in Sources */,
 				2C66257C1A8680720089BBA9 /* PDButtonTableViewCell.m in Sources */,
 				2C0EBC3F1AAF5B640056F87E /* PDDRDetailDataSource.m in Sources */,
+				2C0EBC431AB07F8C0056F87E /* PDDRBaseInfoViewController.m in Sources */,
 				2CF41F171A87703B00435823 /* PDTableViewHeaderTitle.m in Sources */,
 				2C25C8141AA7774F009AD630 /* PDPatientInfoTableDataSource.m in Sources */,
 				2C30BFC119D6FEBD0037A883 /* DateRecordVO.m in Sources */,
+				2C0EBC4F1AB085920056F87E /* PDSwitchTableViewCell.m in Sources */,
 				2C66255D1A8651E60089BBA9 /* PDCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

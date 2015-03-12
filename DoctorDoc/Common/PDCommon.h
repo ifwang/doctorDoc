@@ -16,4 +16,8 @@
 
 + (NSString*)dateRecordKeyWithPid:(NSString*)pid drid:(NSString*)drid;
 
++ (NSArray*)doubleStringListWithString:(NSString*)str;
+
++ (NSString*)stringWithValue1:(NSString*)value1 value2:(NSString*)value2;
+
 @end

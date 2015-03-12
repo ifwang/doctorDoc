@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class PDInputNumberTableViewCell;
-@protocol PDInputNumberTableViewCellDelegate
+@protocol PDInputNumberTableViewCellDelegate<NSObject>
 
 - (void)onInputNumberTableViewCellInputFinished:(PDInputNumberTableViewCell*)cell;
+
+@optional
+- (void)onTextFieldBeginEditing:(PDInputNumberTableViewCell*)cell;
 
 @end
 
@@ -29,5 +32,7 @@
 @property (nonatomic, copy) NSString *unit;
 
 @property (nonatomic, assign) BOOL inputAble;
+
+- (void)setTintFontSzie:(NSUInteger)size valueSize:(NSUInteger)detailSize;
 
 @end

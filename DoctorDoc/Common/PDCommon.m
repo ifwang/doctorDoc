@@ -43,5 +43,42 @@
     return [NSString stringWithFormat:@"%@_%@",pid,drid];
 }
 
++ (NSArray*)doubleStringListWithString:(NSString*)str
+{
+    if (str==nil||str.length == 0)
+    {
+        return nil;
+    }
+    
+    if ([str rangeOfString:@"-"].length > 0)
+    {
+        return [str componentsSeparatedByString:@"-"];
+    }
+    
+    return nil;
+}
+
++ (NSString*)stringWithValue1:(NSString*)value1 value2:(NSString*)value2
+{
+    BOOL isValue1Nil = (value1 == nil) || value1.length == 0;
+    BOOL isValue2Nil = (value2 == nil) || value2.length == 0;
+
+    
+    if (isValue1Nil && isValue2Nil) {
+        return nil;
+    }
+    
+    if (isValue1Nil)
+    {
+        return [NSString stringWithFormat:@"%@-%@",value2,value2];
+    }
+    
+    if (isValue2Nil) {
+        return [NSString stringWithFormat:@"%@-%@",value1,value1];
+    }
+    
+    return [NSString stringWithFormat:@"%@-%@",value1,value2];
+}
+
 
 @end

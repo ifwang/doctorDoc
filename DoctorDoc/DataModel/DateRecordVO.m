@@ -20,13 +20,18 @@
         self.warnBox = [ditionary[@"warnBox"] boolValue];
         self.hotBed = [ditionary[@"hotBed"] boolValue];
         
-        self.heartRate = [self stringNotNull:ditionary[@"heartRate"]];
-        self.bodyTemperature = [self stringNotNull:ditionary[@"bodyTemperature"]];
-        self.breath = [self stringNotNull:ditionary[@"breath"]];
-        
+        self.heartRate1 = [self stringNotNull:ditionary[@"heartRate1"]];
+        self.heartRate2 = [self stringNotNull:ditionary[@"heartRate2"]];
+        self.bodyTemperature1 = [self stringNotNull:ditionary[@"bodyTemperature1"]];
+        self.bodyTemperature2 = [self stringNotNull:ditionary[@"bodyTemperature2"]];
+        self.breath1 = [self stringNotNull:ditionary[@"breath1"]];
+        self.breath2 = [self stringNotNull:ditionary[@"breath2"]];
+
         
         self.lowFlowOxy = [ditionary[@"lowFlowOxy"] boolValue];
-        self.bloodOxy = [self stringNotNull:ditionary[@"bloodOxy"]];
+        self.bloodOxy1 = [self stringNotNull:ditionary[@"bloodOxy1"]];
+        self.bloodOxy2 = [self stringNotNull:ditionary[@"bloodOxy2"]];
+
         self.urine = [self stringNotNull:ditionary[@"urine"]];
 
         self.feed = [[FeedRecordVO alloc] initWithDictionary:ditionary[@"feed"]];
@@ -59,11 +64,15 @@
                                         @"hotBed":@(self.hotBed),
                                         @"lowFlowOxy":@(self.lowFlowOxy),
                                         @"recordDate":[PDCommon stringFromDate:_recordDate],
-                                        @"heartRate":[self stringNotNull:@"heartRate"],
-                                        @"bodyTemperature":[self stringNotNull:@"bodyTemperature"],
-                                        @"breath":[self stringNotNull:@"breath"],
-                                        @"bloodOxy":[self stringNotNull:@"bloodOxy"],
-                                        @"urine":[self stringNotNull:@"urine"],
+                                        @"heartRate1":[self stringNotNull:_heartRate1],
+                                        @"heartRate2":[self stringNotNull:_heartRate2],
+                                        @"bodyTemperature1":[self stringNotNull:_bodyTemperature1],
+                                        @"bodyTemperature2":[self stringNotNull:_bodyTemperature2],
+                                        @"breath1":[self stringNotNull:_breath1],
+                                        @"breath2":[self stringNotNull:_breath2],
+                                        @"bloodOxy1":[self stringNotNull:_bloodOxy1],
+                                        @"bloodOxy2":[self stringNotNull:_bloodOxy2],
+                                        @"urine":[self stringNotNull:_urine],
 
                                         }];
     
@@ -117,11 +126,11 @@
     record.radio = YES;
     record.warnBox = YES;
     record.hotBed = YES;
-    record.heartRate = @"60-250";
-    record.bodyTemperature = @"34.0-44.0";
-    record.breath = @"10-100";
+//    record.heartRate = @"60-250";
+//    record.bodyTemperature = @"34.0-44.0";
+//    record.breath = @"10-100";
     record.lowFlowOxy = YES;
-    record.bloodOxy = @"77-88";
+//    record.bloodOxy = @"77-88";
     record.feed = [FeedRecordVO mockVO];
     record.urine = @"65";
     record.stool = [StoolVO mockVO];
@@ -131,5 +140,39 @@
     return record;
 }
 
+- (NSString*)heartRateString
+{
+    return [PDCommon stringWithValue1:_heartRate1 value2:_heartRate2];
+    
+    
+}
+- (NSString*)bodyTemperatureString
+{
+    return [PDCommon stringWithValue1:_bodyTemperature1 value2:_bodyTemperature2];
+}
+- (NSString*)breathString
+{
+    return [PDCommon stringWithValue1:_breath1 value2:_breath2];
+}
+- (NSString*)bloodOxyString
+{
+    return [PDCommon stringWithValue1:_bloodOxy1 value2:_bloodOxy2];
+}
+
+- (void)coverBaseInfoByDateRecord:(DateRecordVO*)dateRecord
+{
+    self.radio = dateRecord.radio;
+    self.warnBox = dateRecord.warnBox;
+    self.hotBed = dateRecord.hotBed;
+    self.heartRate1 = dateRecord.heartRate1;
+    self.heartRate2 = dateRecord.heartRate2;
+    self.bodyTemperature1 = dateRecord.bodyTemperature1;
+    self.bodyTemperature2 = dateRecord.bodyTemperature2;
+    self.breath1 = dateRecord.breath1;
+    self.breath2 = dateRecord.breath2;
+    self.lowFlowOxy = dateRecord.lowFlowOxy;
+    self.bloodOxy1 = dateRecord.bloodOxy1;
+    self.bloodOxy2 = dateRecord.bloodOxy2;
+}
 
 @end

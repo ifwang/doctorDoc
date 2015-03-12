@@ -9,8 +9,9 @@
 #import "PDDateRecordDetailViewController.h"
 #import "DateRecordVO.h"
 #import "PDDateRecordDetailView.h"
+#import "PDDRBaseInfoViewController.h"
 
-@interface PDDateRecordDetailViewController ()
+@interface PDDateRecordDetailViewController ()<PDDRBaseInfoViewControllerDelegate>
 
 @property (nonatomic, strong) DateRecordVO *dateRecord;
 
@@ -42,14 +43,28 @@
 
 - (IBAction)onBaseInfoBtnClicked:(id)sender
 {
+    PDDRBaseInfoViewController *vc = [[PDDRBaseInfoViewController alloc] init];
+    DateRecordVO *dateRecord = [[DateRecordVO alloc] init];
+    [dateRecord coverBaseInfoByDateRecord:_dateRecord];
+    vc.dRecord = dateRecord;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
+#pragma mark - Base Info Delegate Method
+- (void)onBaseInfoFinishedEditing:(PDDRBaseInfoViewController *)baseInfoVC
+{
+    [_dateRecord coverBaseInfoByDateRecord:baseInfoVC.dRecord];
+    [_dView reload];
+    
+    [[PDDBManager shareInstance] putObject:_dateRecord key:_drKey inTable:kTableNameDateRecord];
 }
 
 #pragma mark - Data init Method
 
 - (void)initData
 {
-    self.dateRecord = [DateRecordVO mockVO];
+    self.dateRecord = [[DateRecordVO alloc] initWithDictionary:[[PDDBManager shareInstance] dictionaryWithKey:_drKey inTable:kTableNameDateRecord]];
 }
 
 

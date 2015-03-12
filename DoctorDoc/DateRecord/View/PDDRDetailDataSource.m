@@ -8,6 +8,15 @@
 
 #import "PDDRDetailDataSource.h"
 
+
+
 @implementation PDDRDetailDataSource
+
+- (void)registerTableView:(UITableView *)tableView
+{
+    
+    
+    
+}
 
 @end

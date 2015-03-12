@@ -36,17 +36,29 @@
  */
 @property (nonatomic, assign) BOOL hotBed;
 /**
- *  心率 60-250 次/分
+ *  心率1 60-250 次/分
  */
-@property (nonatomic, copy) NSString *heartRate;
+@property (nonatomic, copy) NSString *heartRate1;
 /**
- *  体温 34.0-44.0 ℃
+ *  心率2 60-250 次/分
  */
-@property (nonatomic, copy) NSString *bodyTemperature;
+@property (nonatomic, copy) NSString *heartRate2;
 /**
- *  呼吸 10- 100 次/分
+ *  体温1 34.0-44.0 ℃
  */
-@property (nonatomic, copy) NSString *breath;
+@property (nonatomic, copy) NSString *bodyTemperature1;
+/**
+ *  体温2 34.0-44.0 ℃
+ */
+@property (nonatomic, copy) NSString *bodyTemperature2;
+/**
+ *  呼吸1 10- 100 次/分
+ */
+@property (nonatomic, copy) NSString *breath1;
+/**
+ *  呼吸2 10- 100 次/分
+ */
+@property (nonatomic, copy) NSString *breath2;
 /**
  *  低流量吸氧
  */
@@ -54,7 +66,11 @@
 /**
  *  血氧 60-100 %
  */
-@property (nonatomic, copy) NSString *bloodOxy;
+@property (nonatomic, copy) NSString *bloodOxy1;
+/**
+ *  血氧 60-100 %
+ */
+@property (nonatomic, copy) NSString *bloodOxy2;
 /**
  *  尿总
  */
@@ -80,7 +96,16 @@
  *  TCB
  */
 @property (nonatomic, strong) TCBVO *tcb;
+/**
+ *  备注
+ */
+@property (nonatomic, copy) NSString *other;
 
+- (NSString*)heartRateString;
+- (NSString*)bodyTemperatureString;
+- (NSString*)breathString;
+- (NSString*)bloodOxyString;
 
+- (void)coverBaseInfoByDateRecord:(DateRecordVO*)dateRecord;
 
 @end

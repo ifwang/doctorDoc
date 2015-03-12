@@ -25,7 +25,7 @@
     _titleLabel.font = [UIFont lightFlatFontOfSize:24];
     _textField.font = [UIFont lightFlatFontOfSize:21];
     _unitLabel.font = [UIFont lightFlatFontOfSize:18];
-    
+    _textField.delegate = self;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextFieldTextDidChangeNotification object:_textField];
@@ -70,5 +70,21 @@
         [_delegate onInputNumberTableViewCellInputFinished:self];
     }
 }
+
+- (void)setTintFontSzie:(NSUInteger)size valueSize:(NSUInteger)valueSize;
+{
+    _titleLabel.font = [UIFont lightFlatFontOfSize:size];
+    _textField.font = [UIFont lightFlatFontOfSize:valueSize];
+    _unitLabel.font = [UIFont lightFlatFontOfSize:valueSize-3];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if ([_delegate respondsToSelector:@selector(onTextFieldBeginEditing:)])
+    {
+        [_delegate onTextFieldBeginEditing:self];
+    }
+}
+
 
 @end

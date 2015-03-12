@@ -57,25 +57,30 @@
     {
         [baseStr appendString:@"温床，"];
     }
-    if (_dRecord.bodyTemperature.length > 0)
+    NSString *valueString = nil;
+    valueString = _dRecord.bodyTemperatureString;
+    if (valueString.length > 0)
     {
-        [baseStr appendFormat:@"体温: %@ ℃，", _dRecord.bodyTemperature];
+        [baseStr appendFormat:@"体温: %@ ℃，", valueString];
     }
-    if (_dRecord.heartRate.length > 0)
+    valueString = _dRecord.heartRateString;
+    if (valueString.length > 0)
     {
-        [baseStr appendFormat:@"心率: %@ 次/分，",_dRecord.heartRate ];
+        [baseStr appendFormat:@"心率: %@ 次/分，",valueString ];
     }
-    if (_dRecord.breath.length > 0)
+    valueString = _dRecord.breathString;
+    if (valueString.length > 0)
     {
-        [baseStr appendFormat:@"呼吸: %@ 次/分，",_dRecord.breath ];
+        [baseStr appendFormat:@"呼吸: %@ 次/分，",valueString ];
     }
     if (_dRecord.lowFlowOxy)
     {
         [baseStr appendString:@"低流量吸氧，"];
     }
-    if (_dRecord.bloodOxy.length > 0)
+    valueString = _dRecord.bloodOxyString;
+    if (valueString.length > 0)
     {
-        [baseStr appendFormat:@"血氧: %@，", _dRecord.bloodOxy];
+        [baseStr appendFormat:@"血氧: %@ %%，", valueString];
     }
     
     if (baseStr.length > 0)
@@ -85,7 +90,7 @@
     }
     else
     {
-        return @"";
+        return @"暂无数据";
     }
 }
 
