@@ -9,6 +9,11 @@
 #import "PDTableDataSource.h"
 #import "DateRecordVO.h"
 
+typedef NS_ENUM(NSUInteger, PDDRDetailRowType)
+{
+    PDDRDetailRowTypeFeed,
+};
+
 @interface PDDRDetailDataSource : PDTableDataSource
 
 @property (nonatomic, strong) DateRecordVO *dRecord;

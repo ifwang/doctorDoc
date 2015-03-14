@@ -9,7 +9,7 @@
 #import "PDDateRecordDetailView.h"
 #import "PDDRDetailDataSource.h"
 
-@interface PDDateRecordDetailView()
+@interface PDDateRecordDetailView()<PDTableAction>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -25,6 +25,10 @@
 
 - (void)initView
 {
+    self.datasource = [[PDDRDetailDataSource alloc] init];
+    _datasource.dRecord = _dRecord;
+    _datasource.delegate = self;
+    [_datasource registerTableView:_tableView];
     
 }
 
@@ -34,6 +38,7 @@
 {
     _dridLbl.text = _drKey;
     _baseInfoLbl.text = [self baseInfoString];
+    [_tableView reloadData];
 }
 
 - (NSString*)baseInfoString
@@ -94,5 +99,20 @@
     }
 }
 
+#pragma mark - Data Source Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case PDDRDetailRowTypeFeed:
+        {
+            [_delegate onFeedCellSelected];
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 @end
