@@ -41,6 +41,12 @@
     [_tableView reloadData];
 }
 
+- (void)setPatientRecord:(PatientRecord*)patientRecord
+{
+    _datasource.pRecord = patientRecord;
+}
+
+
 - (NSString*)baseInfoString
 {
     if (_dRecord == nil)
@@ -108,6 +114,11 @@
         case PDDRDetailRowTypeFeed:
         {
             [_delegate onFeedCellSelected];
+            break;
+        }
+        case PDDRDetailRowTypeUrine:
+        {
+            [_delegate onUrineCellSelected];
             break;
         }
         default:

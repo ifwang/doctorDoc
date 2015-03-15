@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0E72A81AB5E91E00A519C6 /* PDUrineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E72A61AB5E91E00A519C6 /* PDUrineViewController.m */; };
+		2C0E72A91AB5E91E00A519C6 /* PDUrineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0E72A71AB5E91E00A519C6 /* PDUrineViewController.xib */; };
 		2C0EBC3B1AAF5B430056F87E /* PDDateRecordDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */; };
 		2C0EBC3F1AAF5B640056F87E /* PDDRDetailDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC3E1AAF5B640056F87E /* PDDRDetailDataSource.m */; };
 		2C0EBC431AB07F8C0056F87E /* PDDRBaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EBC411AB07F8C0056F87E /* PDDRBaseInfoViewController.m */; };
@@ -91,6 +93,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0E72A51AB5E91E00A519C6 /* PDUrineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDUrineViewController.h; path = DateRecord/PDUrineViewController.h; sourceTree = "<group>"; };
+		2C0E72A61AB5E91E00A519C6 /* PDUrineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDUrineViewController.m; path = DateRecord/PDUrineViewController.m; sourceTree = "<group>"; };
+		2C0E72A71AB5E91E00A519C6 /* PDUrineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PDUrineViewController.xib; path = DateRecord/PDUrineViewController.xib; sourceTree = "<group>"; };
 		2C0EBC391AAF5B430056F87E /* PDDateRecordDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDateRecordDetailView.h; path = DateRecord/View/PDDateRecordDetailView.h; sourceTree = "<group>"; };
 		2C0EBC3A1AAF5B430056F87E /* PDDateRecordDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDateRecordDetailView.m; path = DateRecord/View/PDDateRecordDetailView.m; sourceTree = "<group>"; };
 		2C0EBC3D1AAF5B640056F87E /* PDDRDetailDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDRDetailDataSource.h; path = DateRecord/View/PDDRDetailDataSource.h; sourceTree = "<group>"; };
@@ -324,6 +329,9 @@
 				2CCDE7721AB46E1900FE0D54 /* PDFeedViewController.h */,
 				2CCDE7731AB46E1900FE0D54 /* PDFeedViewController.m */,
 				2CCDE7741AB46E1900FE0D54 /* PDFeedViewController.xib */,
+				2C0E72A51AB5E91E00A519C6 /* PDUrineViewController.h */,
+				2C0E72A61AB5E91E00A519C6 /* PDUrineViewController.m */,
+				2C0E72A71AB5E91E00A519C6 /* PDUrineViewController.xib */,
 			);
 			name = DateRecord;
 			sourceTree = "<group>";
@@ -685,6 +693,7 @@
 				2C6625671A867FC40089BBA9 /* PatientsViewController.xib in Resources */,
 				2C0EBC501AB085920056F87E /* PDSwitchTableViewCell.xib in Resources */,
 				2C2F74121AAEF4B900A063B1 /* PDDateRecordDetailViewController.xib in Resources */,
+				2C0E72A91AB5E91E00A519C6 /* PDUrineViewController.xib in Resources */,
 				2CBDEC821AAD9B770012BDD3 /* PDDatePickerViewController.xib in Resources */,
 				2C7EC5BC19D32C2B00830578 /* Images.xcassets in Resources */,
 				2CBACB291A9E3A20002D18C8 /* PDTextInputViewController.xib in Resources */,
@@ -745,6 +754,7 @@
 				2C30BFCB19D707CF0037A883 /* PDDBManager.m in Sources */,
 				2CF41F061A875A8E00435823 /* PDNumInputView.m in Sources */,
 				2CF41F111A876CFA00435823 /* PDPatientInfoView.m in Sources */,
+				2C0E72A81AB5E91E00A519C6 /* PDUrineViewController.m in Sources */,
 				2CF41F0E1A876B4700435823 /* PDTableDataSource.m in Sources */,
 				2C1ACC7119D668E400444069 /* BSugarVO.m in Sources */,
 				2C6625831A8689340089BBA9 /* PatientTextTableViewCell.m in Sources */,

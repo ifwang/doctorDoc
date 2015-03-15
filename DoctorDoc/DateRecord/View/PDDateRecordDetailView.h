@@ -8,7 +8,7 @@
 
 #import "PDView.h"
 @class DateRecordVO;
-
+@class PatientRecord;
 @protocol PDDateRecordDetailViewDelegate;
 
 
@@ -22,11 +22,15 @@
 
 - (void)reload;
 
+- (void)setPatientRecord:(PatientRecord*)patientRecord;
+
 @end
 
 
 @protocol PDDateRecordDetailViewDelegate
 
 - (void)onFeedCellSelected;
+
+- (void)onUrineCellSelected;
 
 @end

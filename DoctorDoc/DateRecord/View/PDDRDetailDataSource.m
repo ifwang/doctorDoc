@@ -10,6 +10,7 @@
 #import "PatientTextTableViewCell.h"
 #import "PDTextViewTableViewCell.h"
 #import "PDTableViewHeaderTitle.h"
+#import "PatientRecord.h"
 
 @interface PDDRDetailDataSource()
 
@@ -35,7 +36,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,6 +46,10 @@
         case PDDRDetailRowTypeFeed:
         {
             return _dRecord.feed == nil?0:1;
+        }
+        case PDDRDetailRowTypeUrine:
+        {
+            return _dRecord.urine.length > 0 ? 1:0;
         }
         default:
             return 0;
@@ -60,6 +65,16 @@
             PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
             
             [cell setTextViewText:[_dRecord.feed feedDescString]];
+            
+            return cell;
+        }
+        case PDDRDetailRowTypeUrine:
+        {
+            PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
+            
+            
+            
+            [cell setTextViewText:[self urineString]];
             
             return cell;
         }
@@ -82,7 +97,11 @@
     {
         case PDDRDetailRowTypeFeed:
         {
-            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.feed feedDescString]];
+            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.feed feedDescString]] + 20;
+        }
+        case PDDRDetailRowTypeUrine:
+        {
+            return [PDTextViewTableViewCell cellHeightWithText:[self urineString]] + 20;
         }
         default:
             return 0;
@@ -101,6 +120,10 @@
         case PDDRDetailRowTypeFeed:
         {
             return _dRecord.feed == nil?0:kPDTableViewHeaderTitleHeight;
+        }
+        case PDDRDetailRowTypeUrine:
+        {
+            return _dRecord.urine.length == 0?0:kPDTableViewHeaderTitleHeight;
         }
         default:
             return 0;
@@ -122,6 +145,11 @@
             header.mainColor = HEXCOLOR(0x003D79);
             break;
         }
+        case PDDRDetailRowTypeUrine:
+        {
+            header.title = @"尿";
+            header.mainColor = HEXCOLOR(0x737300);
+        }
         default:
             break;
     }
@@ -129,7 +157,26 @@
     return header;
 }
 
+#pragma mark - Private Method
 
+- (NSString*)urineString
+{
+    if (_dRecord.urine.length == 0)
+    {
+        return nil;
+    }
+    
+    NSMutableString *re = [[NSMutableString alloc] init];
+    
+    [re appendFormat:@"总量：%@",_dRecord.urine ];
+    
+    if (_pRecord != nil)
+    {
+        [re appendFormat:@"，平均：%.2f", _dRecord.urine.doubleValue/_pRecord.weight.doubleValue/24];
+    }
+    
+    return [NSString stringWithString:re];
+}
 
 
 @end

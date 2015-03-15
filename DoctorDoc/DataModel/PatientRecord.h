@@ -42,6 +42,10 @@
  *  新生儿筛查日期
  */
 @property (nonatomic, strong) NSDate *newbornCheck;
+/**
+ *  新生儿筛查是否完成
+ */
+@property (nonatomic, assign) BOOL isNewbornFinished;
 
 /**
  *  光疗记录

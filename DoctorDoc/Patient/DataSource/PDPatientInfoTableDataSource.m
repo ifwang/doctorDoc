@@ -11,8 +11,9 @@
 #import "PDInputNumberTableViewCell.h"
 #import "PDTableViewHeaderTitle.h"
 #import "PatientTextTableViewCell.h"
+#import "PDSwitchTableViewCell.h"
 
-@interface PDPatientInfoTableDataSource()
+@interface PDPatientInfoTableDataSource()<PDSwitchTableViewCellDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
 
@@ -29,6 +30,8 @@
     [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PDTextViewTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([PDTextViewTableViewCell class])];
     
     [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PatientTextTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([PatientTextTableViewCell class])];
+    
+    [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PDSwitchTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([PDSwitchTableViewCell class])];
     
 }
 
@@ -61,7 +64,7 @@
         }
         case PDPatientInfoTableSectionTypeNewBorn:
         {
-            return _pRecord.newbornCheck == nil?0:1;
+            return _pRecord.newbornCheck == nil?0:2;
         }
         case PDPatientInfoTableSectionTypeDateRecord:
         {
@@ -160,17 +163,32 @@
         }
         case PDPatientInfoTableSectionTypeNewBorn:
         {
-            PatientTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PatientTextTableViewCell class]) forIndexPath:indexPath];
-            [textCell setTintFontSzie:18 detailSize:16];
+            if (indexPath.row == 0)
+            {
+                PatientTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PatientTextTableViewCell class]) forIndexPath:indexPath];
+                [textCell setTintFontSzie:18 detailSize:16];
+                
+                NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+                formater.dateFormat = @"MM-dd HH:mm";
+                
+                textCell.title = @"筛查日期";
+                textCell.detail = [formater stringFromDate:_pRecord.newbornCheck];
+                textCell.accessoryType = UITableViewCellAccessoryNone;
+                
+                return textCell;
+            }
+            else if (indexPath.row == 1)
+            {
+                PDSwitchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDSwitchTableViewCell class]) forIndexPath:indexPath];
+                
+                cell.title = @"完成";
+                cell.value = _pRecord.isNewbornFinished;
+                cell.delegate = self;
+                return cell;
+                
+            }
             
-            NSDateFormatter *formater = [[NSDateFormatter alloc] init];
-            formater.dateFormat = @"MM-dd HH:mm";
-            
-            textCell.title = @"筛查日期";
-            textCell.detail = [formater stringFromDate:_pRecord.newbornCheck];
-            textCell.accessoryType = UITableViewCellAccessoryNone;
 
-            return textCell;
         }
         case PDPatientInfoTableSectionTypeDateRecord:
         {
@@ -218,7 +236,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == PDPatientInfoTableSectionTypeAnti || indexPath.section == PDPatientInfoTableSectionTypePhoto || indexPath.section == PDPatientInfoTableSectionTypehypothermia || indexPath.section == PDPatientInfoTableSectionTypeNewBorn)
+    if (indexPath.section == PDPatientInfoTableSectionTypeAnti || indexPath.section == PDPatientInfoTableSectionTypePhoto || indexPath.section == PDPatientInfoTableSectionTypehypothermia)
     {
         return YES;
     }
@@ -235,9 +253,11 @@
 
         if (indexPath.section == PDPatientInfoTableSectionTypehypothermia)
         {
+            NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section];
+            
             NSIndexPath *secIndexPath = [NSIndexPath indexPathForRow:1 inSection:indexPath.section];
             
-            [_tableView deleteRowsAtIndexPaths:@[indexPath, secIndexPath] withRowAnimation:UITableViewRowAnimationRight];
+            [_tableView deleteRowsAtIndexPaths:@[firstIndexPath, secIndexPath] withRowAnimation:UITableViewRowAnimationRight];
         }
         else
         {
@@ -357,6 +377,14 @@
     }
     
     return header;
+}
+
+#pragma mark - Switch Delegate Method
+
+- (void)switchCellValueChange:(PDSwitchTableViewCell *)switchCell
+{
+    _pRecord.isNewbornFinished = switchCell.value;
+    [[PDDBManager shareInstance] putObject:_pRecord key:_pRecord.pid inTable:kTableNamePatient];
 }
 
 #pragma mark - Private Method

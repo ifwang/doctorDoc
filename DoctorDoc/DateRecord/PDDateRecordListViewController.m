@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     self.pView = (PDDateRecordListView*)self.view;
     [_pView initView];
     _pView.delegate = self;
@@ -49,10 +50,11 @@
     NSDictionary *drDict = _drList[row];
     NSString *drid = drDict[@"drid"];
     
-    NSString *drKey = [PDCommon dateRecordKeyWithPid:_pid drid:drid];
+    NSString *drKey = [PDCommon dateRecordKeyWithPid:_pRecord.pid drid:drid];
     
     PDDateRecordDetailViewController *vc = [[PDDateRecordDetailViewController alloc] init];
     vc.drKey = drKey;
+    vc.pRecord = _pRecord;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -62,11 +64,11 @@
     //删除VO
     NSDictionary *dict = _drList[row];
     NSString *drid = dict[@"drid"];
-    [[PDDBManager shareInstance].originalStore deleteObjectById:[PDCommon dateRecordKeyWithPid:_pid drid:drid] fromTable:kTableNameDateRecord];
+    [[PDDBManager shareInstance].originalStore deleteObjectById:[PDCommon dateRecordKeyWithPid:_pRecord.pid drid:drid] fromTable:kTableNameDateRecord];
 
     //在列表中删除
     [_drList removeObjectAtIndex:row];
-    [[PDDBManager shareInstance].originalStore deleteObjectById:_pid fromTable:kTableNameDateRecordList];
+    [[PDDBManager shareInstance].originalStore deleteObjectById:_pRecord.pid fromTable:kTableNameDateRecordList];
 }
 
 - (void)onAddDateRecord
@@ -81,13 +83,13 @@
     NSDictionary *drDict = @{@"drid":[@(newDrid) stringValue], @"date":[formater stringFromDate:nowDate]};
     [_drList addObject:drDict];
     
-    [[PDDBManager shareInstance].originalStore putObject:[NSArray arrayWithArray:_drList] withId:_pid intoTable:kTableNameDateRecordList];
+    [[PDDBManager shareInstance].originalStore putObject:[NSArray arrayWithArray:_drList] withId:_pRecord.pid intoTable:kTableNameDateRecordList];
     //保存DRVO
     DateRecordVO *dateRecord = [[DateRecordVO alloc] init];
     dateRecord.drid = @(newDrid).stringValue;
     dateRecord.recordDate = nowDate;
     
-    [[PDDBManager shareInstance] putObject:dateRecord key:[PDCommon dateRecordKeyWithPid:_pid drid:dateRecord.drid] inTable:kTableNameDateRecord];
+    [[PDDBManager shareInstance] putObject:dateRecord key:[PDCommon dateRecordKeyWithPid:_pRecord.pid drid:dateRecord.drid] inTable:kTableNameDateRecord];
     
     [_pView addDateRecord:drDict];
 }
@@ -96,12 +98,12 @@
 
 - (void)initData
 {
-    if (self.pid == nil)
+    if (self.pRecord == nil)
     {
         return;
     }
     
-    NSArray *array = [[PDDBManager shareInstance].originalStore getObjectById:_pid fromTable:kTableNameDateRecordList];
+    NSArray *array = [[PDDBManager shareInstance].originalStore getObjectById:_pRecord.pid fromTable:kTableNameDateRecordList];
     self.drList = [NSMutableArray arrayWithArray:array];
 }
 

@@ -47,6 +47,8 @@
         self.hypothermia = [PDCommon dateFromString:ditionary[@"hypothermia"]];
         self.newbornCheck = [PDCommon dateFromString:ditionary[@"newbornCheck"]];
         
+        self.isNewbornFinished = [ditionary[@"isNewbornFinished"] boolValue];
+        
         NSArray *photoStrList = ditionary[@"phototherapyList"];
         if (photoStrList != nil)
         {
@@ -98,7 +100,7 @@
     dict[@"bodyLength"] = [self stringNotNull:_bodyLength];
     dict[@"hypothermia"] = [PDCommon stringFromDate:_hypothermia];
     dict[@"newbornCheck"] = [PDCommon stringFromDate:_newbornCheck];
-    
+    dict[@"isNewbornFinished"] = @(_isNewbornFinished);
     NSMutableArray *tList = [NSMutableArray array];
     for (NSDate *photoDate in _phototherapyList)
     {

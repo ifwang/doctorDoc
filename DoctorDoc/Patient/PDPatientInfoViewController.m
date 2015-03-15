@@ -162,12 +162,13 @@ typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
 - (void)onDeleteNewbornCell
 {
     _patientRecord.newbornCheck = nil;
+    _patientRecord.isNewbornFinished = NO;
 }
 
 - (void)onDateRecordCellSelected
 {
     PDDateRecordListViewController *vc = [[PDDateRecordListViewController alloc] init];
-    vc.pid = _patientRecord.pid;
+    vc.pRecord = _patientRecord;
     [self.navigationController pushViewController:vc animated:YES];
     
     
@@ -272,6 +273,7 @@ typedef NS_ENUM(NSUInteger, PDPatientDatePickerType)
         case PDPatientDatePickerTypeNewBorn:
         {
             _patientRecord.newbornCheck = date;
+            _patientRecord.isNewbornFinished = NO;
             break;
         }
     }

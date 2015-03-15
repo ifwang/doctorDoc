@@ -9,13 +9,17 @@
 #import "PDTableDataSource.h"
 #import "DateRecordVO.h"
 
+@class PatientRecord;
 typedef NS_ENUM(NSUInteger, PDDRDetailRowType)
 {
     PDDRDetailRowTypeFeed,
+    PDDRDetailRowTypeUrine,
 };
 
 @interface PDDRDetailDataSource : PDTableDataSource
 
 @property (nonatomic, strong) DateRecordVO *dRecord;
+
+@property (nonatomic, weak) PatientRecord *pRecord;
 
 @end

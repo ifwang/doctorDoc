@@ -7,9 +7,11 @@
 //
 
 #import "PDViewController.h"
-
+@class PatientRecord;
 @interface PDDateRecordDetailViewController : PDViewController
 
 @property (nonatomic, copy) NSString *drKey;
+
+@property (nonatomic, weak) PatientRecord *pRecord;
 
 @end
