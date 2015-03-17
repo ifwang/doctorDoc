@@ -77,4 +77,10 @@
     return string;
 }
 
+- (NSString*)descString
+{
+    return @"";
+}
+
+
 @end

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 
-@interface PDView : UIView
+@interface PDView : UIView<UIActionSheetDelegate>
 
 - (void)initView;
 
+- (UIActionSheet*)showActionSheet:(NSArray *)values title:(NSString*)title;
+
+- (void)onActionSheet:(UIActionSheet*)sheet selectedAtIndex:(NSUInteger)index;
 @end

@@ -36,7 +36,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -51,6 +51,18 @@
         {
             return _dRecord.urine.length > 0 ? 1:0;
         }
+        case PDDRDetailRowTypeStool:
+        {
+            return _dRecord.stool == nil?0:1;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            return _dRecord.tcb == nil?0:1;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            return _dRecord.inspect == nil?0:1;
+        }
         default:
             return 0;
     }
@@ -64,7 +76,7 @@
         {
             PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
             
-            [cell setTextViewText:[_dRecord.feed feedDescString]];
+            [cell setTextViewText:[_dRecord.feed descString]];
             
             return cell;
         }
@@ -75,6 +87,30 @@
             
             
             [cell setTextViewText:[self urineString]];
+            
+            return cell;
+        }
+        case PDDRDetailRowTypeStool:
+        {
+            PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
+            
+            [cell setTextViewText:[_dRecord.stool descString]];
+            
+            return cell;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
+            
+            [cell setTextViewText:[_dRecord.tcb descString]];
+            
+            return cell;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            PDTextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDTextViewTableViewCell class]) forIndexPath:indexPath];
+            
+            [cell setTextViewText:[_dRecord.inspect descString]];
             
             return cell;
         }
@@ -97,11 +133,23 @@
     {
         case PDDRDetailRowTypeFeed:
         {
-            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.feed feedDescString]] + 20;
+            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.feed descString]] + 20;
         }
         case PDDRDetailRowTypeUrine:
         {
             return [PDTextViewTableViewCell cellHeightWithText:[self urineString]] + 20;
+        }
+        case PDDRDetailRowTypeStool:
+        {
+            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.stool descString]] + 20;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.tcb descString]] + 20;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            return [PDTextViewTableViewCell cellHeightWithText:[_dRecord.inspect descString]] + 20;
         }
         default:
             return 0;
@@ -124,6 +172,18 @@
         case PDDRDetailRowTypeUrine:
         {
             return _dRecord.urine.length == 0?0:kPDTableViewHeaderTitleHeight;
+        }
+        case PDDRDetailRowTypeStool:
+        {
+            return _dRecord.stool == nil?0:kPDTableViewHeaderTitleHeight;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            return _dRecord.tcb == nil?0:kPDTableViewHeaderTitleHeight;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            return _dRecord.inspect == nil?0:kPDTableViewHeaderTitleHeight;
         }
         default:
             return 0;
@@ -149,6 +209,25 @@
         {
             header.title = @"尿";
             header.mainColor = HEXCOLOR(0x737300);
+            break;
+        }
+        case PDDRDetailRowTypeStool:
+        {
+            header.title = @"便便";
+            header.mainColor = HEXCOLOR(0x9F5000);
+            break;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            header.title = @"TCB";
+            header.mainColor = HEXCOLOR(0x5A5AAD);
+            break;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            header.title = @"送检";
+            header.mainColor = HEXCOLOR(0x999777);
+            break;
         }
         default:
             break;

@@ -7,7 +7,6 @@
 //
 
 #import "PDDateRecordDetailView.h"
-#import "PDDRDetailDataSource.h"
 
 @interface PDDateRecordDetailView()<PDTableAction>
 
@@ -30,6 +29,8 @@
     _datasource.delegate = self;
     [_datasource registerTableView:_tableView];
     
+    
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0);
 }
 
 #pragma mark - Private Method
@@ -119,6 +120,21 @@
         case PDDRDetailRowTypeUrine:
         {
             [_delegate onUrineCellSelected];
+            break;
+        }
+        case PDDRDetailRowTypeStool:
+        {
+            [_delegate onStoolCellSelected];
+            break;
+        }
+        case PDDRDetailRowTypeTCB:
+        {
+            [_delegate onTCBCellSelected];
+            break;
+        }
+        case PDDRDetailRowTypeInspect:
+        {
+            [_delegate onInspectCellSelected];
             break;
         }
         default:

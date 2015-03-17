@@ -64,11 +64,9 @@
 - (void)textDidChanged:(NSNotification*)notification
 {
     _value = _textField.text;
+
+    [_delegate onInputNumberTableViewCellInputFinished:self];
     
-    if (_indexPath != nil)
-    {
-        [_delegate onInputNumberTableViewCellInputFinished:self];
-    }
 }
 
 - (void)setTintFontSzie:(NSUInteger)size valueSize:(NSUInteger)valueSize;

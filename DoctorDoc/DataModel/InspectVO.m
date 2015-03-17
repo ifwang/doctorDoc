@@ -44,5 +44,35 @@
     return inspect;
 }
 
+- (NSString*)descString
+{
+    NSMutableString *re = [NSMutableString string];
+    
+    if (_MR)
+    {
+        [re appendString:@"MR，"];
+    }
+    
+    if (_ultrasound)
+    {
+        [re appendString:@"超声，"];
+    }
+    
+    if (_chest)
+    {
+        [re appendString:@"胸片，"];
+    }
+    
+    if (re.length == 0)
+    {
+        return @"暂无数据";
+    }
+    else
+    {
+        return [re substringToIndex:re.length - 1];
+    }
+    
+}
+
 
 @end

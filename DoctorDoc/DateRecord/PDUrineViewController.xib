@@ -28,18 +28,6 @@
                         <action selector="valueDidChanged:" destination="-1" eventType="valueChanged" id="Nwi-1b-1FR"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-F2-NLX" customClass="FUIButton">
-                    <rect key="frame" x="30" y="190" width="260" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="dLH-cb-umk"/>
-                    </constraints>
-                    <state key="normal" title="完成">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onDoneBtnClicked:" destination="-1" eventType="touchUpInside" id="6UW-Xu-cic"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-yI-aZp" customClass="FUIButton">
                     <rect key="frame" x="30" y="30" width="60" height="30"/>
                     <constraints>
@@ -54,14 +42,39 @@
                         <action selector="onCancelBtnClicked:" destination="-1" eventType="touchUpInside" id="Kov-0K-rLp"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均量 = 总量/体重/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I18-fB-L0p">
+                    <rect key="frame" x="20" y="158" width="280" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ROk-ED-2LA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-F2-NLX" customClass="FUIButton">
+                    <rect key="frame" x="30" y="198" width="260" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dLH-cb-umk"/>
+                    </constraints>
+                    <state key="normal" title="完成">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onDoneBtnClicked:" destination="-1" eventType="touchUpInside" id="6UW-Xu-cic"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="I18-fB-L0p" firstAttribute="leading" secondItem="ZL0-lA-PFB" secondAttribute="leading" constant="20" id="3D9-eG-Oly"/>
                 <constraint firstAttribute="trailing" secondItem="hmU-PZ-EBy" secondAttribute="trailing" constant="30" id="63p-Nd-IQd"/>
                 <constraint firstItem="hmU-PZ-EBy" firstAttribute="top" secondItem="Mb8-yI-aZp" secondAttribute="bottom" constant="40" id="EWA-Bu-awm"/>
                 <constraint firstItem="0h2-F2-NLX" firstAttribute="leading" secondItem="ZL0-lA-PFB" secondAttribute="leading" constant="30" id="NmB-iF-Esj"/>
                 <constraint firstItem="Mb8-yI-aZp" firstAttribute="leading" secondItem="0h2-F2-NLX" secondAttribute="leading" id="VOo-xJ-OOP"/>
+                <constraint firstItem="I18-fB-L0p" firstAttribute="top" secondItem="hmU-PZ-EBy" secondAttribute="bottom" constant="18" id="anr-ya-Hm1"/>
+                <constraint firstAttribute="trailing" secondItem="I18-fB-L0p" secondAttribute="trailing" constant="20" id="auo-Pk-GbS"/>
+                <constraint firstItem="0h2-F2-NLX" firstAttribute="top" secondItem="I18-fB-L0p" secondAttribute="bottom" constant="20" id="bwZ-DB-YYf"/>
                 <constraint firstItem="Mb8-yI-aZp" firstAttribute="leading" secondItem="hmU-PZ-EBy" secondAttribute="leading" id="hgd-HI-kue"/>
                 <constraint firstAttribute="trailing" secondItem="0h2-F2-NLX" secondAttribute="trailing" constant="30" id="jmv-Dd-EML"/>
                 <constraint firstItem="hmU-PZ-EBy" firstAttribute="top" secondItem="ZL0-lA-PFB" secondAttribute="top" constant="100" id="pOY-Fj-K2Q"/>
@@ -69,6 +82,11 @@
                 <constraint firstItem="0h2-F2-NLX" firstAttribute="top" secondItem="hmU-PZ-EBy" secondAttribute="bottom" constant="50" id="wJj-fF-5jr"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="wJj-fF-5jr"/>
+                </mask>
+            </variation>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="53B-vU-zqA" appends="YES" id="tSE-bb-kTC"/>
             </connections>

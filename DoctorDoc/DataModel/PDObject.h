@@ -20,4 +20,6 @@
 
 - (NSString*)stringNotNull:(NSString*)string;
 
+- (NSString*)descString;
+
 @end

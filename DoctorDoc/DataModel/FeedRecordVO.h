@@ -37,7 +37,6 @@ static const NSUInteger kMilkType = 4;
  */
 @property (nonatomic, copy) NSString *perVlaue2;
 
-- (NSString*)feedDescString;
 + (NSString*)feedTypeAtIndex:(NSUInteger)index;
 + (NSString*)milkTypeAtIndex:(NSUInteger)index;
 + (NSArray*)feedTypeList;

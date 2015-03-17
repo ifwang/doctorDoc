@@ -18,4 +18,7 @@ typedef NS_ENUM(NSUInteger, PDAddVCSourceType)
 
 - (void)showTextHUD:(NSString*)text;
 
+- (void)onDone;
+- (void)addDoneNaviItem;
+
 @end

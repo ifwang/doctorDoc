@@ -7,6 +7,8 @@
 //
 
 #import "PDView.h"
+#import "PDDRDetailDataSource.h"
+
 @class DateRecordVO;
 @class PatientRecord;
 @protocol PDDateRecordDetailViewDelegate;
@@ -32,5 +34,11 @@
 - (void)onFeedCellSelected;
 
 - (void)onUrineCellSelected;
+
+- (void)onStoolCellSelected;
+
+- (void)onTCBCellSelected;
+
+- (void)onInspectCellSelected;
 
 @end

@@ -89,7 +89,7 @@
     return @[@"配方奶",@"水解奶",@"不含乳糖奶",@"早产儿奶"];
 }
 
-- (NSString*)feedDescString
+- (NSString*)descString
 {
     NSMutableString *desc = [[NSMutableString alloc] init];
     

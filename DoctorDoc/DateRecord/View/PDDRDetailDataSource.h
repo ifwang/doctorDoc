@@ -14,6 +14,9 @@ typedef NS_ENUM(NSUInteger, PDDRDetailRowType)
 {
     PDDRDetailRowTypeFeed,
     PDDRDetailRowTypeUrine,
+    PDDRDetailRowTypeStool,
+    PDDRDetailRowTypeTCB,
+    PDDRDetailRowTypeInspect,
 };
 
 @interface PDDRDetailDataSource : PDTableDataSource

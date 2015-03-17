@@ -14,20 +14,11 @@
  */
 @property (nonatomic, assign) NSUInteger times;
 /**
- *  黄色
+ *  大便颜色
  */
-@property (nonatomic, assign) BOOL isYellow;
-/**
- *  绿色
- */
-@property (nonatomic, assign) BOOL isGreen;
-/**
- *  墨绿色
- */
-@property (nonatomic, assign) BOOL isDarkGreen;
-/**
- *  其他备注
- */
-@property (nonatomic, copy) NSString *other;
+@property (nonatomic, copy) NSString *stoolColor;
+
+
++ (NSArray*)stoolColorList;
 
 @end

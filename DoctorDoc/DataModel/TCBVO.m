@@ -47,5 +47,9 @@
     
 }
 
+- (NSString*)descString
+{
+    return [NSString stringWithFormat:@"TCB：%.2f（%.2f - %.2f - %.2f）", (_value1.doubleValue + _value2.doubleValue + _value3.doubleValue)/3*1.71, _value1.doubleValue, _value2.doubleValue, _value3.doubleValue];
+}
 
 @end

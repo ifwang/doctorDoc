@@ -7,6 +7,7 @@
 //
 
 #import "PDViewController.h"
+#import "PDUIFactory.h"
 
 @interface PDViewController ()
 
@@ -45,6 +46,23 @@
     
 }
 
+- (void)addDoneNaviItem
+{
+    UIButton *doneButton = [PDUIFactory doneButton];
+    [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:doneButton];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)doneButtonClicked:(id)sender
+{
+    [self onDone];
+}
+
+- (void)onDone
+{
+    
+}
 
 /*
 #pragma mark - Navigation

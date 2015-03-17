@@ -93,24 +93,19 @@
         [dict setObject:[_feed dictionary] forKey:@"feed"];
     }
     
-    if (_feed != nil)
-    {
-        [dict setObject:[_feed dictionary] forKey:@"feed"];
-    }
-    
     if (_stool != nil)
     {
-        [dict setObject:[_feed dictionary] forKey:@"stool"];
+        [dict setObject:[_stool dictionary] forKey:@"stool"];
     }
     
     if (_inspect != nil)
     {
-        [dict setObject:[_feed dictionary] forKey:@"inspect"];
+        [dict setObject:[_inspect dictionary] forKey:@"inspect"];
     }
     
     if (_tcb != nil)
     {
-        [dict setObject:[_feed dictionary] forKey:@"tcb"];
+        [dict setObject:[_tcb dictionary] forKey:@"tcb"];
     }
     
     return dict;

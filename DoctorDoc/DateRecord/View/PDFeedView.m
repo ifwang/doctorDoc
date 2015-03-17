@@ -9,7 +9,7 @@
 #import "PDFeedView.h"
 #import "PDFeedDataSource.h"
 #import "FeedRecordVO.h"
-@interface PDFeedView()<PDTableAction, UIActionSheetDelegate>
+@interface PDFeedView()<PDTableAction>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -61,41 +61,35 @@
         title = @"喂奶";
     }
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil];
+    UIActionSheet *sheet = [self showActionSheet:valueArray title:title];
     sheet.tag = indexPath.row;
-    
-    [valueArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [sheet addButtonWithTitle:obj];
-    }];
-    
-    [sheet showInView:self];
 }
 
 #pragma mark - Action Sheet Delegate
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)onActionSheet:(UIActionSheet*)sheet selectedAtIndex:(NSUInteger)index
 {
-    if (buttonIndex == 0)
+    if (index == 0)
     {
         return;
     }
-    NSInteger row = buttonIndex - 1;
+    NSInteger row = index - 1;
 
-    if (actionSheet.tag == PDFeedRowTypeFeedWay)
+    if (sheet.tag == PDFeedRowTypeFeedWay)
     {
         
         NSString *value = [FeedRecordVO feedTypeList][row];
         _fRecord.feedWay = value;
         
     }
-    else if (actionSheet.tag == PDFeedRowTypeMilkType)
+    else if (sheet.tag == PDFeedRowTypeMilkType)
     {
         NSString *value = [FeedRecordVO milkTypeList][row];
         _fRecord.milkType = value;
     }
     
     
-    [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:actionSheet.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sheet.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 
 }
 
