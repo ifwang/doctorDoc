@@ -14,16 +14,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N3G-gK-iWo">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N3G-gK-iWo">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="N3G-gK-iWo" secondAttribute="bottom" id="EWf-Wj-SIv"/>
+                <constraint firstItem="N3G-gK-iWo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LGX-D9-NNe"/>
+                <constraint firstAttribute="trailing" secondItem="N3G-gK-iWo" secondAttribute="trailing" id="jFG-ma-Knq"/>
+                <constraint firstItem="N3G-gK-iWo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yDr-0Z-WY7"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="tableView" destination="N3G-gK-iWo" id="7Qu-s9-KEf"/>
             </connections>
+            <point key="canvasLocation" x="251" y="204"/>
         </view>
     </objects>
 </document>

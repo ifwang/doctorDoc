@@ -114,6 +114,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSLog(@"%ld", buttonIndex);
+    
     if (buttonIndex == 1)
     {
         NSUInteger row = alertView.tag;

@@ -76,18 +76,22 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="cgZ-bU-wqO" secondAttribute="trailing" constant="30" id="1at-AM-def"/>
+                <constraint firstItem="45T-rm-fP4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4YP-yR-jTi"/>
                 <constraint firstItem="45T-rm-fP4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5We-FT-vkd"/>
                 <constraint firstItem="BnY-ek-vfp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="7qw-P7-2V3"/>
                 <constraint firstItem="cgZ-bU-wqO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8Ct-AS-eMh"/>
                 <constraint firstItem="htw-uZ-urb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8QT-EZ-gqT"/>
+                <constraint firstAttribute="bottom" secondItem="45T-rm-fP4" secondAttribute="bottom" id="8nR-EG-aBa"/>
                 <constraint firstItem="px1-Cb-DKB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="A7Z-MS-8eM"/>
                 <constraint firstItem="BnY-ek-vfp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="AYO-W1-KCL"/>
                 <constraint firstItem="px1-Cb-DKB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Byd-cr-VVV"/>
                 <constraint firstItem="45T-rm-fP4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gxd-ww-acr"/>
                 <constraint firstAttribute="trailing" secondItem="BnY-ek-vfp" secondAttribute="trailing" constant="30" id="Mcc-21-xrR"/>
+                <constraint firstItem="45T-rm-fP4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RgF-MW-npd"/>
                 <constraint firstItem="htw-uZ-urb" firstAttribute="top" secondItem="BnY-ek-vfp" secondAttribute="bottom" constant="25" id="jDF-bl-lKa"/>
                 <constraint firstAttribute="trailing" secondItem="45T-rm-fP4" secondAttribute="trailing" id="mJ3-p0-ZaN"/>
                 <constraint firstAttribute="trailing" secondItem="htw-uZ-urb" secondAttribute="trailing" constant="30" id="mb2-46-PIx"/>
+                <constraint firstAttribute="trailing" secondItem="45T-rm-fP4" secondAttribute="trailing" id="sEa-da-4tg"/>
                 <constraint firstItem="cgZ-bU-wqO" firstAttribute="top" secondItem="htw-uZ-urb" secondAttribute="bottom" constant="20" id="sd1-OV-1yC"/>
                 <constraint firstAttribute="bottom" secondItem="45T-rm-fP4" secondAttribute="bottom" id="wYd-AO-8y9"/>
             </constraints>
